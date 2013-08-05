@@ -59,8 +59,8 @@ void STL_top_k(std::vector<int> &v_in)
 /* yield output, input array changed */
 void STL_top_k_copy(std::vector<int> &v_in, std::vector<int> &v_out)
 {
-   std::partial_sort_copy(v_in.begin(),  v_in.end(), 
-                          v_out.begin(), v_out.end(),
-                          std::greater<int>());         // greater(): max K
-                                                        // by default: min K
+    std::partial_sort_copy(v_in.begin(),  v_in.end(), 
+                           v_out.begin(), v_out.end(),
+                           std::greater<int>());         // greater(): max K
+                                                         // by default: min K
 }
