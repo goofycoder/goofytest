@@ -1,0 +1,18 @@
+$gdb <symbol_file>
+
+(gdb) core-file <core_file_name>
+
+(gdb) info threads
+
+(gdb) thread N
+
+(gdb) bt
+
+(gdb) frame M
+
+(gdb) x/N ptr              // dump the N byte memory starting from ptr
+(gdb) x/N ptr-N            // dump the N byte memory before ptr
+
+(gdb) set print pretty on
+
+(gdb) p *struct_ptr
