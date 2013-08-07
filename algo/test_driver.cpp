@@ -7,9 +7,34 @@
 
 int main()
 {
-    TEST_isPrime();
+    std::cout << "================== Algorithm Library ==================\n"
+              << "1. Prime\n"
+              << "2. Palindrome\n"
+              << "3. Anagram\n";
 
-    TEST_isPalindromeStr();
+    unsigned option;
+    std::cout << "You choose: \n";
+
+    while ( std::cin>>option ) {
+        switch(option) {
+        case 1:
+            TEST_isPrime();
+            break;
+
+        case 2:
+            TEST_isPalindromeStr();
+            break;
+        
+        case 3:
+            TEST_isAnagram();
+            break;
+        
+        default:
+            std::cout << "Invalid option.";
+            break;
+        }
+        std::cout << "You choose: \n";
+    }
 }
 
 #if 0

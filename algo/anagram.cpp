@@ -18,12 +18,10 @@
 */
 
 #include <iostream>
-#include <map>
 #include <string>
 
 #define NUM_CHAR 256
 
-bool isAnagram(std::string& str1, std::string& str2);
 void buildStat(std::string& str, int* m);
 bool compareStat(int* m1, int* m2);
 
@@ -41,9 +39,11 @@ bool isAnagram(std::string& str1, std::string& str2)
 void buildStat(std::string& str, int* m)
 {
     unsigned i = 0;
+    unsigned slot;
 
     while (str[i] != '\0') {
-        m[ str[i] ]++;
+        slot = (unsigned)str[i];
+        m[slot]++;
         i++;
     }
 }
@@ -59,17 +59,27 @@ bool compareStat(int* m1, int* m2)
     return true;
 }
 
-int main()
+void TEST_isAnagram()
 {
-    std::string s1("gramana");
-    std::string s2("anagram");
+    std::string s1;
+    std::string s2;
 
-    std::cout << "string 1: " << s1 << "\n";
-    std::cout << "string 2: " << s2 << "\n";
+   
+    std::cout << "\n*** TEST for isAnagram() ***\n"
+              << "Two input strings: \n"
+              << "String 1: ";
 
-    if (isAnagram(s1, s2)) {
-        std::cout << "Is anagram.\n";
-    } else {
-        std::cout << "NOT anagram.\n";
+    while (std::cin>>s1) {
+        std::cout << "String 2: ";
+        std::cin>>s2;
+
+        if (isAnagram(s1, s2)) {
+            std::cout << s1 << " and " << s2 << " is anagram.\n";
+        } else {
+            std::cout << s1 << " and " << s2 << " is NOT anagram.\n";
+        }
+        
+        std::cout << "\nTwo input strings: \n"
+                  << "String 1: ";
     }
 }

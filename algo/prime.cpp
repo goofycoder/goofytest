@@ -37,7 +37,7 @@ void TEST_isPrime()
 {
     int num;
     
-    std::cout << "\nTEST for isPrime():\n"
+    std::cout << "\n*** TEST for isPrime() ***\n"
               << "Enter an interger: ";
 
     while (std::cin>>num) {

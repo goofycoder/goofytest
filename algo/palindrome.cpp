@@ -40,7 +40,7 @@ void TEST_isPalindromeStr()
 {
     std::string str;
     
-    std::cout << "\nTEST for isPalindrome():\n"
+    std::cout << "\n *** TEST for isPalindrome() ***\n"
               << "Enter a string: ";
 
     while (std::cin>>str) {

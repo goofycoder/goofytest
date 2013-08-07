@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -g -Wall -c
+CFLAGS = -g -Wall -std=c++0x -c
 LFALGS = 
 
 EXEC = \
@@ -8,12 +8,14 @@ EXEC = \
 OBJ = \
 	  test_driver.o \
 	  prime.o \
+	  anagram.o \
 	  palindrome.o
 
 SRC = \
 	  test_driver.cpp \
 	  prime.cpp \
-      palindrome.cpp
+	  anagram.cpp \
+	  palindrome.cpp
 
 all: $(EXEC)
 
