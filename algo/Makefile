@@ -7,11 +7,13 @@ EXEC = \
 
 OBJ = \
 	  test_driver.o \
-	  prime.o
+	  prime.o \
+	  palindrome.o
 
 SRC = \
 	  test_driver.cpp \
-	  prime.cpp
+	  prime.cpp \
+      palindrome.cpp
 
 all: $(EXEC)
 

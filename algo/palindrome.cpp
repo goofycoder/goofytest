@@ -12,8 +12,6 @@
     Palindrome number:
         12321
         (Decimal, or hex?  negative? ask for clarification)
-
-    Date: 08/06/2013
 */
 
 #include <iostream>
@@ -38,25 +36,22 @@ bool isPalindromeStr(const std::string& str) {
     return true;
 }
 
-void test_isPanlindromeStr(std::string& str) 
+void TEST_isPalindromeStr()
 {
-    if (isPalindromeStr(str)) {
-        std::cout << "IS palindrome\n";
-    } else {
-        std::cout << "is NOT palindrome\n";
+    std::string str;
+    
+    std::cout << "\nTEST for isPalindrome():\n"
+              << "Enter a string: ";
+
+    while (std::cin>>str) {
+        if ( isPalindromeStr(str) ) {
+            std::cout << str << " is a palindrome.\n";
+        } else {
+            std::cout << str << " is NOT a palindrome.\n";
+        }
+
+        std::cout << "\nEnter a string: ";
     }
-}
-
-int main(int argc, char** argv) 
-{
-    if (argc != 2) {
-        std::cout << "Usage: ./palindrome <input_string>\n";
-    }
-
-    std::string str_in = argv[1];
-    std::cout << "Input string: " << str_in << "\n";
-
-    test_isPanlindromeStr(str_in);
-
-    return 0;
+    
+    std::cout << "\nTEST for isPalindromeStr() finished.\n";
 }

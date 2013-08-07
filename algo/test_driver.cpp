@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include "prime.hpp"    // isPrime()
+#include "algo.hpp" 
 #if 0
 #include "gtest/gtest.h"
 #endif
@@ -8,6 +8,8 @@
 int main()
 {
     TEST_isPrime();
+
+    TEST_isPalindromeStr();
 }
 
 #if 0
@@ -38,4 +40,3 @@ TEST(IsPrimeTest, Positive) {
     EXPECT_TRUE(IsPrime(23));
 }
 #endif
-

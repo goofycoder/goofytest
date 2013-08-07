@@ -1,3 +1,14 @@
+/*
+    Algorithm to check whether an integer is a prime number.
+
+    Trivial cases:
+        (-inf, 1]:                  NOT prime
+        2 and all even numbers:     NOT prime
+        3 and all odd number:
+            - if (i> (num/i)) : i > square root of num:  is PRIME
+            - if  < square root, num can be divided by i, NOT prime
+ */
+
 #include <iostream>
 
 bool isPrime(const int& num)
@@ -27,7 +38,7 @@ void TEST_isPrime()
     int num;
     
     std::cout << "\nTEST for isPrime():\n"
-              << "Enter a interger: ";
+              << "Enter an interger: ";
 
     while (std::cin>>num) {
         if ( isPrime(num) ) {
@@ -36,10 +47,8 @@ void TEST_isPrime()
             std::cout << num << " is NOT a prime.\n";
         }
 
-        std::cout << "\nEnter a interger: ";
+        std::cout << "\nEnter an interger: ";
     }
     
     std::cout << "\nTEST for isPrime() finished.\n";
 }
-
-
