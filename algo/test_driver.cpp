@@ -10,7 +10,8 @@ int main()
     std::cout << "================== Algorithm Library ==================\n"
               << "1. Prime\n"
               << "2. Palindrome\n"
-              << "3. Anagram\n";
+              << "3. Anagram\n"
+              << "4. Fibonacci number\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -29,12 +30,18 @@ int main()
             TEST_isAnagram();
             break;
         
+        case 4:
+            TEST_fibo();
+            break;
+        
         default:
             std::cout << "Invalid option.";
             break;
         }
         std::cout << "You choose: \n";
     }
+
+    return 0;
 }
 
 #if 0
