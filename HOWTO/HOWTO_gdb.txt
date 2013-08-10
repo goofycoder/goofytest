@@ -1,4 +1,4 @@
-$gdb <symbol_file>
+$gdb -q <symbol_file>
 
 (gdb) core-file <core_file_name>
 
@@ -16,3 +16,9 @@ $gdb <symbol_file>
 (gdb) set print pretty on
 
 (gdb) p *struct_ptr
+
+
+===========================================
+$gdb -q
+ 
+     -q: quiet mode, skip the banner
