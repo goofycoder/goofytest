@@ -12,21 +12,13 @@
 #include <cstdlib>
 #include <ctime>
 #include <new>
+#include "algo.hpp"
 
-typedef int Item;
-#define SAMPLE_NUM 10
-#define STREAM_LEN 100
-
-/* Helper functions */
-void display_samples(const Item* samples, unsigned sample_size);
-Item* stream_source();
-
-/* MAJOR function */
-void reservior_sample(const Item* stream) 
+void reservior_sample(const Item* stream, const unsigned& stream_len,
+                      Item* samples, unsigned sample_size) 
 {
-    Item samples[SAMPLE_NUM] = {0};     // short-cut: by default int type
     Item curItem;                       // current item
-    int  sample_idx = 0;
+    unsigned sample_idx = 0;
 
     bool sampling_flag = true;
 
@@ -34,7 +26,7 @@ void reservior_sample(const Item* stream)
         /* fetch the item from stream */
         curItem = *(stream+sample_idx);
         
-        if (sample_idx <= SAMPLE_NUM) {
+        if (sample_idx <= sample_size) {
             /* build the reservior
              * add_item_to_sample(curItem);
              */
@@ -42,46 +34,32 @@ void reservior_sample(const Item* stream)
         } else {
             /* random sample */
             srand(time(NULL));
-            int r = rand() % sample_idx;
-            if (r < SAMPLE_NUM) {
+            unsigned r = rand() % sample_idx;
+            if (r < sample_size) {
                 samples[r] = curItem;
             }
         }
 
         sample_idx++;
 
-        display_samples(samples, SAMPLE_NUM);
-
         /* Could be unbound. But for test purpose, 
          * stop sampling after sample all items in stream
          */
-        if (sample_idx == STREAM_LEN) {
+        if (sample_idx == stream_len) {
             sampling_flag = false;
         }
-
     } while (sampling_flag);
 }
 
-int main() 
+Item* stream_source(const int &stream_len)
 {
-    Item* stream = stream_source();
-    
-    reservior_sample(stream);
- 
-    delete[] stream;     // just for test purpose
-   
-    return 0;
-}
-
-Item* stream_source()
-{
-    Item* stream = new Item[STREAM_LEN];
+    Item* stream = new Item[stream_len];
     int pos=0;
 
     do {
         stream[pos] = pos;
         pos++;
-    } while (pos<STREAM_LEN);
+    } while (pos<stream_len);
 
     return stream;
 }
@@ -95,4 +73,26 @@ void display_samples(const Item* samples, unsigned sample_size)
     }
 
     std::cout << "\n";
+}
+
+void TEST_reservoir_sampling()
+{
+    unsigned stream_len;
+    unsigned sample_size;
+    std::cout << "\n *** TEST for Reservoir Sampling ***\n"
+              << "Enter the stream length: ";
+    std::cin >> stream_len; 
+    
+    std::cout << "\n Enter the number of samples: ";
+    std::cin >> sample_size;
+    
+    // generate stream
+    Item* stream = stream_source(stream_len);
+    Item samples[sample_size];
+    
+    reservior_sample(stream, stream_len, samples, sample_size);
+    
+    display_samples(samples, sample_size);
+
+    delete[] stream;
 }

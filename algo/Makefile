@@ -1,6 +1,6 @@
 CC = g++
-CFLAGS = -g -pg -Wall -std=c++0x -c     # -pg: gprof
-LFLAGS = -pg                            # -pg: gprof (both compile and link need -pg)
+CFLAGS = -g -Wall -std=c++0x -c     # -pg: gprof
+LFLAGS =                            # -pg: gprof (both compile and link need -pg)
 
 EXEC = \
 	  test_driver
@@ -10,6 +10,7 @@ OBJ = \
 	  prime.o \
 	  anagram.o \
 	  fibo.o \
+	  reservior_sampling.o \
 	  palindrome.o
 
 SRC = \
@@ -17,6 +18,7 @@ SRC = \
 	  prime.cpp \
 	  anagram.cpp \
 	  fibo.cpp \
+	  reservior_sampling.cpp \
 	  palindrome.cpp
 
 all: $(EXEC)

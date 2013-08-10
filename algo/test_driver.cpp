@@ -12,7 +12,8 @@ int main()
               << "2. Palindrome String\n"
               << "3. Palindrome Number\n"
               << "4. Anagram\n"
-              << "5. Fibonacci number\n";
+              << "5. Fibonacci number\n"
+              << "6. Reservoir sampling\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -37,6 +38,10 @@ int main()
         
         case 5:
             TEST_fibo();
+            break;
+        
+        case 6:
+            TEST_reservoir_sampling();
             break;
         
         default:
