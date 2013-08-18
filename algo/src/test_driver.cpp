@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "algo.hpp" 
+#include "linked_list.hpp" 
 #if 0
 #include "gtest/gtest.h"
 #endif
@@ -13,7 +14,8 @@ int main()
               << "3. Palindrome Number\n"
               << "4. Anagram\n"
               << "5. Fibonacci number\n"
-              << "6. Reservoir sampling\n";
+              << "6. Reservoir sampling\n"
+              << "7. Reverse a singly linked list\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -42,6 +44,10 @@ int main()
         
         case 6:
             TEST_reservoir_sampling();
+            break;
+        
+        case 7:
+            TEST_reverse_list();
             break;
         
         default:

@@ -35,4 +35,6 @@ void TEST_fibo();               // Fibonacci number
 
 void TEST_reservoir_sampling(); // Reservoir sampling
 
+void TEST_reverse_list();       // Reverse singly linked list
+
 #endif
