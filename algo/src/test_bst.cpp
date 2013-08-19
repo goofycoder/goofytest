@@ -2,22 +2,9 @@
 
 #include <iostream>
 #include <vector>
-#include "bst.h"
+#include "bst.hpp"
 
-int main() 
-{
-    test_InsertNode();
-
-    test_TreeTraverse();
-    
-    test_TreeAPI();
-
-    test_BinarySearch();
-
-	return 0;
-}
-
-void test_InsertNode() 
+void TEST_InsertNode() 
 {
     std::cout << "\n========== Running " << __FUNCTION__ <<"\n";
 	
@@ -44,7 +31,7 @@ void test_InsertNode()
 	std::cout << "\n";
 }
 
-void test_TreeTraverse() 
+void TEST_TreeTraverse() 
 {
     std::cout << "\n=========== Running " << __FUNCTION__ <<"\n";
 
@@ -65,7 +52,7 @@ void test_TreeTraverse()
 	std::cout << "\n";
 }
 
-void test_TreeAPI()
+void TEST_TreeAPI()
 {
     std::cout << "\n=========== Running " << __FUNCTION__ <<"\n";
 	
@@ -113,7 +100,7 @@ void test_TreeAPI()
 	bst.printAllPath();
 }
 
-void test_BinarySearch() 
+void TEST_BinarySearch() 
 {
     std::cout << "\n=========== Running " << __FUNCTION__ <<"\n";
   

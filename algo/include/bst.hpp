@@ -63,7 +63,7 @@ private:
 	void    searchRange_int(Node* p, int k1, int k2) const;
 
 	// merge two binary search trees
-	void mergeBST(BST* b);
+	void    mergeBST(BST* b);
 	
     void    preorderVisit(Node* p) const;	    // used in preorderTraverse()
 	void    inorderVisit(Node* p) const;		// used in inorderTraverse()
@@ -83,11 +83,5 @@ private:
 	
 	Node*   sortedListToBST(Node* list, int start, int end);
 };
-
-// BST test APIs
-void test_InsertNode();
-void test_TreeTraverse();
-void test_BinarySearch(); 
-void test_TreeAPI();
 
 #endif /* BST_H_ */

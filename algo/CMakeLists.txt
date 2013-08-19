@@ -13,10 +13,11 @@ cmake_minimum_required(VERSION 2.8, FATAL_ERROR)
 # By default C and CXX are enabled. 
 project(Algorithm)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+# the executable will be generate in project directory 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${Algorithm_BINARY_DIR})
 
-#add_subdirectory(src)
-add_subdirectory(${Algorithm_SOURCE_DIR}/src)
+# add /src subdirectory
+add_subdirectory(src)
 
 
 

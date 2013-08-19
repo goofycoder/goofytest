@@ -37,4 +37,10 @@ void TEST_reservoir_sampling(); // Reservoir sampling
 
 void TEST_reverse_list();       // Reverse singly linked list
 
+// BST test APIs
+void TEST_InsertNode();
+void TEST_TreeTraverse();
+void TEST_BinarySearch(); 
+void TEST_TreeAPI();
+
 #endif

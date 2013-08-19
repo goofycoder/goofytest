@@ -15,7 +15,8 @@ int main()
               << "4. Anagram\n"
               << "5. Fibonacci number\n"
               << "6. Reservoir sampling\n"
-              << "7. Reverse a singly linked list\n";
+              << "7. Reverse a singly linked list\n"
+              << "8. Test Binary Search Tree\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -48,6 +49,16 @@ int main()
         
         case 7:
             TEST_reverse_list();
+            break;
+        
+        case 8:
+            TEST_InsertNode();
+
+            TEST_TreeTraverse();
+    
+            TEST_TreeAPI();
+
+            TEST_BinarySearch();
             break;
         
         default:

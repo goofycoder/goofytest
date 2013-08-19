@@ -15,6 +15,8 @@ set(source_files
     prime.cpp
     reservior_sampling.cpp
     reverse.cpp
+    test_bst.cpp
+    bst.cpp
     test_driver.cpp
 )
 
