@@ -16,7 +16,8 @@ int main()
               << "5. Fibonacci number\n"
               << "6. Reservoir sampling\n"
               << "7. Reverse a singly linked list\n"
-              << "8. Test Binary Search Tree\n";
+              << "8. Test Binary Search Tree\n"
+              << "9. Longest non-repeatable-char substr\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -61,6 +62,9 @@ int main()
             TEST_BinarySearch();
             break;
         
+        case 9:
+            TEST_longestSubstr();        
+
         default:
             std::cout << "Invalid option.";
             break;

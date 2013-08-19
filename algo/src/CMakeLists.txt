@@ -17,6 +17,7 @@ set(source_files
     reverse.cpp
     test_bst.cpp
     bst.cpp
+    longestSubstr.cpp
     test_driver.cpp
 )
 
