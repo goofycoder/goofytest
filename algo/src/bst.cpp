@@ -26,7 +26,7 @@ Node* BST::sortedArrayToBST(int *arr, int start, int end)
 BST::~BST()
 {
     if (root != NULL) {
-	    deleteWholeTree(root);
+    	deleteWholeTree(root);
     }
 }
 
@@ -99,21 +99,21 @@ void BST::insertNode(const int& data)
     Node* p = root;
     
     while (p != NULL) {
-	    if (p->data <= data) {
+    	if (p->data <= data) {
     	    if (p->right == NULL) {
-	 	        p->right = pNewNode;
-		        return;
-	        } else { 
+	        p->right = pNewNode;
+	    	return;
+	    } else { 
                 p = p->right;
             }
+	} else {
+	    if (p->left == NULL) {
+	        p->left = pNewNode;
+	        return;
 	    } else {
-	        if (p->left == NULL) {
-		        p->left = pNewNode;
-		        return;
-	        } else {
                 p = p->left;
             }
-	    }   
+	}   
     }
 }
 
@@ -140,17 +140,17 @@ void BST::searchNode(const int& key) const
 void BST::bstSearch(Node* p, int v) const
 {
     if (p==NULL) {
-	    std::cout << "Could not find.\n";
-	    return;
+    	std::cout << "Could not find.\n";
+	return;
     }
 
     if (p->data == v) {
-	    std::cout << "Found.\n";
-	    return;
+	std::cout << "Found.\n";
+	return;
     } else if(p->data < v) {
     	bstSearch(p->right, v);
     } else if(p->data > v) {
-	    bstSearch(p->left, v);
+	bstSearch(p->left, v);
     }	
 }
 
@@ -171,8 +171,8 @@ int BST::DoGetHeight(Node* p) const
 int BST::getWidth(int k) const
 {
     if(k>getHeight()) {	
-	    std::cout << "k is larger than the height of the tree\n";
-	    return -1;
+	std::cout << "k is larger than the height of the tree\n";
+	return -1;
     }
 	
     return DoGetWidth(root, k);
@@ -206,10 +206,10 @@ void BST::DoPrintAllPath(Node* p, int path[], int pathLen) const
     pathLen++;
 
     if (p->left==NULL && p->right==NULL) {
-	    printPath(path, pathLen);
+	printPath(path, pathLen);
     } else {
      	DoPrintAllPath(p->left, path, pathLen);
-	    DoPrintAllPath(p->right,path, pathLen);
+	DoPrintAllPath(p->right,path, pathLen);
     }
 }
 
@@ -236,8 +236,8 @@ void BST::DoPrintKthLayer(Node* p, int k) const
     if (p==NULL) return;
 
     if (k==1) {
-	    std::cout << p->data << " ";
-	    return;
+	std::cout << p->data << " ";
+	return;
     }
 
     DoPrintKthLayer(p->left, k-1);
@@ -291,14 +291,14 @@ void BST::searchRange_int(Node* p, int k1, int k2) const
     if (p==NULL) 
         return;
 
-    if ( k1 < p->data )
- 	    searchRange_int(p->left,k1,k2);
+    if (k1 < p->data)
+ 	searchRange_int(p->left,k1,k2);
 	
-    if ( k1 <= p->data && k2 >= p->data)
-	    std::cout << p->data << " ";
+    if (k1 <= p->data && k2 >= p->data)
+	std::cout << p->data << " ";
 	
-    if ( k2 > p->data)
-	    searchRange_int(p->right,k1,k2);
+    if (k2 > p->data)
+	searchRange_int(p->right,k1,k2);
 }
 
 Node* BST::convTreeToList()
@@ -353,9 +353,9 @@ void BST::printList(Node* head) const
     Node* p = head;
 
     while (p!=NULL) {
-	    std::cout << p->data << " ";
-	    p=p->right;
-	    if (p==head) 
+    	std::cout << p->data << " ";
+	p=p->right;
+	if (p==head) 
             break;
     }
 
