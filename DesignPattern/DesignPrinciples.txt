@@ -1,0 +1,66 @@
+Design patterns
+    - Software design patterns are abstractions that help structure system designs. 
+    - 3 categories
+        * Creational Patterns
+        * Structural Patterns
+        * Behavioral Patterns
+
+Cohesion
+    - the degree to which the elements of a module belong together.
+    - a measure of how strongly-related or focused the responsibilities of a single module are.
+    - As applied to OOP, if the methods that serve the given class tend to be similar in many aspects, then the class is said to have high cohesion.
+    
+Coupling or dependency 
+    - the degree to which each program module relies on each one of the other modules.
+
+SOLID is an acronym that stands for five basic principles of Object-Oriented Programming and design to fix STUPID code:
+	- Single Responsibility Principle
+	- Open/Closed Principle
+	- Liskov Substitution Principle
+	- Interface Segregation Principle
+	- Dependency Inversion Principle
+  
+STUPID is an acronym that describes bad practices in Oriented Object Programming:
+	- Singleton
+	- Tight Coupling
+	- Untestability
+	- Premature Optimization
+	- Indescriptive Naming
+	- Duplication
+	
+Single Source Of Truth (SSOT) principle 
+    - the practice of structuring information models and associated schemata such that every data element is stored exactly once
+	
+DRY principle
+    - Don't repeat yourself
+    - Example: Djongo web framework
+    
+Rule-Of-Three
+    - a code refactoring rule of thumb to decide when a replicated piece of code should be replaced by a new procedure. 
+    - It states that the code can be copied once, but when the same code is used three times, it should be extracted into a new procedure. 
+    - Introduced by Martin Fowler in Refactoring
+    - Duplication in programming is a bad practice because it makes the code harder to maintain.
+    - "Three or more? use a for!"
+    
+Package Principles
+    - a way of organizing classes in larger systems to make them more organized and manageable. 
+    - Package cohesion: Which classes should go into which package
+    - Package coupling: how these packages should relate with one another
+    
+Principles of * Package Cohesion *
+    - Reuse-Release Equivalence Principle (REP)
+        * Either all of the classes inside the package are reusable, or none of them are.
+    - Common-Reuse Principle (CRP)
+        * classes that tend to be reused together belong in the same package together. 
+    - Common-Closure Principle (CCP)
+        * If change were to happen in an application dependent on a number of packages, 
+          ideally we only want changes to occur in one package, rather than in a number of them.
+          
+Principles of Package Coupling
+    -  Acyclic-Dependencies Principle (ADP)
+        * NO cycles in the dependency structure
+    - Stable-Dependencies Principle (SDP)
+        * any packages we want to be volatile should not be depended on by a package that is difficult to change.
+    - Stable-Abstractions Principle (SAP)
+        * a stable package should also be abstract so that its stability does not prevent it from being extended.
+        * an instable package should be concrete since its instability allows the concrete code within it to be easily changed.
