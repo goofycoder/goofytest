@@ -17,7 +17,8 @@ int main()
               << "6. Reservoir sampling\n"
               << "7. Reverse a singly linked list\n"
               << "8. Test Binary Search Tree\n"
-              << "9. Longest non-repeatable-char substr\n";
+              << "9. Longest non-repeatable-char substr\n"
+              << "10. Longest common sequence\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -64,6 +65,11 @@ int main()
         
         case 9:
             TEST_longestSubstr();        
+            break;
+
+	case 10:
+            TEST_LongestCommonSeq();        
+	    break;
 
         default:
             std::cout << "Invalid option.";

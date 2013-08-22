@@ -25,6 +25,10 @@ void display_samples(const Item* samples, unsigned sample_size);
 // longest non-repeatable-char substr
 int longestSubstr(const std::string& str);      
 
+// longest common sequence between two strings
+int lcs(const std::string& s1, const std::string& s2);
+void printLCS(char** b, const std::string& s, int i, int j);
+
 /* Test APIs */
 void TEST_isPrime();            // Prime number
 
@@ -40,6 +44,8 @@ void TEST_reservoir_sampling(); // Reservoir sampling
 void TEST_reverse_list();       // Reverse singly linked list
 
 void TEST_longestSubstr();      // longest non-repeatable-char substr
+
+int TEST_LongestCommonSeq();	// longest common sequence
 
 // BST test APIs
 void TEST_InsertNode();
