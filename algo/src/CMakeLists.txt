@@ -18,6 +18,7 @@ set(source_files
     test_bst.cpp
     bst.cpp
     longestSubstr.cpp
+    longestCommonSeq.cpp
     test_driver.cpp
 )
 
