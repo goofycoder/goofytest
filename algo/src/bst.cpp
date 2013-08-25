@@ -132,25 +132,25 @@ void BST::deleteNode(const int& key)
 }
 
 // wrapper fo bstSearch()
-void BST::searchNode(const int& key) const	
+Node* BST::searchNode(const int& key) const	
 {
-    bstSearch(root, key);
+    return bstSearch(root, key);
 }
 
-void BST::bstSearch(Node* p, int v) const
+Node* BST::bstSearch(Node* p, int v) const
 {
     if (p==NULL) {
     	std::cout << "Could not find.\n";
-	return;
+	    return NULL;
     }
 
     if (p->data == v) {
-	std::cout << "Found.\n";
-	return;
+	    std::cout << "Found.\n";
+	    return p;
     } else if(p->data < v) {
-    	bstSearch(p->right, v);
+    	return bstSearch(p->right, v);
     } else if(p->data > v) {
-	bstSearch(p->left, v);
+	    return bstSearch(p->left, v);
     }	
 }
 

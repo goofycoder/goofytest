@@ -73,6 +73,7 @@ void TEST_InsertNode();
 void TEST_TreeTraverse();
 void TEST_BinarySearch(); 
 void TEST_TreeAPI();
+void TEST_lca();
 
 void TEST_rotateStr();
 

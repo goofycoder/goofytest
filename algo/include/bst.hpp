@@ -25,7 +25,7 @@ public:
 
 	void    insertNode(const int& dataToInsert);
 	void    deleteNode(const int& dataToDelete);
-	void    searchNode(const int& key) const;       // Binary search
+	Node*   searchNode(const int& key) const;       // Binary search
 	void    searchRange(int key1, int key2) const;  // search Range
 	
 	Node*   sortedArrayToBST(int *arr, int start, int end);
@@ -53,13 +53,15 @@ public:
 	
 	Node*   sortedListToBST(Node* head, int n);
 
-private:
-	Node*   root;
+    Node*   lca(Node* a, Node* b, Node *p) const;    // Least Common Ancestor
+	
+    Node*   root;
 
+private:
 	void    deleteWholeTree(Node* p);			// used in the destructor
 
 	// binary search
-	void    bstSearch(Node* p, int v) const;	// used in search();
+	Node*   bstSearch(Node* p, int v) const;	// used in search();
 	void    searchRange_int(Node* p, int k1, int k2) const;
 
 	// merge two binary search trees

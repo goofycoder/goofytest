@@ -21,7 +21,8 @@ int main()
               << "10. Longest common sequence\n"
               << "11. Max sum in the array\n"
               << "12. Rotate the string\n"
-              << "13. Reverse the bits in the unsigned integer\n";
+              << "13. Reverse the bits in the unsigned integer\n"
+              << "14. Least Common Ancestor of two nodes in BST\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -84,6 +85,10 @@ int main()
         
         case 13:
             TEST_reverseBit();        
+	        break;
+        
+        case 14:
+            TEST_lca();        
 	        break;
         
         default:

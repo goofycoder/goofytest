@@ -22,6 +22,7 @@ set(source_files
     max_sum.cpp
     rotateStr.cpp
     reverseBit.cpp
+    bst_lca.cpp
     test_driver.cpp
 )
 
