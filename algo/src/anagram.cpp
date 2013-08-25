@@ -17,13 +17,9 @@
     Date: 08/05/2013
 */
 
-#include <iostream>
-#include <string>
+#include "algo.hpp"
 
-#define NUM_CHAR 256
-
-void buildStat(std::string& str, int* m);
-bool compareStat(int* m1, int* m2);
+const unsigned NUM_CHAR = 256;
 
 bool isAnagram(std::string& str1, std::string& str2)
 {

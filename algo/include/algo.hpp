@@ -1,6 +1,10 @@
 #ifndef ALGO_H
 #define ALGO_H
 
+#include <iostream>
+#include <vector>
+#include <string>
+
 typedef int Item;
 
 bool isPrime(const int &num);
@@ -29,6 +33,14 @@ int longestSubstr(const std::string& str);
 int lcs(const std::string& s1, const std::string& s2);
 void printLCS(char** b, const std::string& s, int i, int j);
 
+// Max sum in the array
+int maxSum(const std::vector<int>& arr, const unsigned len);
+
+// Rotate string at postion i
+void rotateStr(std::string& str, const unsigned i);
+void swapChar(char& a, char& b);
+void reverseStr(std::string& str, int bgn, int end);
+
 /* Test APIs */
 void TEST_isPrime();            // Prime number
 
@@ -45,12 +57,16 @@ void TEST_reverse_list();       // Reverse singly linked list
 
 void TEST_longestSubstr();      // longest non-repeatable-char substr
 
-int TEST_LongestCommonSeq();	// longest common sequence
+void TEST_LongestCommonSeq();	// longest common sequence
+
+void TEST_maxSum();             // test max sum in array 
 
 // BST test APIs
 void TEST_InsertNode();
 void TEST_TreeTraverse();
 void TEST_BinarySearch(); 
 void TEST_TreeAPI();
+
+void TEST_rotateStr();
 
 #endif

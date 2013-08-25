@@ -19,6 +19,8 @@ set(source_files
     bst.cpp
     longestSubstr.cpp
     longestCommonSeq.cpp
+    max_sum.cpp
+    rotateStr.cpp
     test_driver.cpp
 )
 

@@ -1,4 +1,4 @@
-#include <iostream>
+#include "algo.hpp"
 #include "bst.hpp"
 
 BST::BST(int *sorted_arr, int len)

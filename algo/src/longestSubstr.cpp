@@ -14,10 +14,9 @@
  */
 
 
-#include <iostream>
-#include <string>
+#include "algo.hpp"
 
-#define NUM_OF_CHAR 256
+const unsigned NUM_OF_CHAR = 256;
 
 int longestSubstr(const std::string& s) 
 {

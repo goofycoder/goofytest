@@ -20,11 +20,7 @@
                 then it is palindrome number.
 */
 
-#include <iostream>
-#include <string>
-
-bool isPalindromeNum(int num);
-bool isPalindromeStr(const std::string& str);
+#include "algo.hpp"
 
 bool isPalindromeNum(int x) 
 {   

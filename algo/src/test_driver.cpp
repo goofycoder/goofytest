@@ -18,7 +18,9 @@ int main()
               << "7. Reverse a singly linked list\n"
               << "8. Test Binary Search Tree\n"
               << "9. Longest non-repeatable-char substr\n"
-              << "10. Longest common sequence\n";
+              << "10. Longest common sequence\n"
+              << "11. Max sum in the array\n"
+              << "12. Rotate the string\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -67,10 +69,18 @@ int main()
             TEST_longestSubstr();        
             break;
 
-	case 10:
+	    case 10:
             TEST_LongestCommonSeq();        
 	    break;
+	    
+        case 11:
+            TEST_maxSum();        
+	        break;
 
+        case 12:
+            TEST_rotateStr();        
+	        break;
+        
         default:
             std::cout << "Invalid option.";
             break;

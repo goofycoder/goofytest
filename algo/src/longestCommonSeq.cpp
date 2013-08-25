@@ -7,8 +7,6 @@
 
         the longest common seq: abyz
  */
-#include <iostream>
-#include <string>
 #include "algo.hpp"
 
 int lcs(const std::string& s1, const std::string& s2)
@@ -89,7 +87,7 @@ void printLCS(char** b, const std::string& s, int i, int j)
     }
 }
 
-int TEST_LongestCommonSeq()
+void TEST_LongestCommonSeq()
 {
     std::string str1, str2;
     
@@ -102,6 +100,4 @@ int TEST_LongestCommonSeq()
         
     int len = lcs(str1, str2);
     std::cout << "len: " << len << "\n";
-
-    return 0;
 }

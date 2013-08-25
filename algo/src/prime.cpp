@@ -9,7 +9,7 @@
             - if  < square root, num can be divided by i, NOT prime
  */
 
-#include <iostream>
+#include "algo.hpp"
 
 bool isPrime(const int& num)
 {
