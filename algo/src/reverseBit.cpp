@@ -21,29 +21,29 @@ void reverseBit(unsigned &input)
 
 unsigned getNumOfBits(const unsigned input)
 {
-    unsigned testBit = 1;   
-    unsigned leftPos = 0; 
+    unsigned testBit = 1U;   
+    unsigned highPos = 0; 
 
     for(unsigned i=0; i<sizeof(input)*8-1; i++) {
         if ( input&testBit ) {
-            leftPos = i;
+            highPos = i;
         } 
         
        testBit *= 2;
     }
 
-    return leftPos+1;
+    return highPos+1;
 }
 
-void swapBit(unsigned &input, unsigned left, unsigned right) 
+void swapBit(unsigned &input, unsigned high, unsigned low) 
 {
-    unsigned leftBit  = (input>>left) & 1;
-    unsigned rightBit = (input>>right) & 1; 
+    unsigned highBit = (input>>high) & 1;
+    unsigned lowBit  = (input>>low) & 1; 
 
-    if (leftBit^rightBit) {
+    if (highBit^lowBit) {
         //toggle both bits for swap
-        input ^= (1<<left);
-        input ^= (1<<right);
+        input ^= (1U<<high);
+        input ^= (1U<<low);
     }
 }
 
