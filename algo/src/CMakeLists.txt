@@ -21,6 +21,7 @@ set(source_files
     longestCommonSeq.cpp
     max_sum.cpp
     rotateStr.cpp
+    reverseBit.cpp
     test_driver.cpp
 )
 

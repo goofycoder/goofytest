@@ -41,6 +41,11 @@ void rotateStr(std::string& str, const unsigned i);
 void swapChar(char& a, char& b);
 void reverseStr(std::string& str, int bgn, int end);
 
+// Reverse Bits in the unsigned integer
+void reverseBit(unsigned &input);
+unsigned getNumOfBits(const unsigned input);
+void swapBit(unsigned &input, unsigned left, unsigned right);
+
 /* Test APIs */
 void TEST_isPrime();            // Prime number
 
@@ -60,6 +65,8 @@ void TEST_longestSubstr();      // longest non-repeatable-char substr
 void TEST_LongestCommonSeq();	// longest common sequence
 
 void TEST_maxSum();             // test max sum in array 
+
+void TEST_reverseBit();         // reverse bit of an unsigned integer
 
 // BST test APIs
 void TEST_InsertNode();

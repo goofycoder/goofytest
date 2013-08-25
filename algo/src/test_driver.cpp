@@ -20,7 +20,8 @@ int main()
               << "9. Longest non-repeatable-char substr\n"
               << "10. Longest common sequence\n"
               << "11. Max sum in the array\n"
-              << "12. Rotate the string\n";
+              << "12. Rotate the string\n"
+              << "13. Reverse the bits in the unsigned integer\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -81,11 +82,15 @@ int main()
             TEST_rotateStr();        
 	        break;
         
+        case 13:
+            TEST_reverseBit();        
+	        break;
+        
         default:
             std::cout << "Invalid option.";
             break;
         }
-        std::cout << "You choose: \n";
+        std::cout << "\nYou choose: \n";
     }
 
     return 0;
