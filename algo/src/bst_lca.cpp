@@ -2,6 +2,13 @@
     Least Common Ancestor of two nodes 
 
     search from the root to bottom
+    
+   Different cases:
+	1. Both nodes are to the left of the tree (recursively search on left subtree)
+	2. Both nodes are to the right of the tree (recursively search on right subtree)..
+	3. One node is on the left while the other is on the right
+	4. One of (or both) the search nodes equals to the current tree-root node.
+		** Both 3 and 4 return the current root node (p in the code below)
 
     Time Complexity: O(logn)
  */
@@ -9,7 +16,14 @@
 #include "algo.hpp"
 #include "bst.hpp"
 
-/* Least Common Ancestor of two nodes */
+/* Least Common Ancestor (LCA) of two nodes
+   Input:   
+  	p: the root node of the current subtree 
+    	a: search node 1
+ 	b: search node 2
+   Output:
+   	the LCA node
+ */
 Node* BST::lca(Node* a, Node* b, Node *p) const
 {
     int pV = p->data;
