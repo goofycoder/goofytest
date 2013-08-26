@@ -1,3 +1,16 @@
+/* 
+ * Find the max sum of consecutive integers in the array
+ * Algorithm:
+ *      Step 1: build an Aux array that each entry in the array 
+ *              indicates the max sum ends this
+ *           -  aux[0] = a[0]
+ *           -  iterate through the list
+ *           -  if aux[i-1] + a[i] > a[i]
+ *                  aux[i] = aux[i-1]+a[i]
+ *              else 
+ *                  aux[i] = a[i]
+ *      Step 2: find the max in array aux
+ */
 #include <iostream>
 #include <fstream>
 #include <sstream>
