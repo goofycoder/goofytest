@@ -23,7 +23,8 @@ int main()
               << "12. Rotate the string\n"
               << "13. Reverse the bits in the unsigned integer\n"
               << "14. Least Common Ancestor of two nodes in BST\n"
-              << "15. Edit distance btwn two strings\n";
+              << "15. Edit distance btwn two strings\n"
+              << "16. Rejection sampling\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -94,6 +95,10 @@ int main()
         
         case 15:
             TEST_editDistance();        
+	        break;
+        
+        case 16:
+            TEST_rejection_sampling();        
 	        break;
         
         default:

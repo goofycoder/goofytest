@@ -26,6 +26,10 @@ void display_samples(const Item* samples, unsigned sample_size);
 Item* stream_source(const int &stream_len);
 void display_samples(const Item* samples, unsigned sample_size);
 
+// Rejection sampling */
+int rand10();       // made from rand7()
+int rand7();        
+
 // longest non-repeatable-char substr
 int longestSubstr(const std::string& str);      
 
@@ -88,5 +92,7 @@ void TEST_lca();
 void TEST_rotateStr();          // rotate string: "abcde" ==> "cdeab"
 
 void TEST_editDistance();       // Edit distance of two strings
+
+void TEST_rejection_sampling(); // Rejection sampling: rand7() ==> rand10()
 
 #endif

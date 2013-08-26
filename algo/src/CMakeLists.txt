@@ -24,6 +24,7 @@ set(source_files
     reverseBit.cpp
     bst_lca.cpp
     edit_distance.cpp
+    rejection_sampling.cpp
     test_driver.cpp
 )
 
