@@ -37,16 +37,26 @@ void printLCS(char** b, const std::string& s, int i, int j);
 int maxSum(const std::vector<int>& arr, const unsigned len);
 
 // Rotate string at postion i
+// "abcde" ==> "cdeab"
 void rotateStr(std::string& str, const unsigned i);
 void swapChar(char& a, char& b);
 void reverseStr(std::string& str, int bgn, int end);
 
 // Reverse Bits in the unsigned integer
+// 8 (1010) ==> 5 (101)
 void reverseBit(unsigned &input);
 unsigned getNumOfBits(const unsigned input);
 void swapBit(unsigned &input, unsigned left, unsigned right);
 
-/* Test APIs */
+// Edit distance between two strings
+// "hat" ==> "cap": distance 2
+int editDistance(const std::string& s, const std::string& t);
+int editDistanceInt(const char *s, int len_s, const char *t, int len_t);
+
+// minimum of three integer
+int minOfThree(int a, int b, int c);
+
+/* ======================= Test APIs ========================== */
 void TEST_isPrime();            // Prime number
 
 void TEST_isPalindromeStr();    // Palindrome String
@@ -75,6 +85,8 @@ void TEST_BinarySearch();
 void TEST_TreeAPI();
 void TEST_lca();
 
-void TEST_rotateStr();
+void TEST_rotateStr();          // rotate string: "abcde" ==> "cdeab"
+
+void TEST_editDistance();       // Edit distance of two strings
 
 #endif

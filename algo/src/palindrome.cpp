@@ -72,16 +72,12 @@ void TEST_isPalindromeStr()
     std::cout << "\n *** TEST for Palindrome String ***\n"
               << "Enter a string: ";
 
-    while (std::cin>>str) {
-        if ( isPalindromeStr(str) ) {
-            std::cout << str << " is a palindrome.\n";
-        } else {
-            std::cout << str << " is NOT a palindrome.\n";
-        }
-
-        std::cout << "\nEnter a string: ";
+    if ( isPalindromeStr(str) ) {
+        std::cout << str << " is a palindrome.\n";
+    } else {
+        std::cout << str << " is NOT a palindrome.\n";
     }
-    
+
     std::cout << "\nTEST for Palindrome String finished.\n";
 }
 

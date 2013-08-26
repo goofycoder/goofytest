@@ -22,7 +22,8 @@ int main()
               << "11. Max sum in the array\n"
               << "12. Rotate the string\n"
               << "13. Reverse the bits in the unsigned integer\n"
-              << "14. Least Common Ancestor of two nodes in BST\n";
+              << "14. Least Common Ancestor of two nodes in BST\n"
+              << "15. Edit distance btwn two strings\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -89,6 +90,10 @@ int main()
         
         case 14:
             TEST_lca();        
+	        break;
+        
+        case 15:
+            TEST_editDistance();        
 	        break;
         
         default:

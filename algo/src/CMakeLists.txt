@@ -23,6 +23,7 @@ set(source_files
     rotateStr.cpp
     reverseBit.cpp
     bst_lca.cpp
+    edit_distance.cpp
     test_driver.cpp
 )
 
