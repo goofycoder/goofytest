@@ -15,7 +15,6 @@ private:
 	int size;			// current heapsize
 	int leftChild(int i)  { return i*2+1; } // left child: i*2+1
 	int rightChild(int i) { return i*2+2; } // right child: i*2+2
-	//friend void swap(int& a, int& b);
 	void buildMaxHeap(int* a, int len);
 	void do_max_heapify(int i);
 	void max_heapify();
