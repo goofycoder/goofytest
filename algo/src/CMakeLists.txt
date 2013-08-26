@@ -25,6 +25,8 @@ set(source_files
     bst.cpp
     bst_lca.cpp
     bst_prettyprint.cpp
+    top_k.cpp
+    maxheap.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp

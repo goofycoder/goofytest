@@ -25,7 +25,8 @@ int main()
               << "14. Least Common Ancestor of two nodes in BST\n"
               << "15. Edit distance btwn two strings\n"
               << "16. Rejection sampling\n"
-              << "17. Prettyprint a BST\n";
+              << "17. Prettyprint a BST\n"
+              << "18. Minimum K elements in the stream (Top-K, heap)\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -104,6 +105,10 @@ int main()
         
         case 17:
             TEST_prettyprintBST();        
+	        break;
+        
+        case 18:
+            TEST_min_k();        
 	        break;
         
         default:

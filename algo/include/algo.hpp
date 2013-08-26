@@ -57,10 +57,19 @@ void swapBit(unsigned &input, unsigned left, unsigned right);
 int editDistance(const std::string& s, const std::string& t);
 int editDistanceInt(const char *s, int len_s, const char *t, int len_t);
 
+// top-K, partial sort algorithm
+// minimum k elements in the array
+void min_k(int arr[], int len, int k);		// a[] is the stream, find minimum k elements in a[]
+ 
+
 /* ======================= Commonly Used APIs ========================== */
 std::string intToStr(int val);          // Convert an integer value to string
 
 int minOfThree(int a, int b, int c);    // minimum of three integer
+
+void swapInt(int& a, int& b);           // swap two integers
+
+void printIntArray(const int *arr, int len);    // print integer array
 
 /* ======================= Test APIs ========================== */
 void TEST_isPrime();            // Prime number
@@ -97,5 +106,7 @@ void TEST_BinarySearch();
 void TEST_TreeAPI();
 void TEST_lca();
 void TEST_prettyprintBST();
+
+void TEST_min_k();
 
 #endif

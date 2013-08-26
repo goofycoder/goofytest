@@ -21,3 +21,19 @@ int minOfThree(int a, int b, int c)
     }
 }
 
+void swapInt(int& a, int& b)
+{
+	int tmp = a;
+	a = b;
+	b = tmp;
+}
+
+void printIntArray(const int *arr, int len)
+{
+    std::cout << "The array is: ";
+    for (int i=0; i<len; i++) {
+        std::cout << arr[i] << " ";
+    }
+    
+    std::cout << "\n";
+}
