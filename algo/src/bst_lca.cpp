@@ -52,12 +52,7 @@ void TEST_lca()
     int a[] = {1,2,3,4,5,6,7,8,9,10};
 	int len = sizeof(a)/sizeof(a[0]);
 	BST bst = BST(a, len);
-	std::cout << "In-order traverse: ";
-	bst.inorderTraverse();
-	std::cout << "\nPre-order traverse: ";
-	bst.preorderTraverse();
-	std::cout << "\nPost-order traverse: ";
-	bst.postorderTraverse();
+    bst.printPretty(bst.root, 1, 0, std::cout);
 
     int n1_v;
     int n2_v;

@@ -6,6 +6,9 @@
 #define BST_H_
 
 #include <vector>
+#include <fstream>
+#include <sstream>
+#include <deque>
 
 class Node
 {
@@ -55,6 +58,12 @@ public:
 
     Node*   lca(Node* a, Node* b, Node *p) const;    // Least Common Ancestor
 	
+
+    void    printPretty(Node* root, 
+                        int level, 
+                        int indentSpace, 
+                        std::ostream& out);
+
     Node*   root;
 
 private:
@@ -84,6 +93,25 @@ private:
 	Node*   append(Node* p, Node* q);
 	
 	Node*   sortedListToBST(Node* list, int start, int end);
+    
+    void    printBranches(int branchLen, 
+                          int nodeSpaceLen, 
+                          int startLen, 
+                          int nodesInThisLevel, 
+                          const std::deque<Node*>& nodesQueue, 
+                          std::ostream& out);
+    void    printNodes(int branchLen, 
+                       int nodeSpaceLen, 
+                       int startLen, 
+                       int nodesInThisLevel, 
+                       const std::deque<Node*>& nodesQueue, 
+                       std::ostream& out);
+
+    void    printLeaves(int indentSpace, 
+                        int level, 
+                        int nodesInThisLevel, 
+                        const std::deque<Node*>& nodesQueue, 
+                        std::ostream& out);
 };
 
 #endif /* BST_H_ */

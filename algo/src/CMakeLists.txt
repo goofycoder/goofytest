@@ -9,23 +9,25 @@ include_directories(${Algorithm_SOURCE_DIR}/include)
 
 set(source_files 
     anagram.cpp
-    fibo.cpp
-    linked_list_api.cpp
     palindrome.cpp
-    prime.cpp
-    reservior_sampling.cpp
-    reverse.cpp
-    test_bst.cpp
-    bst.cpp
     longestSubstr.cpp
     longestCommonSeq.cpp
+    edit_distance.cpp
+    fibo.cpp
+    prime.cpp
+    linked_list_api.cpp
+    reverse.cpp
+    reservior_sampling.cpp
+    rejection_sampling.cpp
     max_sum.cpp
     rotateStr.cpp
     reverseBit.cpp
+    bst.cpp
     bst_lca.cpp
-    edit_distance.cpp
-    rejection_sampling.cpp
+    bst_prettyprint.cpp
+    test_bst.cpp
     test_driver.cpp
+    useful_api.cpp
 )
 
 # add_executable: Add an executable to the project using the specified source files.

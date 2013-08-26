@@ -57,8 +57,10 @@ void swapBit(unsigned &input, unsigned left, unsigned right);
 int editDistance(const std::string& s, const std::string& t);
 int editDistanceInt(const char *s, int len_s, const char *t, int len_t);
 
-// minimum of three integer
-int minOfThree(int a, int b, int c);
+/* ======================= Commonly Used APIs ========================== */
+std::string intToStr(int val);          // Convert an integer value to string
+
+int minOfThree(int a, int b, int c);    // minimum of three integer
 
 /* ======================= Test APIs ========================== */
 void TEST_isPrime();            // Prime number
@@ -68,13 +70,19 @@ void TEST_isPalindromeNum();    // Palindrome Number
 
 void TEST_isAnagram();          // Anagram
 
+void TEST_editDistance();       // Edit distance of two strings
+
 void TEST_fibo();               // Fibonacci number
 
 void TEST_reservoir_sampling(); // Reservoir sampling
 
+void TEST_rejection_sampling(); // Rejection sampling: rand7() ==> rand10()
+
 void TEST_reverse_list();       // Reverse singly linked list
 
 void TEST_longestSubstr();      // longest non-repeatable-char substr
+
+void TEST_rotateStr();          // rotate string: "abcde" ==> "cdeab"
 
 void TEST_LongestCommonSeq();	// longest common sequence
 
@@ -88,11 +96,6 @@ void TEST_TreeTraverse();
 void TEST_BinarySearch(); 
 void TEST_TreeAPI();
 void TEST_lca();
-
-void TEST_rotateStr();          // rotate string: "abcde" ==> "cdeab"
-
-void TEST_editDistance();       // Edit distance of two strings
-
-void TEST_rejection_sampling(); // Rejection sampling: rand7() ==> rand10()
+void TEST_prettyprintBST();
 
 #endif
