@@ -27,6 +27,7 @@ set(source_files
     bst_prettyprint.cpp
     top_k.cpp
     maxheap.cpp
+    bit_swap.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp

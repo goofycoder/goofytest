@@ -26,7 +26,9 @@ int main()
               << "15. Edit distance btwn two strings\n"
               << "16. Rejection sampling\n"
               << "17. Prettyprint a BST\n"
-              << "18. Minimum K elements in the stream (Top-K, heap)\n";
+              << "18. Minimum K elements in the stream (Top-K, heap)\n"
+              << "19. Number of diff bits between 2 integeres\n";
+
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -109,6 +111,10 @@ int main()
         
         case 18:
             TEST_min_k();        
+	        break;
+        
+        case 19:
+            TEST_bitSwap();        
 	        break;
         
         default:
