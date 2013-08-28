@@ -27,7 +27,8 @@ int main()
               << "16. Rejection sampling\n"
               << "17. Prettyprint a BST\n"
               << "18. Minimum K elements in the stream (Top-K, heap)\n"
-              << "19. Number of diff bits between 2 integeres\n";
+              << "19. Number of diff bits between 2 integeres\n"
+              << "20. Find whether singly linked list has a loop\n";
 
 
     unsigned option;
@@ -79,7 +80,7 @@ int main()
 
 	    case 10:
             TEST_LongestCommonSeq();        
-	    break;
+	        break;
 	    
         case 11:
             TEST_maxSum();        
@@ -115,6 +116,10 @@ int main()
         
         case 19:
             TEST_bitSwap();        
+	        break;
+        
+        case 20:
+            TEST_find_loop();        
 	        break;
         
         default:

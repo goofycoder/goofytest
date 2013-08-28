@@ -53,3 +53,42 @@ Node* buildListFromArray(const int *array, unsigned len)
 
 	return head;
 }
+
+Node* getTail(Node *p) 
+{
+    if (p==NULL) 
+        return p;
+
+    while(p->next!=NULL) {
+        p=p->next;
+    }
+
+    return p;
+}
+
+int getLengthOfList(Node *p) 
+{   
+    int len = 0;
+
+    while (p!=NULL) {
+        p=p->next;
+        len++;
+    }
+
+    return len;
+}
+
+Node* getNthNode(Node *p, int idx) 
+{
+    int len = getLengthOfList(p);
+
+    if (idx<=0 || idx>len) {
+        return NULL;
+    }
+
+    for (int i=1; i<idx; i++) {
+        p=p->next;
+    }
+
+    return p;
+}

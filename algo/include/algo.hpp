@@ -93,6 +93,8 @@ void TEST_rejection_sampling(); // Rejection sampling: rand7() ==> rand10()
 
 void TEST_reverse_list();       // Reverse singly linked list
 
+void TEST_find_loop();          // find loop in the list
+
 void TEST_longestSubstr();      // longest non-repeatable-char substr
 
 void TEST_rotateStr();          // rotate string: "abcde" ==> "cdeab"
