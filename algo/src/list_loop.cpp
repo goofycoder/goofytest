@@ -1,7 +1,33 @@
+/* 
+    Three related issues:
+
+   Find the loop: Floyd's cycle detection algorithm 
+                  - fast and slow ptr (fast: 2X)
+                  - both starts at head
+                  - meet if there is a loop
+            
+   Get the loop length
+            - from the point fast and slow ptr meet
+            - keep going (fast ptr moves 2X, slow ptr moves 1X)
+            - till they meet again (fast ptr moves 1 more circle than slow one does)
+            - count the steps till they meet (that's the loop length)
+
+    Remove the loop:   
+        - from the point fast and slow ptr meet (let's say Node P)
+        - put a pointer Q at the head
+        - move both pointers at 1X speed
+        - check whether the P->next and Q->next meet first, before move both
+            * If the next nodes meet, then P points to the original tail of the node
+        
+        *** Note the special case (the whole list is a loop: A->B->C->A), then list length is LOOP_LEN-1)
+            - simply walk from the head node by LOOP_LEN-1 steps should find the tail node.
+ */
 #include <iostream>
 #include "linked_list.hpp"
 
-bool list_hasLoop(Node* head,
+static void removeLoop(Node *head, Node *p, int loop_len);
+
+bool findAndRemoveLoop(Node* head,
                   int* loop_size) 
 {
     Node *fast_p = head;
@@ -22,11 +48,42 @@ bool list_hasLoop(Node* head,
         } while (fast_p != slow_p);
 
         *loop_size = loop_len;
+
+        removeLoop(head, slow_p, loop_len);
         
         return true;
     } else {                    // no loop detected
         return false;
     }
+}
+
+/* p is the postion where fast and slow ptr meet during loop detection */
+static void removeLoop(Node *head, Node *p, int loop_len)
+{
+    Node *q = head;
+
+    /* !!! Corner case: slow and fast ptr meet at the head node
+     *   Ex:  A->B->C->D->A (the whole list is a loop!)
+     *       Loop length = list length + 1
+     */
+    if (p==head) {
+        for(int i=0; i<loop_len-1; i++) {
+            p = p->next;
+        }
+
+        // recover the original tail node at p
+        p->next = NULL;
+        return;
+    }
+
+    while (p->next != q->next) {
+        p=p->next;
+        q=q->next;
+    }
+
+    // p now points to the tail of the list 
+    // remove the loop
+    p->next = NULL;
 }
 
 // pay attention to the argument: the reference to the pointer
@@ -46,7 +103,7 @@ inline Node* advance_slow(Node*& p)
 
 void TEST_find_loop() 
 {
-    int arr[] = {2,9,5,7,4,8,1,6,3};
+    int arr[] = {2,9,5,7,4,8,1,6};
     unsigned arr_len = sizeof(arr)/sizeof(int);
     
     Node *head = buildListFromArray(arr, arr_len);
@@ -70,15 +127,17 @@ void TEST_find_loop()
         return;
     }
 
-    // Make a loop
+    // Make a loop for testing purpose
     if (t) {
         t->next = p;
     }
 
     int loop_len = 0;
 
-    if (list_hasLoop(head, &loop_len)) {
+    if (findAndRemoveLoop(head, &loop_len)) {
         std::cout << "Loop detected with length: " << loop_len << "\n";
+        std::cout << "After removing the loop: ";
+        showList(head);
     } else {
         std::cout << "Loop free list.\n";
     }

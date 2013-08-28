@@ -31,7 +31,7 @@ void deleteList(Node *p);
 Node* reverse(Node *);
 
 // detect whether a list has loop
-bool list_hasLoop(Node* head, int* loop_len);
+bool findAndRemoveLoop(Node* head, int* loop_len);
 inline Node* advance_fast(Node*& p);
 inline Node* advance_slow(Node*& p);
 
