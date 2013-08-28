@@ -113,8 +113,10 @@ void TEST_TreeAPI();
 void TEST_lca();
 void TEST_prettyprintBST();
 
-void TEST_min_k();          // top-k heap algorithm
+void TEST_min_k();           // top-k heap algorithm
         
 void TEST_bitSwap();         // number of diff bits btwn 2 ints
+
+void TEST_linked_list();    // test linked list APIs
 
 #endif

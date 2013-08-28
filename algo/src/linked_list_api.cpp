@@ -7,8 +7,10 @@
 
 void showList(Node* p)
 {
-    if (p==NULL) 
+    if (p==NULL) {
+        std::cout << "List is empty\n";
         return;
+    }
     
     while (p!=NULL) {
         std::cout << p->data<< " ";
@@ -91,4 +93,53 @@ Node* getNthNode(Node *p, int idx)
     }
 
     return p;
+}
+
+void deleteNthNode(Node*& p, int idx) 
+{
+    Node *toDelete = getNthNode(p, idx);
+
+    if (toDelete == p) {    // delete head node
+        p = p->next;
+    } else {
+        Node *prev = getPrevNode(p, toDelete);
+        prev->next = toDelete->next;
+    }
+
+    delete toDelete;
+}
+
+Node* getPrevNode(Node *head, Node *p)
+{
+    Node *q = head;
+
+    if (p==head)         // previous node of head node is NULL
+        return NULL;
+
+    while (q->next!=p) {
+        q=q->next;
+    }
+
+    return q;
+}
+
+void TEST_linked_list()
+{
+    std::cout << "\n *** TEST for linked list APIs***\n";
+    std::cout << "\n * TEST: delete N_th node in linked list\n";
+    int arr[] = {2,3,1,4};
+    unsigned len = sizeof(arr)/sizeof(int);
+    Node *p = buildListFromArray(arr, len);
+
+    int idx;
+    std::cout << "Enter the idx of the node to delete[1, " << len << "]: ";
+    std::cin >> idx;  
+
+	std::cout << "\nOriginal list: \n";
+	showList(p);
+
+    deleteNthNode(p, idx);
+	
+    std::cout << "\nThe list after deletion: \n";
+	showList(p);
 }

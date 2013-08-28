@@ -28,7 +28,8 @@ int main()
               << "17. Prettyprint a BST\n"
               << "18. Minimum K elements in the stream (Top-K, heap)\n"
               << "19. Number of diff bits between 2 integeres\n"
-              << "20. Find whether singly linked list has a loop\n";
+              << "20. Find whether singly linked list has a loop\n"
+              << "21. delete Nth node in the singly list\n";
 
 
     unsigned option;
@@ -120,6 +121,10 @@ int main()
         
         case 20:
             TEST_find_loop();        
+	        break;
+        
+        case 21:
+            TEST_linked_list();        
 	        break;
         
         default:

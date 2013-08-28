@@ -18,6 +18,10 @@ Node* getTail(Node *p);
 // the header node is 1st node
 Node* getNthNode(Node *p, int n);
 
+void deleteNthNode(Node*& p, int idx);
+
+Node* getPrevNode(Node *head, Node *p);
+
 // get the length of the list
 // return 0 if empty list
 int getLengthOfList(Node *p);
