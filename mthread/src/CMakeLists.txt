@@ -9,6 +9,7 @@ include_directories(${Mthread_SOURCE_DIR}/include)
 
 set(source_files 
     thread_async.cpp   
+    thread_pool.cpp
     test_driver.cpp
 )
 

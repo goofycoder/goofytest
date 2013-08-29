@@ -4,7 +4,8 @@
 int main()
 {
     std::cout << "================== Mthread Lab ==================\n"
-              << "1. Async\n";
+              << "1. Async.\n"
+              << "2. Thread pool.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -13,6 +14,10 @@ int main()
         switch(option) {
         case 1:
             TEST_async();
+            break;
+        
+        case 2:
+            TEST_thread_pool();
             break;
         
         default:
