@@ -24,7 +24,9 @@
  */
 #include <iostream>
 #include "linked_list.hpp"
-
+ 
+static inline Node* advance_fast(Node *& p);
+static inline Node* advance_slow(Node *& p);
 static void removeLoop(Node *head, Node *p, int loop_len);
 
 bool findAndRemoveLoop(Node* head,
@@ -88,7 +90,7 @@ static void removeLoop(Node *head, Node *p, int loop_len)
 
 // pay attention to the argument: the reference to the pointer
 // If not pass as reference, the pointer won't move in the caller function.
-inline Node* advance_fast(Node *& p) 
+static inline Node* advance_fast(Node *& p) 
 {
     (p) ? p=p->next : NULL;
     (p) ? p=p->next : NULL;
@@ -96,7 +98,7 @@ inline Node* advance_fast(Node *& p)
 
 // pay attention to the argument: the reference to the pointer
 // If not pass as reference, the pointer won't move in the caller function.
-inline Node* advance_slow(Node*& p)
+static inline Node* advance_slow(Node*& p)
 {
     (p) ? p=p->next : NULL;
 }
@@ -142,5 +144,3 @@ void TEST_find_loop()
         std::cout << "Loop free list.\n";
     }
 }
-
-

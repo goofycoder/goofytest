@@ -64,7 +64,6 @@ void min_k(int arr[], int len, int k);		// a[] is the stream, find minimum k ele
 // count how many bits need to swap from intA to intB
 int bitSwap(int num_1, int num_2);
 int countBitOne(int num);
- 
 
 /* ======================= Commonly Used APIs ========================== */
 std::string intToStr(int val);          // Convert an integer value to string
@@ -113,10 +112,12 @@ void TEST_TreeAPI();
 void TEST_lca();
 void TEST_prettyprintBST();
 
-void TEST_min_k();           // top-k heap algorithm
+void TEST_min_k();              // top-k heap algorithm
         
-void TEST_bitSwap();         // number of diff bits btwn 2 ints
+void TEST_bitSwap();            // number of diff bits btwn 2 ints
 
-void TEST_linked_list();    // test linked list APIs
+void TEST_linked_list();        // test linked list APIs
+
+void TEST_rectangle_overlap();  // test whether two rectangles overlap
 
 #endif

@@ -29,6 +29,7 @@ set(source_files
     maxheap.cpp
     bit_swap.cpp
     list_loop.cpp
+    rectangle_overlap.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp

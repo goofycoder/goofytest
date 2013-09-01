@@ -36,7 +36,5 @@ Node* reverse(Node *);
 
 // detect whether a list has loop
 bool findAndRemoveLoop(Node* head, int* loop_len);
-inline Node* advance_fast(Node*& p);
-inline Node* advance_slow(Node*& p);
 
 #endif // LINKED_LIST_H
