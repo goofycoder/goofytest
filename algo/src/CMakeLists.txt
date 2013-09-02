@@ -12,6 +12,7 @@ set(source_files
     palindrome.cpp
     longestSubstr.cpp
     longestCommonSeq.cpp
+    str_removespace.cpp
     edit_distance.cpp
     fibo.cpp
     prime.cpp

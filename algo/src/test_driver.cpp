@@ -31,7 +31,8 @@ int main()
               << "20. Find whether singly linked list has a loop\n"
               << "21. delete Nth node in the singly list\n"
               << "22. rectangle overlap?\n"
-              << "23. the stack that pops minimum in constant time.\n";
+              << "23. the stack that pops minimum in constant time.\n"
+              << "24. remove space in string.\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -134,6 +135,10 @@ int main()
         
         case 23:
             TEST_min_stack();        
+	        break;
+        
+        case 24:
+            TEST_removeSpaceInStr();        
 	        break;
         
         default:

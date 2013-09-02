@@ -65,6 +65,9 @@ void min_k(int arr[], int len, int k);		// a[] is the stream, find minimum k ele
 int bitSwap(int num_1, int num_2);
 int countBitOne(int num);
 
+// remove space in the string (in place)
+void removeSpaceInStr_inPlace(char *str);
+
 /* ======================= Commonly Used APIs ========================== */
 std::string intToStr(int val);          // Convert an integer value to string
 
@@ -121,4 +124,6 @@ void TEST_linked_list();        // test linked list APIs
 void TEST_rectangle_overlap();  // test whether two rectangles overlap
 
 void TEST_min_stack();          // test the stack that could return min value in the stack
+
+void TEST_removeSpaceInStr();        
 #endif
