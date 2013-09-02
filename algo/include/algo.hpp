@@ -120,4 +120,5 @@ void TEST_linked_list();        // test linked list APIs
 
 void TEST_rectangle_overlap();  // test whether two rectangles overlap
 
+void TEST_min_stack();          // test the stack that could return min value in the stack
 #endif
