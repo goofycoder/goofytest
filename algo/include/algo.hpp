@@ -68,6 +68,10 @@ int countBitOne(int num);
 // remove space in the string (in place)
 void removeSpaceInStr_inPlace(char *str);
 
+void intersectionOfSortedArray(std::vector<int> &v1,
+                               std::vector<int> &v2,
+                               std::vector<int> &res);
+
 /* ======================= Commonly Used APIs ========================== */
 std::string intToStr(int val);          // Convert an integer value to string
 
@@ -76,6 +80,8 @@ int minOfThree(int a, int b, int c);    // minimum of three integer
 void swapInt(int& a, int& b);           // swap two integers
 
 void printIntArray(const int *arr, int len);    // print integer array
+
+void printVector(const std::vector<int> &v);
 
 /* ======================= Test APIs ========================== */
 void TEST_isPrime();            // Prime number
@@ -126,4 +132,6 @@ void TEST_rectangle_overlap();  // test whether two rectangles overlap
 void TEST_min_stack();          // test the stack that could return min value in the stack
 
 void TEST_removeSpaceInStr();        
+
+void TEST_intersectionOfSortedArray();
 #endif

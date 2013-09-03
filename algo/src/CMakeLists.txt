@@ -32,6 +32,7 @@ set(source_files
     list_loop.cpp
     min_stack.cpp
     rectangle_overlap.cpp
+    intersection_sorted_array.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp
