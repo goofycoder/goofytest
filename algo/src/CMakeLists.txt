@@ -12,6 +12,7 @@ set(source_files
     palindrome.cpp
     longestSubstr.cpp
     longestCommonSeq.cpp
+    str_removespace.cpp
     edit_distance.cpp
     fibo.cpp
     prime.cpp
@@ -29,6 +30,9 @@ set(source_files
     maxheap.cpp
     bit_swap.cpp
     list_loop.cpp
+    min_stack.cpp
+    rectangle_overlap.cpp
+    intersection_sorted_array.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp

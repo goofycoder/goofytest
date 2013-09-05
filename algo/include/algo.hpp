@@ -64,7 +64,13 @@ void min_k(int arr[], int len, int k);		// a[] is the stream, find minimum k ele
 // count how many bits need to swap from intA to intB
 int bitSwap(int num_1, int num_2);
 int countBitOne(int num);
- 
+
+// remove space in the string (in place)
+void removeSpaceInStr_inPlace(char *str);
+
+void intersectionOfSortedArray(std::vector<int> &v1,
+                               std::vector<int> &v2,
+                               std::vector<int> &res);
 
 /* ======================= Commonly Used APIs ========================== */
 std::string intToStr(int val);          // Convert an integer value to string
@@ -74,6 +80,8 @@ int minOfThree(int a, int b, int c);    // minimum of three integer
 void swapInt(int& a, int& b);           // swap two integers
 
 void printIntArray(const int *arr, int len);    // print integer array
+
+void printVector(const std::vector<int> &v);
 
 /* ======================= Test APIs ========================== */
 void TEST_isPrime();            // Prime number
@@ -113,10 +121,17 @@ void TEST_TreeAPI();
 void TEST_lca();
 void TEST_prettyprintBST();
 
-void TEST_min_k();           // top-k heap algorithm
+void TEST_min_k();              // top-k heap algorithm
         
-void TEST_bitSwap();         // number of diff bits btwn 2 ints
+void TEST_bitSwap();            // number of diff bits btwn 2 ints
 
-void TEST_linked_list();    // test linked list APIs
+void TEST_linked_list();        // test linked list APIs
 
+void TEST_rectangle_overlap();  // test whether two rectangles overlap
+
+void TEST_min_stack();          // test the stack that could return min value in the stack
+
+void TEST_removeSpaceInStr();        
+
+void TEST_intersectionOfSortedArray();
 #endif

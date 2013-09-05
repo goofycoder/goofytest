@@ -29,8 +29,11 @@ int main()
               << "18. Minimum K elements in the stream (Top-K, heap)\n"
               << "19. Number of diff bits between 2 integeres\n"
               << "20. Find whether singly linked list has a loop\n"
-              << "21. delete Nth node in the singly list\n";
-
+              << "21. delete Nth node in the singly list\n"
+              << "22. rectangle overlap?\n"
+              << "23. the stack that pops minimum in constant time.\n"
+              << "24. remove space in string.\n"
+              << "25. intersection of two sorted array.\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -125,6 +128,22 @@ int main()
         
         case 21:
             TEST_linked_list();        
+	        break;
+        
+        case 22:
+            TEST_rectangle_overlap();        
+	        break;
+        
+        case 23:
+            TEST_min_stack();        
+	        break;
+        
+        case 24:
+            TEST_removeSpaceInStr();        
+	        break;
+        
+        case 25:
+            TEST_intersectionOfSortedArray();
 	        break;
         
         default:

@@ -1,5 +1,6 @@
 #include "algo.hpp"
 #include <sstream>
+#include <vector>
 
 // Convert an integer value to string
 std::string intToStr(int val) 
@@ -35,5 +36,17 @@ void printIntArray(const int *arr, int len)
         std::cout << arr[i] << " ";
     }
     
+    std::cout << "\n";
+}
+
+void printVector(const std::vector<int> &v)
+{
+    //std::vector<int>::iterator it = v.begin();
+    auto it = v.begin();    
+
+    for (; it!=v.end(); ++it) {
+        std::cout << *it << " ";
+    }
+
     std::cout << "\n";
 }
