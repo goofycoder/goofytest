@@ -32,9 +32,10 @@ static void timeout_cb(EV_P_ ev_periodic *w, int revents);
 
 int setnonblock(int fd);
 
+const int MAX_QUEUE = 128;
+
 int main(void) 
 {
-    const int MAX_QUEUE = 128;
     struct sock_ev_serv server;
     struct ev_periodic every_few_seconds;
 
@@ -57,9 +58,14 @@ int main(void)
     ev_periodic_init(&every_few_seconds, timeout_cb, 0, 5, 0);
     ev_periodic_start(EV_A_ &every_few_seconds);
 
-    // Get notified whenever the socket is ready to read
-    // Initialize an io watcher, then start it;
-    // It will watch for stdin to become readable
+    /* 
+     Initialize and configures an ev_io watcher
+        ev_io_init (ev_io *, callback, int fd, int events)     
+            fd: file descriptor to rceeive events for
+            events: EV_READ, EV_WRITE or EV_READ | EV_WRITE to receive the given events.
+        
+        Get notified and call callback function whenever the socket receives the event.
+    */
     ev_io_init(&server.io, server_cb, server.fd, EV_READ);
     ev_io_start(EV_A_ &server.io);
 
@@ -136,7 +142,7 @@ int server_init(struct sock_ev_serv* server, char* sock_path, int max_queue)
     server->fd = unix_socket_init(&server->socket, sock_path, max_queue);
     server->socket_len = sizeof(server->socket.sun_family) + strlen(server->socket.sun_path);
 
-    array_init(&server->clients, 128);
+    array_init(&server->clients, MAX_QUEUE);
 
     if (-1 == bind(server->fd, (struct sockaddr*) &server->socket, server->socket_len))
     {
