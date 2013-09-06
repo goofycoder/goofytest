@@ -68,6 +68,8 @@ public:
     void    buildFromInPreOder(int* in, int* pre, int len);
     
     int     getNumOfChild(const Node *p) const;
+
+    Node*   getParent(const Node* p) const;
     
     Node*   root;
 
@@ -87,7 +89,7 @@ private:
 	void    postorderVisit(Node* p) const;		// used in postorderTraverse()
 
 	int     DoGetHeight(Node* p) const; 	
-	int     DoNumOfNodes(Node* p) const;
+	int     _numOfNodes(Node* p) const;
 	Node*   DoKthNode(Node* p, int k) const;
 	void    DoPrintKthLayer(Node* p, int k) const;
 	int     DoGetWidth(Node* p, int k) const;
@@ -126,6 +128,8 @@ private:
                         int level, 
                         int indentSpace, 
                         std::ostream& out);
+
+    Node*   _getParent(Node* r, const Node* p) const;
 };
 
 #endif /* BST_H_ */

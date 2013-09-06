@@ -232,10 +232,10 @@ void BST::DoPrintKthLayer(Node* p, int k) const
 
 int BST::numOfNodes() const
 {
-    return DoNumOfNodes(root);
+    return _numOfNodes(root);
 }
 
-int BST::DoNumOfNodes(Node* p) const
+int BST::_numOfNodes(Node* p) const
 {	
     if (p==NULL)
         return 0;
@@ -243,7 +243,7 @@ int BST::DoNumOfNodes(Node* p) const
     if (p->right==NULL && p->left==NULL) 
         return 1;
 
-    return DoNumOfNodes(p->left) + DoNumOfNodes(p->right) + 1;	
+    return _numOfNodes(p->left) + _numOfNodes(p->right) + 1;	
 }
 
 /* index starting with 1, end with the total number of nodes in the tree 
@@ -259,7 +259,7 @@ Node* BST::DoKthNode(Node* p, int k) const
     if (p==NULL) 
     	return NULL;
 
-    int leftNodes = DoNumOfNodes(p->left);
+    int leftNodes = _numOfNodes(p->left);
 
     if (k<=leftNodes) 
 	    return DoKthNode(p->left, k);

@@ -24,9 +24,9 @@ set(source_files
     rotateStr.cpp
     reverseBit.cpp
     bst.cpp
+    bst_api.cpp
     bst_lca.cpp
     bst_prettyprint.cpp
-    bst_numOfChild.cpp
     top_k.cpp
     maxheap.cpp
     bit_swap.cpp

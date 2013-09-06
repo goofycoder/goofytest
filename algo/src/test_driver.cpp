@@ -34,7 +34,7 @@ int main()
               << "23. the stack that pops minimum in constant time.\n"
               << "24. remove space in string.\n"
               << "25. intersection of two sorted array.\n"
-              << "26. get the number of children given a node in a BST.\n";
+              << "26. Misc BST APIs such as 1) get numOfChild of a node. 2) get Parent node.\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -148,7 +148,7 @@ int main()
 	        break;
         
         case 26:
-            TEST_BST_numOfChild();
+            TEST_BST_API();
 	        break;
         
         default:
