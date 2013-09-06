@@ -6,6 +6,17 @@
     2. Get the ptr to the parent node
         Algorithm similar to the binary search
         stop on the parent node
+
+    3. Get the inorder successor of a node (N)
+        Case#1: node N has right subtree
+            - return the smallest node on the right tree
+        Case#2: node N has no right subtree, and N is its parent's left child
+            - return its parent
+        Case#3: node N has no right subtree, and N is its parent's right child
+            - trace back towards the root, stop till the node is the parent's left child
+                * if all the way back to root's parent(NULL), return NULL
+                * otherwise return the node where it stops
+        
  */
 #include <iostream>
 #include "bst.hpp"
@@ -43,9 +54,53 @@ Node* BST::_getParent(Node* r, const Node* p) const
     }
 }
 
+Node* BST::getInorderSuccessor(Node* p) const 
+{
+    // if p has right subtree
+    if (p->right) {
+        // return the left most node on the right subtree
+        return getSmallestNode(p->right);
+    } 
+
+    // p is a root  and p does not have right subtree
+    if (p == root) {
+        return NULL;
+    }
+
+    Node *parent = getParent(p);
+    // if p is the left child of the parent
+    if (p == parent->left) {
+        return parent;   
+    } else {
+        while (p != parent->left) {
+            p = parent;
+            parent = getParent(p);
+            if (parent == NULL)
+                break;
+        }
+
+        if (parent==NULL) {
+            return NULL;
+        } else {
+            return parent;
+        }
+    }
+}
+
+Node* BST::getSmallestNode(Node *n) const
+{
+    Node* p = n;
+
+    while (p->left) {
+        p = p->left;
+    }
+    
+    return p;
+}
+
 void TEST_BST_API()
 {
-    std::cout << "\n=========== Test getNumOfChild() and getParent() for a node in BST.\n";
+    std::cout << "\n=========== Test BST APIs.==============\n";
     
     int a[] = {1,2,3,4,5,6,7,8,9,10};
 	int len = sizeof(a)/sizeof(a[0]);
@@ -54,7 +109,7 @@ void TEST_BST_API()
 
     int numOfNodes = bst.numOfNodes();
     int numOfChild;
-    Node *p, *parent;
+    Node *p, *parent, *s;
 
     for(int i=1; i<=numOfNodes; i++) {
         p = bst.kthNode(i);
@@ -65,9 +120,16 @@ void TEST_BST_API()
         std::cout << "Node: " << p->data << " has " << numOfChild << " children.";
 
         if (parent!=NULL) {
-            std::cout << " Parent node is " << parent->data << "\n"; 
+            std::cout << " Parent node is " << parent->data << ".";  
         } else {
-            std::cout << " Parent node is NULL\n"; 
+            std::cout << " Parent node is NULL."; 
+        }
+
+        s = bst.getInorderSuccessor(p);
+        if (s!=NULL) {
+            std::cout << " Inorder successor node is " << s->data << "\n";
+        } else {
+            std::cout << " Inorder successor node is NULL.\n";
         }
     }
 }

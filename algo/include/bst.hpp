@@ -30,7 +30,7 @@ public:
     void    printPretty();
 
 	void    insertNode(const int& dataToInsert);
-	void    deleteNode(const int& dataToDelete);
+	void    deleteNode(Node *d);
 	Node*   searchNode(const int& key) const;       // Binary search
 	void    searchRange(int key1, int key2) const;  // search Range
 	
@@ -70,7 +70,12 @@ public:
     int     getNumOfChild(const Node *p) const;
 
     Node*   getParent(const Node* p) const;
-    
+
+    // get the smallest node (left most) in the subtree rooted at n.
+    Node*   getSmallestNode(Node *n) const;
+
+    Node*   getInorderSuccessor(Node* p) const;
+   
     Node*   root;
 
 private:

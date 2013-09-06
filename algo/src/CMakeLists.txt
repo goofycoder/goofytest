@@ -27,6 +27,7 @@ set(source_files
     bst_api.cpp
     bst_lca.cpp
     bst_prettyprint.cpp
+    bst_delete_node.cpp
     top_k.cpp
     maxheap.cpp
     bit_swap.cpp

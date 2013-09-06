@@ -34,7 +34,11 @@ int main()
               << "23. the stack that pops minimum in constant time.\n"
               << "24. remove space in string.\n"
               << "25. intersection of two sorted array.\n"
-              << "26. Misc BST APIs such as 1) get numOfChild of a node. 2) get Parent node.\n";
+              << "26. [BST] Misc APIs: \n \
+                    \t1) get numOfChild of a node.\n \
+                    \t2) get Parent node. \n  \
+                    \t3) getInorderSuccessor node\n"
+              << "27. [BST] delete a node from BST.\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -149,6 +153,10 @@ int main()
         
         case 26:
             TEST_BST_API();
+	        break;
+        
+        case 27:
+            TEST_BST_deleteNode();
 	        break;
         
         default:

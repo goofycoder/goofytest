@@ -121,6 +121,7 @@ void TEST_TreeAPI();
 void TEST_lca();
 void TEST_prettyprintBST();
 void TEST_BST_API();            // getParent(), getNumOfChild()
+void TEST_BST_deleteNode();
 
 void TEST_min_k();              // top-k heap algorithm
         
