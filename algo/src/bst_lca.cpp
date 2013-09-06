@@ -52,7 +52,7 @@ void TEST_lca()
     int a[] = {1,2,3,4,5,6,7,8,9,10};
 	int len = sizeof(a)/sizeof(a[0]);
 	BST bst = BST(a, len);
-    bst.printPretty(bst.root, 1, 0, std::cout);
+    bst.printPretty();
 
     int n1_v;
     int n2_v;

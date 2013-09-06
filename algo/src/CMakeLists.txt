@@ -26,6 +26,7 @@ set(source_files
     bst.cpp
     bst_lca.cpp
     bst_prettyprint.cpp
+    bst_numOfChild.cpp
     top_k.cpp
     maxheap.cpp
     bit_swap.cpp

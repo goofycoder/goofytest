@@ -25,6 +25,9 @@ public:
 	BST():root(NULL) {}
 	BST(int a[], int len);
 	~BST();
+    
+    /* Very useful API */
+    void    printPretty();
 
 	void    insertNode(const int& dataToInsert);
 	void    deleteNode(const int& dataToDelete);
@@ -42,6 +45,10 @@ public:
 	int     getHeight() const;
 	int     numOfNodes() const;
 
+    /* Return the k_th node in the BST
+       Index starting with 1, end with the total number of nodes in the tree.
+    Example: if a BST has 10 nodes, the index is in the range of [1, 10].
+    */
     Node*   kthNode(int k) const;
 	
     void    printKthLayer(int k) const;
@@ -58,15 +65,14 @@ public:
 
     Node*   lca(Node* a, Node* b, Node *p) const;    // Least Common Ancestor
 	
-
-    void    printPretty(Node* root, 
-                        int level, 
-                        int indentSpace, 
-                        std::ostream& out);
-
+    void    buildFromInPreOder(int* in, int* pre, int len);
+    
+    int     getNumOfChild(const Node *p) const;
+    
     Node*   root;
 
 private:
+
 	void    deleteWholeTree(Node* p);			// used in the destructor
 
 	// binary search
@@ -111,6 +117,14 @@ private:
                         int level, 
                         int nodesInThisLevel, 
                         const std::deque<Node*>& nodesQueue, 
+                        std::ostream& out);
+    Node*   __buildFromInPreOrder(int* in, int* pre, int len);
+
+    bool    isLeaf(const Node* p) const;
+    
+    void    _printPretty(Node* root, 
+                        int level, 
+                        int indentSpace, 
                         std::ostream& out);
 };
 

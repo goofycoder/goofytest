@@ -117,20 +117,6 @@ void BST::insertNode(const int& data)
     }
 }
 
-void BST::deleteNode(const int& key)
-{
-#if 0
-    if(root == NULL) return;
-
-	// find the node to delete
-	Node* p = root;
-	while(p != NULL)
-	{
-		if(p->data)
-	}
-#endif
-}
-
 // wrapper fo bstSearch()
 Node* BST::searchNode(const int& key) const	
 {
@@ -260,6 +246,9 @@ int BST::DoNumOfNodes(Node* p) const
     return DoNumOfNodes(p->left) + DoNumOfNodes(p->right) + 1;	
 }
 
+/* index starting with 1, end with the total number of nodes in the tree 
+    Example: if a BST has 10 nodes, the index is in the range of [1, 10].
+*/
 Node* BST::kthNode(int k) const
 {
     return DoKthNode(root,k);
@@ -273,11 +262,11 @@ Node* BST::DoKthNode(Node* p, int k) const
     int leftNodes = DoNumOfNodes(p->left);
 
     if (k<=leftNodes) 
-	return DoKthNode(p->left, k);
+	    return DoKthNode(p->left, k);
     else if(k==leftNodes+1) 
- 	return p;
+ 	    return p;
     else if(k>leftNodes+1)
-	return DoKthNode(p->right, k-leftNodes-1);
+	    return DoKthNode(p->right, k-leftNodes-1);
 }
 
 void BST::searchRange(int key1, int key2) const
@@ -384,4 +373,15 @@ Node* BST::sortedListToBST(Node* list, int start, int end)
     parent->right = sortedListToBST(list, mid+1, end);
   	
     return parent;
+}
+
+bool BST::isLeaf(const Node *p)  const
+{
+    if (p==NULL)
+        return false;
+
+    if (p->left == NULL && p->right==NULL) 
+        return true;
+    else 
+        return false;
 }

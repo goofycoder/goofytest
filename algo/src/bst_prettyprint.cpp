@@ -69,13 +69,21 @@ void BST::printLeaves(int indentSpace,
     out << std::endl;
 }
 
+void BST::printPretty() {
+    /* 1: control how wide the printed tree is
+     * 0: control the indent of left-most node
+     */ 
+    _printPretty(root, 1, 0, std::cout);
+}
+
+
 // Pretty formatting of a binary tree to the output stream
 // @ param
 // level  Control how wide you want the tree to sparse 
 //      (eg, level 1 has minimum space between nodes, while level 2 has larger space between nodes)
 // indentSpace  Change this to add some indent space to the left 
 //      (eg, indentSpace of 0 means the lowest level of the left node will stick to the left margin)
-void BST::printPretty(Node *root, 
+void BST::_printPretty(Node *root, 
                       int level, 
                       int indentSpace, 
                       std::ostream& out) 
@@ -133,9 +141,6 @@ void TEST_prettyprintBST()
     int a[] = {1,2,3,4,5,6,7,8,9,10};
 	int len = sizeof(a)/sizeof(a[0]);
 	BST bst = BST(a, len);
-    
-    /* 1: control how wide the printed tree is
-     * 0: control the indent of left-most node
-     */ 
-    bst.printPretty(bst.root, 1, 0, std::cout);
+
+    bst.printPretty();
 }
