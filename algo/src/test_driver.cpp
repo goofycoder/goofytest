@@ -38,7 +38,8 @@ int main()
                     \t1) get numOfChild of a node.\n \
                     \t2) get Parent node. \n  \
                     \t3) getInorderSuccessor node\n"
-              << "27. [BST] delete a node from BST.\n";
+              << "27. [BST] delete a node from BST.\n"
+              << "28. #unique paths from left-upper to bottom-right in table.\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -157,6 +158,10 @@ int main()
         
         case 27:
             TEST_BST_deleteNode();
+	        break;
+        
+        case 28:
+            TEST_unique_path();
 	        break;
         
         default:

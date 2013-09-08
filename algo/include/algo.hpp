@@ -72,6 +72,9 @@ void intersectionOfSortedArray(std::vector<int> &v1,
                                std::vector<int> &v2,
                                std::vector<int> &res);
 
+// number of unique paths from upper-left to bottom-right in the table
+int unique_path(int** table, int width, int height);
+
 /* ======================= Commonly Used APIs ========================== */
 std::string intToStr(int val);          // Convert an integer value to string
 
@@ -81,7 +84,9 @@ void swapInt(int& a, int& b);           // swap two integers
 
 void printIntArray(const int *arr, int len);    // print integer array
 
-void printVector(const std::vector<int> &v);
+void printVector(const std::vector<int> &v);    // print vector
+
+void print_2D_array(int** table, int width, int height);    // print 2D array
 
 /* ======================= Test APIs ========================== */
 void TEST_isPrime();            // Prime number
@@ -136,4 +141,6 @@ void TEST_min_stack();          // test the stack that could return min value in
 void TEST_removeSpaceInStr();        
 
 void TEST_intersectionOfSortedArray();
+
+void TEST_unique_path();
 #endif

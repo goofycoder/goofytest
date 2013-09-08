@@ -50,3 +50,15 @@ void printVector(const std::vector<int> &v)
 
     std::cout << "\n";
 }
+
+void print_2D_array(int** table, const int width, const int height)
+{
+    for(int i=0; i<height; i++) {
+        for(int j=0; j<width; j++) {
+            std::cout << table[i][j] << "\t";
+        }
+        std::cout << "\n";
+    }
+
+    std::cout << "\n";
+}
