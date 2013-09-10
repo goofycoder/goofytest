@@ -13,6 +13,7 @@ set(source_files
     longestSubstr.cpp
     longestCommonSeq.cpp
     str_removespace.cpp
+    str_permute.cpp
     edit_distance.cpp
     fibo.cpp
     prime.cpp

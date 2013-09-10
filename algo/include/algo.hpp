@@ -46,6 +46,9 @@ void rotateStr(std::string& str, const unsigned i);
 void swapChar(char& a, char& b);
 void reverseStr(std::string& str, int bgn, int end);
 
+void strPermute(std::string str);
+void strPermute_NoDup(std::string str);
+
 // Reverse Bits in the unsigned integer
 // 8 (1010) ==> 5 (101)
 void reverseBit(unsigned &input);
@@ -143,4 +146,6 @@ void TEST_removeSpaceInStr();
 void TEST_intersectionOfSortedArray();
 
 void TEST_unique_path();
+
+void TEST_str_permute();
 #endif
