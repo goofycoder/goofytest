@@ -37,4 +37,14 @@ Node* reverse(Node *);
 // detect whether a list has loop
 bool findAndRemoveLoop(Node* head, int* loop_len);
 
+// advance the fast and slow ptr on the linked list
+//  - used in the loop detection and split list algorithms
+void advance_fast(Node*& p);
+void advance_slow(Node*& p);
+
+// split the linked list into two halves
+// the first list starts at head
+// the second list starts at split.
+void split_linked_list(Node* head, Node*& split);
+
 #endif // LINKED_LIST_H

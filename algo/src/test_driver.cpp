@@ -40,7 +40,8 @@ int main()
                     \t3) getInorderSuccessor node\n"
               << "27. [BST] delete a node from BST.\n"
               << "28. #unique paths from left-upper to bottom-right in table.\n"
-              << "29. List all the permutation of a string. (both Dup and Non-Dup algorithm.\n";
+              << "29. List all the permutation of a string. (both Dup and Non-Dup algorithm.\n"
+              << "30. Split the linked list to half.\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -167,6 +168,10 @@ int main()
 
         case 29:
             TEST_str_permute();
+	        break;
+        
+        case 30:
+            TEST_split_list();
 	        break;
         
         default:

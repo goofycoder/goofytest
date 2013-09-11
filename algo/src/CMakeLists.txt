@@ -33,6 +33,7 @@ set(source_files
     maxheap.cpp
     bit_swap.cpp
     list_loop.cpp
+    split_linked_list.cpp
     min_stack.cpp
     rectangle_overlap.cpp
     intersection_sorted_array.cpp
