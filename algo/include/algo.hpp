@@ -9,6 +9,9 @@ typedef int Item;
 
 bool isPrime(const int &num);
 
+// compute the sqrt of an integer
+unsigned isqrt(unsigned num);   
+
 bool isPalindromeStr(const std::string& str);
 bool isPalindromeNum(int x);
 
@@ -150,4 +153,6 @@ void TEST_unique_path();
 void TEST_str_permute();
 
 void TEST_split_list();         
+
+void TEST_isqrt();         
 #endif

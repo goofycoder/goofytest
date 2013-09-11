@@ -41,7 +41,8 @@ int main()
               << "27. [BST] delete a node from BST.\n"
               << "28. #unique paths from left-upper to bottom-right in table.\n"
               << "29. List all the permutation of a string. (both Dup and Non-Dup algorithm.\n"
-              << "30. Split the linked list to half.\n";
+              << "30. Split the linked list to half.\n"
+              << "31. Compute the square root of an int\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -174,6 +175,10 @@ int main()
             TEST_split_list();
 	        break;
         
+        case 31:
+            TEST_isqrt();
+	        break;
+
         default:
             std::cout << "Invalid option.";
             break;

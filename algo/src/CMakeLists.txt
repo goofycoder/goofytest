@@ -17,6 +17,7 @@ set(source_files
     edit_distance.cpp
     fibo.cpp
     prime.cpp
+    isqrt.cpp
     linked_list_api.cpp
     reverse.cpp
     reservior_sampling.cpp
