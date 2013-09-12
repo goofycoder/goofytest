@@ -25,7 +25,8 @@
                         // This function does not block, but instead simply signals the io_service to stop.
                         // All invocations of its run() or run_one() member functions should return as soon as possible. 
 
-    io_service.post()   // post() asks the io_service to execute the given handler
+    io_service.post()   // give io_service work via post()
+                        // post() asks the io_service to execute the given handler
                         // but without allowing the io_service to call the handler from inside this function.
                         // io_service guarantees that the handler will only be called in a thread in which 
                         // the run(), run_one(), poll() or poll_one() member functions is currently being invoked.
@@ -44,7 +45,6 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/thread.hpp>
 #include <boost/thread/mutex.hpp>
-#include <boost/lexical_cast.hpp>
 #include <boost/bind.hpp>
 #include <iostream>
 
@@ -87,7 +87,7 @@ static void example_poll()
     boost::asio::io_service::work work(io_service);
 
     for (int i=0; i<NUM_TASKS; i++) {
-        std::size_t rv;
+        size_t rv;
         rv = io_service.poll();
         std::cout << "Task #" << i << " with return value: " << rv << "\n";
     }
@@ -129,7 +129,7 @@ static size_t fibo(size_t n)
     if (n<=1) 
         return n;
 
-    boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
+    boost::this_thread::sleep(boost::posix_time::millisec(500));
 
     return fibo(n-1) + fibo(n-2);
 }
@@ -145,28 +145,30 @@ static void calc_fibo(size_t n)
 
     global_stream_lock.lock();
     std::cout << "[" << boost::this_thread::get_id()
-              << "] fib( " << n << " ) = " << f << std::endl;
+              << "] fib(" << n << ") = " << f << std::endl;
     global_stream_lock.unlock();
 }
 
 static void WorkerThread(boost::shared_ptr<boost::asio::io_service> io_service_t)
 {
-    std::string id = boost::lexical_cast<std::string>(boost::this_thread::get_id());
-
     global_stream_lock.lock();
-    std::cout << "Thread [" << id <<"] Starts...\n";
+    std::cout << "Thread [" << boost::this_thread::get_id() <<"] Starts...\n";
     global_stream_lock.unlock();
 
-    io_service_t->run();         // support more concurrency for processing work through io_service object.
+    size_t rv = io_service_t->run();         // support more concurrency for processing work through io_service object.
 
     global_stream_lock.lock();
-    std::cout << "Thread [" << id <<"] Terminates.\n";
+    std::cout << "Thread [" << boost::this_thread::get_id() <<"] Terminates. Executed " << rv << " tasks.\n";
     global_stream_lock.unlock();
 }
 
 // create multiple threads to handle io_service events
 static void example_mthread_io()
 {
+    global_stream_lock.lock();
+    std::cout << "Main thread [" << boost::this_thread::get_id() <<"] Starts...\n";
+    global_stream_lock.unlock();
+    
     const int NUM_THREADS = 3;
 
     // shared_ptr makes it copyable 
@@ -180,17 +182,28 @@ static void example_mthread_io()
         worker_threads.create_thread(boost::bind(&WorkerThread, io_service_t));
     }
 
-    // post work to the worker threads
+    // give io_service work via post()
+    // post work to other worker threads (because the current thread did not call poll() or run()
     io_service_t->post( boost::bind(calc_fibo, 3) );
     io_service_t->post( boost::bind(calc_fibo, 4) );
     io_service_t->post( boost::bind(calc_fibo, 5) );
     io_service_t->post( boost::bind(calc_fibo, 6) );
     io_service_t->post( boost::bind(calc_fibo, 7) );
+    io_service_t->post( boost::bind(calc_fibo, 8) );
+      
+    size_t rv = io_service_t->poll();
+    std::cout << "Main thread processed " << rv << " tasks.\n";
 
-    //io_service_t->stop();         // if still use stop(), none of the work would be done
+    // reset the work object to signal once the work has been completed that we wish to exit
     work.reset();
+    //io_service_t->stop();         // if still use stop(), none of the work would be done
 
+    // wait on all the threads to finish
     worker_threads.join_all();
+    
+    global_stream_lock.lock();
+    std::cout << "Main thread [" << boost::this_thread::get_id() <<"] Terminates.\n";
+    global_stream_lock.unlock();
 }
 
 void TEST_boost_asio_api()
