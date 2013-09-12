@@ -33,10 +33,12 @@
             - In that case, at some point, we would want to call the stop function to ensure the system actually stops.
 
     boost::bind()       // supports arbitrary function objects, functions, function pointers, and class member function pointers
+                        // provides a great deal of flexibility
  */
 #include <boost/asio.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/thread.hpp>
+#include <boost/thread/mutex.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/bind.hpp>
 #include <iostream>
@@ -45,11 +47,11 @@ static void example_run();
 static void example_poll();
 static void example_reset();
 static void example_mthread_io();       
-static void WorkerThread();
+static void WorkerThread(boost::shared_ptr<boost::asio::io_service> io_service_t);
 static void example_boost_bind();
 static void goo(int i, float f);
 
-boost::asio::io_service io_service_t;       // global io_service object for multithread uses
+boost::mutex global_stream_lock;        // for std::cout
 
 class MyClass 
 {
@@ -100,29 +102,36 @@ static void example_reset()
 static void example_mthread_io()
 {
     const int NUM_THREADS = 3;
+
+    // shared_ptr makes it copyable 
+    boost::shared_ptr<boost::asio::io_service> io_service_t(new boost::asio::io_service);
     
-    boost::shared_ptr<boost::asio::io_service::work> work(new boost::asio::io_service::work(io_service_t));
+    boost::shared_ptr<boost::asio::io_service::work> work(new boost::asio::io_service::work(*io_service_t));
 
     boost::thread_group worker_threads;
 
     for (int i=0; i<NUM_THREADS; ++i) {
-        worker_threads.create_thread(WorkerThread);
+        worker_threads.create_thread(boost::bind(&WorkerThread, io_service_t));
     }
 
-    io_service_t.stop();
+    io_service_t->stop();
 
     worker_threads.join_all();
 }
 
-static void WorkerThread()
+static void WorkerThread(boost::shared_ptr<boost::asio::io_service> io_service_t)
 {
     std::string id = boost::lexical_cast<std::string>(boost::this_thread::get_id());
 
+    global_stream_lock.lock();
     std::cout << "Thread [" << id <<"] Starts...\n";
+    global_stream_lock.unlock();
 
-    io_service_t.run();         // support more concurrency for processing work through io_service object.
+    io_service_t->run();         // support more concurrency for processing work through io_service object.
 
+    global_stream_lock.lock();
     std::cout << "Thread [" << id <<"] Finishes.\n";
+    global_stream_lock.unlock();
 }
 
 static void example_boost_bind()
