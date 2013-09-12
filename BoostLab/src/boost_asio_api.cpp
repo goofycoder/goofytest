@@ -18,14 +18,26 @@
     io_service.reset()  // Remove a work object from io_service
                         // must be called prior to any second or later set of invocations of the run(), run_one(), poll() or poll_one() functions 
                         // when a previous invocation of these functions returned due to the io_service being stopped or running out of work.
+
+    io_service.stop()   // stop() function will signal the io_service that all work should be stopped
+                        // so after the current batch of work finishes, no more work will be done. 
+                        // It stops the io_service object's event processing loop.
+                        // This function does not block, but instead simply signals the io_service to stop.
+                        // All invocations of its run() or run_one() member functions should return as soon as possible. 
  */
 #include <boost/asio.hpp>
 #include <boost/shared_ptr.hpp>
+#include <boost/thread.hpp>
+#include <boost/lexical_cast.hpp>
 #include <iostream>
 
 static void example_run();
 static void example_poll();
 static void example_reset();
+static void example_mthread_io();       
+static void WorkerThread();
+
+boost::asio::io_service io_service_t;       // global io_service object for multithread uses
 
 static void example_run()
 {
@@ -63,14 +75,46 @@ static void example_reset()
     std::cout << "Event processing is not blocked." << std::endl;     
 }
 
+// create multiple threads to handle io_service events
+static void example_mthread_io()
+{
+    const int NUM_THREADS = 3;
+    
+    boost::shared_ptr<boost::asio::io_service::work> work(new boost::asio::io_service::work(io_service_t));
+
+    boost::thread_group worker_threads;
+
+    for (int i=0; i<NUM_THREADS; ++i) {
+        worker_threads.create_thread(WorkerThread);
+    }
+
+    io_service_t.stop();
+
+    worker_threads.join_all();
+}
+
+static void WorkerThread()
+{
+    std::string id = boost::lexical_cast<std::string>(boost::this_thread::get_id());
+
+    std::cout << "Thread [" << id <<"] Starts...\n";
+
+    io_service_t.run();         // support more concurrency for processing work through io_service object.
+
+    std::cout << "Thread [" << id <<"] Finishes.\n";
+}
+
 void TEST_boost_asio_api()
 {
-    std::cout << "\nExample: io_service run:\n";
+    std::cout << "\n=== Example: io_service run:\n";
     example_run();
 
-    std::cout << "\nExample: io_service poll:\n";
+    std::cout << "\n=== Example: io_service poll:\n";
     example_poll();
     
-    std::cout << "\nExample: io_service reset:\n";
+    std::cout << "\n=== Example: io_service reset:\n";
     example_reset();
+
+    std::cout << "\n=== Example: multithread io:\n";
+    example_mthread_io();
 }
