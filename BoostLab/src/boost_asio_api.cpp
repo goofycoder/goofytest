@@ -24,11 +24,21 @@
                         // It stops the io_service object's event processing loop.
                         // This function does not block, but instead simply signals the io_service to stop.
                         // All invocations of its run() or run_one() member functions should return as soon as possible. 
+
+   ** Difference between stop() and reset():
+        1) If we had associated a work object with the io_service and wanted to let all queued work finish
+            - we would not call stop but rather destroy the work object. 
+        2) If we want all work to finish but keep giving the io_service more things to do
+            - it will never exit! 
+            - In that case, at some point, we would want to call the stop function to ensure the system actually stops.
+
+    boost::bind()       // supports arbitrary function objects, functions, function pointers, and class member function pointers
  */
 #include <boost/asio.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/thread.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/bind.hpp>
 #include <iostream>
 
 static void example_run();
@@ -36,8 +46,19 @@ static void example_poll();
 static void example_reset();
 static void example_mthread_io();       
 static void WorkerThread();
+static void example_boost_bind();
+static void goo(int i, float f);
 
 boost::asio::io_service io_service_t;       // global io_service object for multithread uses
+
+class MyClass 
+{
+public:
+    void mFoo(int i, float f) {
+        std::cout << "mFoo has input arg i: " << i << "\n";
+        std::cout << "mFoo has input arg f: " << f << "\n";
+    }
+};
 
 static void example_run()
 {
@@ -51,7 +72,7 @@ static void example_run()
 
 static void example_poll()
 {
-    const int NUM_TASKS = 23;
+    const int NUM_TASKS = 7;
 
     boost::asio::io_service io_service;
     boost::asio::io_service::work work(io_service);
@@ -104,6 +125,25 @@ static void WorkerThread()
     std::cout << "Thread [" << id <<"] Finishes.\n";
 }
 
+static void example_boost_bind()
+{
+    // bind and invocate the regular function
+    std::cout << "Bind regular function: \n";
+    boost::bind(&goo, 23, 3.14f)();
+
+    // bind and invocate the class member function
+    std::cout << "Bind class member function: \n";
+    MyClass mc;
+    boost::bind(&MyClass::mFoo, mc, 23, 3.14f)();       // pay attention to the bind and invocation of class member function
+}
+
+static void goo(int i, float f)
+{
+    std::cout << "goo has input arg i: " << i << "\n";
+    std::cout << "goo has input arg f: " << f << "\n";
+}
+
+
 void TEST_boost_asio_api()
 {
     std::cout << "\n=== Example: io_service run:\n";
@@ -117,4 +157,7 @@ void TEST_boost_asio_api()
 
     std::cout << "\n=== Example: multithread io:\n";
     example_mthread_io();
+
+    std::cout << "\n=== Example: boost bind:\n";
+    example_boost_bind();
 }
