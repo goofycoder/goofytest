@@ -25,6 +25,11 @@
                         // This function does not block, but instead simply signals the io_service to stop.
                         // All invocations of its run() or run_one() member functions should return as soon as possible. 
 
+    io_service.post()   // post() asks the io_service to execute the given handler
+                        // but without allowing the io_service to call the handler from inside this function.
+                        // io_service guarantees that the handler will only be called in a thread in which 
+                        // the run(), run_one(), poll() or poll_one() member functions is currently being invoked.
+
    ** Difference between stop() and reset():
         1) If we had associated a work object with the io_service and wanted to let all queued work finish
             - we would not call stop but rather destroy the work object. 
@@ -50,6 +55,8 @@ static void example_mthread_io();
 static void WorkerThread(boost::shared_ptr<boost::asio::io_service> io_service_t);
 static void example_boost_bind();
 static void goo(int i, float f);
+static void calc_fibo(size_t n);
+static size_t fibo(size_t n);
 
 boost::mutex global_stream_lock;        // for std::cout
 
@@ -98,41 +105,6 @@ static void example_reset()
     std::cout << "Event processing is not blocked." << std::endl;     
 }
 
-// create multiple threads to handle io_service events
-static void example_mthread_io()
-{
-    const int NUM_THREADS = 3;
-
-    // shared_ptr makes it copyable 
-    boost::shared_ptr<boost::asio::io_service> io_service_t(new boost::asio::io_service);
-    
-    boost::shared_ptr<boost::asio::io_service::work> work(new boost::asio::io_service::work(*io_service_t));
-
-    boost::thread_group worker_threads;
-
-    for (int i=0; i<NUM_THREADS; ++i) {
-        worker_threads.create_thread(boost::bind(&WorkerThread, io_service_t));
-    }
-
-    io_service_t->stop();
-
-    worker_threads.join_all();
-}
-
-static void WorkerThread(boost::shared_ptr<boost::asio::io_service> io_service_t)
-{
-    std::string id = boost::lexical_cast<std::string>(boost::this_thread::get_id());
-
-    global_stream_lock.lock();
-    std::cout << "Thread [" << id <<"] Starts...\n";
-    global_stream_lock.unlock();
-
-    io_service_t->run();         // support more concurrency for processing work through io_service object.
-
-    global_stream_lock.lock();
-    std::cout << "Thread [" << id <<"] Finishes.\n";
-    global_stream_lock.unlock();
-}
 
 static void example_boost_bind()
 {
@@ -152,6 +124,74 @@ static void goo(int i, float f)
     std::cout << "goo has input arg f: " << f << "\n";
 }
 
+static size_t fibo(size_t n)
+{
+    if (n<=1) 
+        return n;
+
+    boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
+
+    return fibo(n-1) + fibo(n-2);
+}
+
+static void calc_fibo(size_t n)
+{
+    global_stream_lock.lock();
+    std::cout << "[" << boost::this_thread::get_id()
+              << "] Now calculating fib( " << n << " ) " << std::endl;
+    global_stream_lock.unlock();
+
+    size_t f = fibo(n);
+
+    global_stream_lock.lock();
+    std::cout << "[" << boost::this_thread::get_id()
+              << "] fib( " << n << " ) = " << f << std::endl;
+    global_stream_lock.unlock();
+}
+
+static void WorkerThread(boost::shared_ptr<boost::asio::io_service> io_service_t)
+{
+    std::string id = boost::lexical_cast<std::string>(boost::this_thread::get_id());
+
+    global_stream_lock.lock();
+    std::cout << "Thread [" << id <<"] Starts...\n";
+    global_stream_lock.unlock();
+
+    io_service_t->run();         // support more concurrency for processing work through io_service object.
+
+    global_stream_lock.lock();
+    std::cout << "Thread [" << id <<"] Terminates.\n";
+    global_stream_lock.unlock();
+}
+
+// create multiple threads to handle io_service events
+static void example_mthread_io()
+{
+    const int NUM_THREADS = 3;
+
+    // shared_ptr makes it copyable 
+    boost::shared_ptr<boost::asio::io_service> io_service_t(new boost::asio::io_service);
+    
+    boost::shared_ptr<boost::asio::io_service::work> work(new boost::asio::io_service::work(*io_service_t));
+
+    boost::thread_group worker_threads;
+
+    for (int i=0; i<NUM_THREADS; ++i) {
+        worker_threads.create_thread(boost::bind(&WorkerThread, io_service_t));
+    }
+
+    // post work to the worker threads
+    io_service_t->post( boost::bind(calc_fibo, 3) );
+    io_service_t->post( boost::bind(calc_fibo, 4) );
+    io_service_t->post( boost::bind(calc_fibo, 5) );
+    io_service_t->post( boost::bind(calc_fibo, 6) );
+    io_service_t->post( boost::bind(calc_fibo, 7) );
+
+    //io_service_t->stop();         // if still use stop(), none of the work would be done
+    work.reset();
+
+    worker_threads.join_all();
+}
 
 void TEST_boost_asio_api()
 {
@@ -164,9 +204,9 @@ void TEST_boost_asio_api()
     std::cout << "\n=== Example: io_service reset:\n";
     example_reset();
 
-    std::cout << "\n=== Example: multithread io:\n";
-    example_mthread_io();
-
     std::cout << "\n=== Example: boost bind:\n";
     example_boost_bind();
+    
+    std::cout << "\n=== Example: multithread io:\n";
+    example_mthread_io();
 }
