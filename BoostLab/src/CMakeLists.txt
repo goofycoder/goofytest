@@ -9,12 +9,19 @@ include_directories(${BoostLab_SOURCE_DIR}/include)
 
 set(source_files 
     boost_asio_api.cpp
+    serialized_io.cpp
     test_driver.cpp
 )
 
+set (Boost_MULTITHREADED TRUE)
+
+if (USE_STATIC_BOOST)
+    set (Boost_USE_STATIC_LIBS TRUE)
+endif ()
+
 find_package(Threads)
 
-find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS system thread)
 if (Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIR})
     add_definitions("-DHAS_BOOST")
