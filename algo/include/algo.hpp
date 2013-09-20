@@ -43,6 +43,9 @@ void printLCS(char** b, const std::string& s, int i, int j);
 // Max sum in the array
 int maxSum(const std::vector<int>& arr, const unsigned len);
 
+// the sliding window max in the array
+void slide_window_max(int A[], int n, int w, std::vector<int>& v);
+
 // Rotate string at postion i
 // "abcde" ==> "cdeab"
 void rotateStr(std::string& str, const unsigned i);
@@ -122,6 +125,8 @@ void TEST_LongestCommonSeq();	// longest common sequence
 
 void TEST_maxSum();             // test max sum in array 
 
+void TEST_slide_window_max();   // test the sliding window max in an array
+
 void TEST_reverseBit();         // reverse bit of an unsigned integer
 
 // BST test APIs
@@ -133,6 +138,7 @@ void TEST_lca();
 void TEST_prettyprintBST();
 void TEST_BST_API();            // getParent(), getNumOfChild()
 void TEST_BST_deleteNode();
+void TEST_bst_mirror();         // test the mirror of BST
 
 void TEST_min_k();              // top-k heap algorithm
         

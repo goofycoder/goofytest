@@ -30,7 +30,9 @@ set(source_files
     bst_lca.cpp
     bst_prettyprint.cpp
     bst_delete_node.cpp
+    bst_mirror.cpp
     top_k.cpp
+    slide_window_max.cpp
     maxheap.cpp
     bit_swap.cpp
     list_loop.cpp

@@ -14,6 +14,10 @@ class Node
 {
 public:
 	Node(int _data):data(_data),left(NULL),right(NULL) { }
+    Node(Node *p):data(p->data), left(p->left), right(p->right) { }
+
+    //Node& operator= (const
+
 	int   data;
 	Node *left;
 	Node *right;
@@ -23,6 +27,7 @@ class BST
 {
 public:
 	BST():root(NULL) {}
+    BST(Node *r):root(r) {}
 	BST(int a[], int len);
 	~BST();
     
@@ -75,6 +80,8 @@ public:
     Node*   getSmallestNode(Node *n) const;
 
     Node*   getInorderSuccessor(Node* p) const;
+
+    Node*   mirror() const;     // get the mirror image of a BST
    
     Node*   root;
 
@@ -135,6 +142,8 @@ private:
                         std::ostream& out);
 
     Node*   _getParent(Node* r, const Node* p) const;
+    
+    Node*   _mirror(Node *p) const;
 };
 
 #endif /* BST_H_ */

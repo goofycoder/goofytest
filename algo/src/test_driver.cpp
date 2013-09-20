@@ -42,7 +42,9 @@ int main()
               << "28. #unique paths from left-upper to bottom-right in table.\n"
               << "29. List all the permutation of a string. (both Dup and Non-Dup algorithm.\n"
               << "30. Split the linked list to half.\n"
-              << "31. Compute the square root of an int\n";
+              << "31. Compute the square root of an int\n"
+              << "32. Max in the sliding window of int array.(crash)\n"
+              << "33. Mirror of BST.\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -177,6 +179,14 @@ int main()
         
         case 31:
             TEST_isqrt();
+	        break;
+        
+        case 32:
+            TEST_slide_window_max();
+	        break;
+        
+        case 33:
+            TEST_bst_mirror();
 	        break;
 
         default:
