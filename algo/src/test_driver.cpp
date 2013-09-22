@@ -45,7 +45,10 @@ int main()
               << "31. Compute the square root of an int\n"
               << "32. Max in the sliding window of int array.(crash)\n"
               << "33. Mirror of BST.\n"
-              << "34. Ugly number.\n";
+              << "34. Ugly number.\n"
+              << "35. Test basic bit operations.\n \
+                    \t1) check whether an integer is a power of two.\n \
+                    \t2) check whether two integers have opposite sign\n ";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -192,6 +195,10 @@ int main()
 
         case 34:
             TEST_ugly_number();
+	        break;
+        
+        case 35:
+            TEST_bit_op();
 	        break;
 
         default:

@@ -1,6 +1,7 @@
 #include "algo.hpp"
 #include <sstream>
 #include <vector>
+#include <algorithm>
 
 // Convert an integer value to string
 std::string intToStr(int val) 
@@ -13,13 +14,7 @@ std::string intToStr(int val)
 // minimum of three integers
 int minOfThree(int a, int b, int c) 
 {
-    if (a<b) {
-        if (c<a) return c; 
-        else     return a;    
-    } else {
-        if (c<b) return c;
-        else     return b;
-    }
+    return std::min(a, std::min(b,c));
 }
 
 void swapInt(int& a, int& b)

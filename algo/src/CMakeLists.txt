@@ -36,6 +36,7 @@ set(source_files
     slide_window_max.cpp
     maxheap.cpp
     bit_swap.cpp
+    bit_op.cpp
     list_loop.cpp
     split_linked_list.cpp
     min_stack.cpp

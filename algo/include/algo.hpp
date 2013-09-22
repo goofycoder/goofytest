@@ -77,6 +77,8 @@ void min_k(int arr[], int len, int k);		// a[] is the stream, find minimum k ele
 // count how many bits need to swap from intA to intB
 int bitSwap(int num_1, int num_2);
 int countBitOne(int num);
+bool powerOfTwo(int n);
+bool opposite_sign(int x, int y);
 
 // remove space in the string (in place)
 void removeSpaceInStr_inPlace(char *str);
@@ -146,6 +148,7 @@ void TEST_bst_mirror();         // test the mirror of BST
 
 void TEST_min_k();              // top-k heap algorithm
         
+void TEST_bit_op();             // test the basic bit operations
 void TEST_bitSwap();            // number of diff bits btwn 2 ints
 
 void TEST_linked_list();        // test linked list APIs
