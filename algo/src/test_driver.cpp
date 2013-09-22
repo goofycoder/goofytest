@@ -44,7 +44,8 @@ int main()
               << "30. Split the linked list to half.\n"
               << "31. Compute the square root of an int\n"
               << "32. Max in the sliding window of int array.(crash)\n"
-              << "33. Mirror of BST.\n";
+              << "33. Mirror of BST.\n"
+              << "34. Ugly number.\n";
 
     unsigned option;
     std::cout << "You choose: \n";
@@ -187,6 +188,10 @@ int main()
         
         case 33:
             TEST_bst_mirror();
+	        break;
+
+        case 34:
+            TEST_ugly_number();
 	        break;
 
         default:

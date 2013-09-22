@@ -22,6 +22,7 @@ set(source_files
     reverse.cpp
     reservior_sampling.cpp
     rejection_sampling.cpp
+    ugly_number.cpp
     max_sum.cpp
     rotateStr.cpp
     reverseBit.cpp

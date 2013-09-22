@@ -33,6 +33,10 @@ void display_samples(const Item* samples, unsigned sample_size);
 int rand10();       // made from rand7()
 int rand7();        
 
+/* Ugly numbers are numbers whose only prime factors are 2, 3 or 5. 
+   Get the n-th ugly number. */
+unsigned ugly_number(unsigned n);       
+
 // longest non-repeatable-char substr
 int longestSubstr(const std::string& str);      
 
@@ -160,5 +164,7 @@ void TEST_str_permute();
 
 void TEST_split_list();         
 
-void TEST_isqrt();         
+void TEST_isqrt();              // integer square root      
+
+void TEST_ugly_number();        // compute the n_th ugly number         
 #endif
