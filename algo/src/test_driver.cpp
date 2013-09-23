@@ -48,10 +48,11 @@ int main()
               << "34. Ugly number.\n"
               << "35. Test basic bit operations.\n \
                     \t1) check whether an integer is a power of two.\n \
-                    \t2) check whether two integers have opposite sign\n ";
+                    \t2) check whether two integers have opposite sign\n"
+              << "36. Replace the space in a string with pattern.\n";
 
     unsigned option;
-    std::cout << "You choose: \n";
+    std::cout << "\nYou choose: \n";
 
     while ( std::cin>>option ) {
         switch(option) {
@@ -199,6 +200,10 @@ int main()
         
         case 35:
             TEST_bit_op();
+	        break;
+        
+        case 36:
+            TEST_str_replace_space();
 	        break;
 
         default:

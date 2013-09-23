@@ -14,6 +14,7 @@ set(source_files
     longestCommonSeq.cpp
     str_removespace.cpp
     str_permute.cpp
+    str_replace_space.cpp
     edit_distance.cpp
     fibo.cpp
     prime.cpp

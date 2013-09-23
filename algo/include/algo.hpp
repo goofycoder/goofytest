@@ -59,6 +59,9 @@ void reverseStr(std::string& str, int bgn, int end);
 void strPermute(std::string str);
 void strPermute_NoDup(std::string str);
 
+// replace the space in a string with certain pattern
+void replaceSpace(char *str, int len, char* pattern, int p_len, char*& new_str, int& new_len);
+
 // Reverse Bits in the unsigned integer
 // 8 (1010) ==> 5 (101)
 void reverseBit(unsigned &input);
@@ -126,6 +129,8 @@ void TEST_find_loop();          // find loop in the list
 void TEST_longestSubstr();      // longest non-repeatable-char substr
 
 void TEST_rotateStr();          // rotate string: "abcde" ==> "cdeab"
+
+void TEST_str_replace_space();  // replace space in a string with certain pattern
 
 void TEST_LongestCommonSeq();	// longest common sequence
 
