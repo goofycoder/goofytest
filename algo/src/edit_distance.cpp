@@ -35,7 +35,7 @@ void TEST_editDistance()
               << "Enter 1st string: ";
     std::cin >> s;
 
-    std::cout << "Enter 1st string: ";
+    std::cout << "Enter 2nd string: ";
     std::cin >> t;
 
     int dist = editDistance(s,t);

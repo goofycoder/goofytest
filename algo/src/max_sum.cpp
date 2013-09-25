@@ -15,6 +15,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include "algo.hpp"
 
 int maxSum(const std::vector<int>& arr, const unsigned len) 
 {
@@ -43,41 +44,19 @@ int maxSum(const std::vector<int>& arr, const unsigned len)
 void TEST_maxSum() 
 {
     std::string file_name;
-    std::string dflt_file_name("maxsum_input.dat");
 
     std::cout << "\n *** TEST for Max Sum In Array ***\n";
 
-    std::cout << "Input file that contains data (default: maxsum_input.dat): ";
-    
+    std::cout << "Input file (default: maxsum_input.dat) that contains data: ";
     std::cin >> file_name;
 
-#if 0
-    if (file_name == "\n") {
-        std::cout << "Using default";
-        file_name = dflt_file_name;
-    } else {
-        std::cout << "using othe files\n";
-    }
-#endif
-
-    std::ifstream f_in(file_name);
-
-    std::string str;
-    std::string token;
-
-    std::getline(f_in, str);
-    std::cout << str << "\n";
-
-    std::stringstream iss(str);
     std::vector<int> v;
+    readArrayFromFile(file_name, v);
     
-    while (iss >> token) {
-        std::cout << "token: " << token << "\n";
-        v.push_back(std::stoi(token));
-    }
+    std::cout << "Input array: ";
+    printVector(v);
 
     int sum = maxSum(v, v.size());
 
-    std::cout << "Max Sum in Array is: " << sum << "\n";
+    std::cout << "\nMax Sum in Array is: " << sum << "\n";
 }
-

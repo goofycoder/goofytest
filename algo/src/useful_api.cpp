@@ -1,7 +1,34 @@
 #include "algo.hpp"
 #include <sstream>
+#include <fstream>
 #include <vector>
 #include <algorithm>
+#include <string>
+
+/*
+    Note: this function only read one line. Thus, the array should be 
+    put in the first line, delimited by any number of spaces
+ 
+    Input: file name string
+    Output: a vector that contains all the numbers in the file 
+           (currently only read the first line)
+ */
+void readArrayFromFile(const std::string& file_name, std::vector<int>& v)
+{
+    std::ifstream f_in(file_name);
+
+    std::string str;
+    std::string token;
+
+    // Only read one line.
+    std::getline(f_in, str);
+
+    std::stringstream iss(str);
+    
+    while (iss >> token) {
+        v.push_back(std::stoi(token));
+    }
+}
 
 // Convert an integer value to string
 std::string intToStr(int val) 

@@ -94,6 +94,8 @@ void intersectionOfSortedArray(std::vector<int> &v1,
 int unique_path(int** table, int width, int height);
 
 /* ======================= Commonly Used APIs ========================== */
+void readArrayFromFile(const std::string& filename, std::vector<int>& v);
+
 std::string intToStr(int val);          // Convert an integer value to string
 
 int minOfThree(int a, int b, int c);    // minimum of three integer
