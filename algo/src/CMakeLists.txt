@@ -15,6 +15,7 @@ set(source_files
     str_removespace.cpp
     str_permute.cpp
     str_replace_space.cpp
+    str_longestPalindrome.cpp
     edit_distance.cpp
     fibo.cpp
     prime.cpp

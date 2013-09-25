@@ -4,7 +4,6 @@
     The robot is trying to reach the bottom-right corner of the grid. 
     How many possible unique paths are there?
 
-
     Algorithm: bottom-up Dynamic programming.
 
     1.Fill the [width-1] column with '1'
@@ -13,6 +12,12 @@
         the value of this grid is the number in right grid + the number in down grid  
     4. keep doing this till the very upper left grid.
     5. the number in table[0][0] is the total number of unique paths
+    
+    Extension:
+        The obstacle is located at (x,y). Compute the total number of unique path.
+   
+    Solution:
+        Set table[y][x] = 0, follow the algorithm above to compute the #unique path.
  */
 
 #include <iostream>

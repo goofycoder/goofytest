@@ -59,6 +59,9 @@ void reverseStr(std::string& str, int bgn, int end);
 void strPermute(std::string str);
 void strPermute_NoDup(std::string str);
 
+// longest palindrome substring in a string
+std::string longestPalindrome(std::string& s);
+
 // replace the space in a string with certain pattern
 void replaceSpace(char *str, int len, char* pattern, int p_len, char*& new_str, int& new_len);
 
@@ -177,4 +180,5 @@ void TEST_split_list();
 void TEST_isqrt();              // integer square root      
 
 void TEST_ugly_number();        // compute the n_th ugly number         
+void TEST_longestPalindrome();  // longest palindrome substring in a string
 #endif
