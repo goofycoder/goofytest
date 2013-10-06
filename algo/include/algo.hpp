@@ -62,6 +62,9 @@ void strPermute_NoDup(std::string str);
 // longest palindrome substring in a string
 std::string longestPalindrome(std::string& s);
 
+// KMP algorithm: find string w in string s
+int string_kmp(std::string s, std::string w);
+
 // replace the space in a string with certain pattern
 void replaceSpace(char *str, int len, char* pattern, int p_len, char*& new_str, int& new_len);
 
@@ -136,6 +139,8 @@ void TEST_longestSubstr();      // longest non-repeatable-char substr
 void TEST_rotateStr();          // rotate string: "abcde" ==> "cdeab"
 
 void TEST_str_replace_space();  // replace space in a string with certain pattern
+
+void TEST_string_kmp();         // KMP string search algorithm
 
 void TEST_LongestCommonSeq();	// longest common sequence
 

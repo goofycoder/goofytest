@@ -50,7 +50,8 @@ int main()
                     \t1) check whether an integer is a power of two.\n \
                     \t2) check whether two integers have opposite sign\n"
               << "36. Replace the space in a string with pattern.\n"
-              << "37. Longest palindrome substring in a string.\n";
+              << "37. Longest palindrome substring in a string.\n"
+              << "38. KMP string search algorithm.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -209,6 +210,10 @@ int main()
         
         case 37:
             TEST_longestPalindrome();
+	        break;
+        
+        case 38:
+            TEST_string_kmp();
 	        break;
 
         default:
