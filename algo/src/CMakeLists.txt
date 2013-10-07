@@ -17,6 +17,7 @@ set(source_files
     str_replace_space.cpp
     str_longestPalindrome.cpp
     str_kmp.cpp
+    str_reverse.cpp
     edit_distance.cpp
     fibo.cpp
     prime.cpp

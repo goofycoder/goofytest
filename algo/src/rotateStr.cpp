@@ -22,13 +22,6 @@ void reverseStr(std::string& str, int bgn, int end)
     }
 }
 
-void swapChar(char& a, char& b) 
-{
-    char tmp = a;
-    a = b;
-    b = tmp;
-}
-
 void TEST_rotateStr()
 {
     std::string str;

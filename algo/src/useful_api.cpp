@@ -51,6 +51,13 @@ void swapInt(int& a, int& b)
 	b = tmp;
 }
 
+void swapChar(char& a, char& b)
+{
+    char tmp = a;
+    a = b;
+    b = tmp;
+}
+
 void printIntArray(const int *arr, int len)
 {
     std::cout << "The array is: ";

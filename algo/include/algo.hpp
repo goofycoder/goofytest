@@ -7,20 +7,89 @@
 
 typedef int Item;
 
+/************************************************
+ ********* Commonly used APIs *******************
+ ************************************************/
+void readArrayFromFile(const std::string& filename, std::vector<int>& v);
+
+std::string intToStr(int val);          // Convert an integer value to string
+
+int minOfThree(int a, int b, int c);    // minimum of three integer
+
+void swapInt(int& a, int& b);           // swap two integers
+void swapChar(char& a, char& b);        // swap two chars
+
+void printIntArray(const int *arr, int len);    // print integer array
+
+void printVector(const std::vector<int> &v);    // print vector
+
+void print_2D_array(int** table, int width, int height);    // print 2D array
+/************************************************/
+
+
+/************************************************
+ ******** String-related algorithm **************
+ ************************************************/
+// palindrome string
+bool isPalindromeStr(const std::string& str);
+
+// longest palindrome substring in a string
+std::string longestPalindrome(std::string& s);
+
+bool isAnagram(std::string& str1, std::string& str2);
+
+// longest non-repeatable-char substr
+int longestSubstr(const std::string& str);      
+
+// longest common sequence between two strings
+int lcs(const std::string& s1, const std::string& s2);
+void printLCS(char** b, const std::string& s, int i, int j);
+
+// Rotate string at postion i
+// Example: "abcde" ==> "cdeab"
+void rotateStr(std::string& str, const unsigned i);
+
+// string permutation
+void strPermute(std::string str);
+void strPermute_NoDup(std::string str);
+
+// KMP algorithm: find string w in string s
+int string_kmp(std::string s, std::string w);
+
+/* In place C-string reverse */
+void str_reverse(char* str, int len);
+
+/* In-place reverse of a STL string */
+void reverseStr(std::string& str, int bgn, int end);
+
+// replace the space in a string with certain pattern
+void replaceSpace(char *str, int len, 
+                  char* pattern, int p_len, 
+                  char*& new_str, int& new_len);
+
+// Edit distance between two strings
+// "hat" ==> "cap": distance 2
+int editDistance(const std::string& s, const std::string& t);
+int editDistanceInt(const char *s, int len_s, const char *t, int len_t);
+
+// remove space in the string (in place)
+void removeSpaceInStr_inPlace(char *str);
+/************************************************/
+
+
+/************************************************
+ ******** Number-related algorithm **************
+ ************************************************/
 bool isPrime(const int &num);
+
+bool isPalindromeNum(int x);
+
+// Fibonacci number
+int fibo(const int&n);      // recursive version
+int fibo_nr(const int&n);   // non-recursive version
 
 // compute the sqrt of an integer
 unsigned isqrt(unsigned num);   
-
-bool isPalindromeStr(const std::string& str);
-bool isPalindromeNum(int x);
-
-bool isAnagram(std::string& str1, std::string& str2);
-void buildStat(std::string& str, int* m);
-bool compareStat(int* m1, int* m2);
-
-int fibo(const int&n);
-int fibo_nr(const int&n);
 
 /* reservior sampling */
 void reservior_sample(const Item* stream, const unsigned& stream_len,
@@ -36,13 +105,16 @@ int rand7();
 /* Ugly numbers are numbers whose only prime factors are 2, 3 or 5. 
    Get the n-th ugly number. */
 unsigned ugly_number(unsigned n);       
+/************************************************/
 
-// longest non-repeatable-char substr
-int longestSubstr(const std::string& str);      
 
-// longest common sequence between two strings
-int lcs(const std::string& s1, const std::string& s2);
-void printLCS(char** b, const std::string& s, int i, int j);
+/************************************************
+ ********* Array/stream related algorithm *******
+ ************************************************/
+// top-K, partial sort algorithm
+// minimum k elements in the array
+// arr[] is the stream, find minimum k elements in arr[]
+void min_k(int arr[], int len, int k);		
 
 // Max sum in the array
 int maxSum(const std::vector<int>& arr, const unsigned len);
@@ -50,71 +122,39 @@ int maxSum(const std::vector<int>& arr, const unsigned len);
 // the sliding window max in the array
 void slide_window_max(int A[], int n, int w, std::vector<int>& v);
 
-// Rotate string at postion i
-// "abcde" ==> "cdeab"
-void rotateStr(std::string& str, const unsigned i);
-void swapChar(char& a, char& b);
-void reverseStr(std::string& str, int bgn, int end);
-
-void strPermute(std::string str);
-void strPermute_NoDup(std::string str);
-
-// longest palindrome substring in a string
-std::string longestPalindrome(std::string& s);
-
-// KMP algorithm: find string w in string s
-int string_kmp(std::string s, std::string w);
-
-// replace the space in a string with certain pattern
-void replaceSpace(char *str, int len, char* pattern, int p_len, char*& new_str, int& new_len);
-
-// Reverse Bits in the unsigned integer
-// 8 (1010) ==> 5 (101)
-void reverseBit(unsigned &input);
-unsigned getNumOfBits(const unsigned input);
-void swapBit(unsigned &input, unsigned left, unsigned right);
-
-// Edit distance between two strings
-// "hat" ==> "cap": distance 2
-int editDistance(const std::string& s, const std::string& t);
-int editDistanceInt(const char *s, int len_s, const char *t, int len_t);
-
-// top-K, partial sort algorithm
-// minimum k elements in the array
-void min_k(int arr[], int len, int k);		// a[] is the stream, find minimum k elements in a[]
-
-// count how many bits need to swap from intA to intB
-int bitSwap(int num_1, int num_2);
-int countBitOne(int num);
-bool powerOfTwo(int n);
-bool opposite_sign(int x, int y);
-
-// remove space in the string (in place)
-void removeSpaceInStr_inPlace(char *str);
-
+// intersection of two sorted arrays
 void intersectionOfSortedArray(std::vector<int> &v1,
                                std::vector<int> &v2,
                                std::vector<int> &res);
 
 // number of unique paths from upper-left to bottom-right in the table
 int unique_path(int** table, int width, int height);
+/************************************************/
 
-/* ======================= Commonly Used APIs ========================== */
-void readArrayFromFile(const std::string& filename, std::vector<int>& v);
 
-std::string intToStr(int val);          // Convert an integer value to string
+/************************************************
+ ********* Bit operation algorithm **************
+ ************************************************/
+// Reverse Bits in the unsigned integer
+// Example: 8 (1010) ==> 5 (101)
+void reverseBit(unsigned &input);
+unsigned getNumOfBits(const unsigned input);
+void swapBit(unsigned &input, unsigned left, unsigned right);
 
-int minOfThree(int a, int b, int c);    // minimum of three integer
+// count how many bits need to swap from intA to intB
+int bitSwap(int num_1, int num_2);
 
-void swapInt(int& a, int& b);           // swap two integers
+int countBitOne(int num);
 
-void printIntArray(const int *arr, int len);    // print integer array
+bool powerOfTwo(int n);
 
-void printVector(const std::vector<int> &v);    // print vector
+bool opposite_sign(int x, int y);
+/************************************************/
 
-void print_2D_array(int** table, int width, int height);    // print 2D array
 
-/* ======================= Test APIs ========================== */
+/************************************************
+ ********* Unit Test APIS ***********************
+ ************************************************/
 void TEST_isPrime();            // Prime number
 
 void TEST_isPalindromeStr();    // Palindrome String
@@ -141,6 +181,8 @@ void TEST_rotateStr();          // rotate string: "abcde" ==> "cdeab"
 void TEST_str_replace_space();  // replace space in a string with certain pattern
 
 void TEST_string_kmp();         // KMP string search algorithm
+
+void TEST_str_reverse();        // reverse the c-string
 
 void TEST_LongestCommonSeq();	// longest common sequence
 
@@ -186,4 +228,6 @@ void TEST_isqrt();              // integer square root
 
 void TEST_ugly_number();        // compute the n_th ugly number         
 void TEST_longestPalindrome();  // longest palindrome substring in a string
-#endif
+
+
+#endif  // ALGO_H

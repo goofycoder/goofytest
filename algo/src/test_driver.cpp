@@ -51,7 +51,8 @@ int main()
                     \t2) check whether two integers have opposite sign\n"
               << "36. Replace the space in a string with pattern.\n"
               << "37. Longest palindrome substring in a string.\n"
-              << "38. KMP string search algorithm.\n";
+              << "38. KMP string search algorithm.\n"
+              << "39. Reverse C-string.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -214,6 +215,10 @@ int main()
         
         case 38:
             TEST_string_kmp();
+	        break;
+        
+        case 39:
+            TEST_str_reverse();
 	        break;
 
         default:
