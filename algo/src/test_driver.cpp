@@ -52,7 +52,8 @@ int main()
               << "36. Replace the space in a string with pattern.\n"
               << "37. Longest palindrome substring in a string.\n"
               << "38. KMP string search algorithm.\n"
-              << "39. Reverse C-string.\n";
+              << "39. Reverse C-string.\n"
+              << "40. Greatest Common Divider.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -219,6 +220,10 @@ int main()
         
         case 39:
             TEST_str_reverse();
+	        break;
+        
+        case 40:
+            TEST_gcd();
 	        break;
 
         default:

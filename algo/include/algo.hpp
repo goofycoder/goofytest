@@ -82,6 +82,9 @@ void removeSpaceInStr_inPlace(char *str);
  ************************************************/
 bool isPrime(const int &num);
 
+// Greatest Common Divider
+int gcd(int a, int b);
+
 bool isPalindromeNum(int x);
 
 // Fibonacci number
@@ -225,6 +228,8 @@ void TEST_str_permute();
 void TEST_split_list();         
 
 void TEST_isqrt();              // integer square root      
+
+void TEST_gcd();                // greatest common divider  
 
 void TEST_ugly_number();        // compute the n_th ugly number         
 void TEST_longestPalindrome();  // longest palindrome substring in a string
