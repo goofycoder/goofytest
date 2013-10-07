@@ -1,7 +1,26 @@
 /* 
     Greatest Common Divider
+
+    Euclid's algorithm:
+        gcd(a,b) = 
+            gcd(a,0) = a;
+            gcd(a,b) = gcd(b, a%b);
+
+    If a>0 and b>0: 
+        gcd(a,b) :
+            gcd(a,a) = a
+            gcd(a,b) = gcd(a-b,b)       // if a>b
+            gcd(a,b) = gcd(a, b-a)      // if b>a
  */
 #include <iostream>
+
+int gcd_e(int a, int b)
+{
+    if (b==0)
+        return a;
+
+    return gcd_e(b, a%b);
+}
 
 int gcd(int a, int b) 
 {
@@ -32,4 +51,5 @@ void TEST_gcd()
     std::cin >> b;
 
     std::cout << "The greatest common divider is " << gcd(a,b) << "\n";
+    std::cout << "The greatest common divider (Euclid's algorithm) is " << gcd_e(a,b) << "\n";
 }

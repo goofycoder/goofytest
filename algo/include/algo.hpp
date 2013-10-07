@@ -84,6 +84,7 @@ bool isPrime(const int &num);
 
 // Greatest Common Divider
 int gcd(int a, int b);
+int gcd_e(int a, int b);    // Euclid's algorithm
 
 bool isPalindromeNum(int x);
 
