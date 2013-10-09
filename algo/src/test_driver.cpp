@@ -53,7 +53,8 @@ int main()
               << "37. Longest palindrome substring in a string.\n"
               << "38. KMP string search algorithm.\n"
               << "39. Reverse C-string.\n"
-              << "40. Greatest Common Divider.\n";
+              << "40. Greatest Common Divider.\n"
+              << "41. Regex match.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -224,6 +225,10 @@ int main()
         
         case 40:
             TEST_gcd();
+	        break;
+        
+        case 41:
+            TEST_regex();
 	        break;
 
         default:

@@ -19,6 +19,7 @@ set(source_files
     str_kmp.cpp
     str_reverse.cpp
     edit_distance.cpp
+    regex.cpp
     fibo.cpp
     prime.cpp
     isqrt.cpp

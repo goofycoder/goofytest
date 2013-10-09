@@ -74,6 +74,9 @@ int editDistanceInt(const char *s, int len_s, const char *t, int len_t);
 
 // remove space in the string (in place)
 void removeSpaceInStr_inPlace(char *str);
+
+// regular expression strings match
+bool regex_match(const char *s, const char *p);
 /************************************************/
 
 
@@ -233,7 +236,8 @@ void TEST_isqrt();              // integer square root
 void TEST_gcd();                // greatest common divider  
 
 void TEST_ugly_number();        // compute the n_th ugly number         
+
 void TEST_longestPalindrome();  // longest palindrome substring in a string
 
-
+void TEST_regex();              // regular expression match
 #endif  // ALGO_H
