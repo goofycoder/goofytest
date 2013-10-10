@@ -7,6 +7,7 @@
 
 typedef int Item;
 
+
 /************************************************
  ********* Commonly used APIs *******************
  ************************************************/
@@ -158,7 +159,6 @@ bool powerOfTwo(int n);
 bool opposite_sign(int x, int y);
 /************************************************/
 
-
 /************************************************
  ********* Unit Test APIS ***********************
  ************************************************/
@@ -240,4 +240,6 @@ void TEST_ugly_number();        // compute the n_th ugly number
 void TEST_longestPalindrome();  // longest palindrome substring in a string
 
 void TEST_regex();              // regular expression match
+
+void TEST_circular_sorted_list();
 #endif  // ALGO_H

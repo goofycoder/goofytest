@@ -54,7 +54,8 @@ int main()
               << "38. KMP string search algorithm.\n"
               << "39. Reverse C-string.\n"
               << "40. Greatest Common Divider.\n"
-              << "41. Regex match.\n";
+              << "41. Regex match.\n"
+              << "42. Circular list.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -229,6 +230,10 @@ int main()
         
         case 41:
             TEST_regex();
+	        break;
+        
+        case 42:
+            TEST_circular_sorted_list();
 	        break;
 
         default:

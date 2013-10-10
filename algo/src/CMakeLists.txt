@@ -24,6 +24,7 @@ set(source_files
     prime.cpp
     isqrt.cpp
     linked_list_api.cpp
+    circular_sorted_list.cpp
     reverse.cpp
     reservior_sampling.cpp
     rejection_sampling.cpp
