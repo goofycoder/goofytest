@@ -18,6 +18,7 @@ set(source_files
     str_longestPalindrome.cpp
     str_kmp.cpp
     str_reverse.cpp
+    str_longest_substr_no_dup
     edit_distance.cpp
     regex.cpp
     fibo.cpp

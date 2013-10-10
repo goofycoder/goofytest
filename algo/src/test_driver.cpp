@@ -55,7 +55,8 @@ int main()
               << "39. Reverse C-string.\n"
               << "40. Greatest Common Divider.\n"
               << "41. Regex match.\n"
-              << "42. Circular list.\n";
+              << "42. Circular list.\n"
+              << "43. Longest substring without dup character.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -234,6 +235,10 @@ int main()
         
         case 42:
             TEST_circular_sorted_list();
+	        break;
+        
+        case 43:    
+            TEST_longest_substr_no_dup();
 	        break;
 
         default:
