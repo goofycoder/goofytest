@@ -81,9 +81,11 @@ public:
 
     Node*   getInorderSuccessor(Node* p) const;
 
-    Node*   mirror() const;     // get the mirror image of a BST
+    Node*   mirror() const;             // get the mirror image of a BST
    
-    Node*   root;
+    Node*   convertToDoublyList();      // convert BST to doubly-linked list
+
+    Node*   root;                       // TO-DO: should not be public 
 
 private:
 
@@ -144,6 +146,8 @@ private:
     Node*   _getParent(Node* r, const Node* p) const;
     
     Node*   _mirror(Node *p) const;
+    
+    void    _convertToDoublyList(Node *p, Node *& prev, Node *& head);
 };
 
 #endif /* BST_H_ */

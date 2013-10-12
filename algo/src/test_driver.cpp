@@ -56,7 +56,8 @@ int main()
               << "40. Greatest Common Divider.\n"
               << "41. Regex match.\n"
               << "42. Circular list.\n"
-              << "43. Longest substring without dup character.\n";
+              << "43. Longest substring without dup character.\n"
+              << "44. [BST]: convert BST to circular doubly-linked-list.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -240,6 +241,10 @@ int main()
         case 43:    
             TEST_longest_substr_no_dup();
 	        break;
+
+        case 44:
+            TEST_convertToDoublyList();
+            break;
 
         default:
             std::cout << "Invalid option.";

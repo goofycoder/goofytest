@@ -214,6 +214,7 @@ void TEST_prettyprintBST();
 void TEST_BST_API();            // getParent(), getNumOfChild()
 void TEST_BST_deleteNode();
 void TEST_bst_mirror();         // test the mirror of BST
+void TEST_convertToDoublyList();    // convert BST to circular doubly-linked list
 
 void TEST_min_k();              // top-k heap algorithm
         

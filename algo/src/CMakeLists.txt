@@ -40,6 +40,7 @@ set(source_files
     bst_prettyprint.cpp
     bst_delete_node.cpp
     bst_mirror.cpp
+    bst_to_doubly_list.cpp
     top_k.cpp
     slide_window_max.cpp
     maxheap.cpp
