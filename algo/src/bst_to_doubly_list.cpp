@@ -2,13 +2,17 @@
     Given an ordered binary tree, returns a sorted circular
   doubly-linked list. The conversion is done in-place.
  
+    Idea: 'left' pointer in Node struct means "prev" ptr.
+          'right' pointer in Node struct means "next" ptr.
+
     Algorithm:
         - Recusion: similar to in-order traversal
         - left-doubly-list -> the node -> right-doubly-list
 
-    Caution: (TO-DO)
-        - coredump generated with _convertToDoublyList() call
-            * it's because the in-place conversion messed up the deallocator of BST
+    Note:
+        Because of in-place convertion from BST to doubly-linked-list.
+    The deallocation of BST cannot be called. We need to manually free 
+    the doubly-linked list.
 */
 #include <iostream>
 #include "bst.hpp"
@@ -28,6 +32,7 @@ void BST::_convertToDoublyList(Node *p, Node *& prev, Node *& head)
     if (!p) 
         return; 
 
+    // left substree
     _convertToDoublyList(p->left, prev, head);
 
     // current node's left points to previous node
@@ -47,6 +52,8 @@ void BST::_convertToDoublyList(Node *p, Node *& prev, Node *& head)
 
     // updates previous node
     prev = p;
+
+    // right substree
     _convertToDoublyList(right, prev, head);
 }
 
@@ -69,4 +76,13 @@ void TEST_convertToDoublyList()
         p = p->right;
     }
     std::cout << "\n";
+
+    // free the list
+    for (int i=0; i<len; i++) {
+        Node *d = p;
+        p=p->right;
+        delete d;
+    }
+
+    bst.root = NULL;
 }
