@@ -83,6 +83,11 @@ bool regex_match(const char *s, const char *p);
 std::string longest_substr_no_dup(std::string s,
                                   int& max_left, 
                                   int& max_right);
+
+// the minimum substring (window) in string S 
+// that contains all chars in string T
+bool min_cover_window(std::string& s, std::string& t,
+                      int& w_left, int& w_right);
 /************************************************/
 
 
@@ -250,4 +255,6 @@ void TEST_regex();              // regular expression match
 void TEST_circular_sorted_list();
 
 void TEST_longest_substr_no_dup();
+
+void TEST_min_cover_window();
 #endif  // ALGO_H

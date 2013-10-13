@@ -21,6 +21,7 @@ set(source_files
     str_longest_substr_no_dup
     edit_distance.cpp
     regex.cpp
+    min_cover_window.cpp
     fibo.cpp
     prime.cpp
     isqrt.cpp

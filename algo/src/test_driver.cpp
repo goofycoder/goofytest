@@ -57,7 +57,8 @@ int main()
               << "41. Regex match.\n"
               << "42. Circular list.\n"
               << "43. Longest substring without dup character.\n"
-              << "44. [BST]: convert BST to circular doubly-linked-list.\n";
+              << "44. [BST]: convert BST to circular doubly-linked-list.\n"
+              << "45. [STR]: minimum window(substring) in S contains all chars in string T.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -244,6 +245,10 @@ int main()
 
         case 44:
             TEST_convertToDoublyList();
+            break;
+        
+        case 45:
+            TEST_min_cover_window();
             break;
 
         default:
