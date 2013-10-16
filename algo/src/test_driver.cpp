@@ -58,7 +58,8 @@ int main()
               << "42. Circular list.\n"
               << "43. Longest substring without dup character.\n"
               << "44. [BST]: convert BST to circular doubly-linked-list.\n"
-              << "45. [STR]: minimum window(substring) in S contains all chars in string T.\n";
+              << "45. [STR]: minimum window(substring) in S contains all chars in string T.\n"
+              << "46. Print all combination of balanced parenthesis.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -249,6 +250,10 @@ int main()
         
         case 45:
             TEST_min_cover_window();
+            break;
+        
+        case 46:
+            TEST_print_parenthesis();
             break;
 
         default:

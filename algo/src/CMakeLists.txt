@@ -53,6 +53,7 @@ set(source_files
     rectangle_overlap.cpp
     intersection_sorted_array.cpp
     unique_path.cpp
+    parenthesis.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp

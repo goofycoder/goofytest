@@ -147,6 +147,9 @@ void intersectionOfSortedArray(std::vector<int> &v1,
 
 // number of unique paths from upper-left to bottom-right in the table
 int unique_path(int** table, int width, int height);
+
+// print all combination of balanced parenthesis
+void printParenthesis(int n);
 /************************************************/
 
 
@@ -257,4 +260,6 @@ void TEST_circular_sorted_list();
 void TEST_longest_substr_no_dup();
 
 void TEST_min_cover_window();
+
+void TEST_print_parenthesis();
 #endif  // ALGO_H
