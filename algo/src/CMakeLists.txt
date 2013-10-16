@@ -32,6 +32,7 @@ set(source_files
     rejection_sampling.cpp
     ugly_number.cpp
     gcd.cpp
+    divide_and_mod.cpp
     max_sum.cpp
     rotateStr.cpp
     reverseBit.cpp

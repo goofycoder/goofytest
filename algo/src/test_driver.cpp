@@ -59,7 +59,8 @@ int main()
               << "43. Longest substring without dup character.\n"
               << "44. [BST]: convert BST to circular doubly-linked-list.\n"
               << "45. [STR]: minimum window(substring) in S contains all chars in string T.\n"
-              << "46. Print all combination of balanced parenthesis.\n";
+              << "46. Print all combination of balanced parenthesis.\n"
+              << "47. Compute Divide and Mod without division.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -254,6 +255,10 @@ int main()
         
         case 46:
             TEST_print_parenthesis();
+            break;
+        
+        case 47:
+            TEST_divide_and_mod();
             break;
 
         default:

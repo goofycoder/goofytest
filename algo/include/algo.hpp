@@ -123,6 +123,10 @@ int rand7();
 /* Ugly numbers are numbers whose only prime factors are 2, 3 or 5. 
    Get the n-th ugly number. */
 unsigned ugly_number(unsigned n);       
+
+void divide_and_mod(int a, int b,
+                    int& q,     // output: quotient 
+                    int& r);    // output: remainder
 /************************************************/
 
 
@@ -262,4 +266,6 @@ void TEST_longest_substr_no_dup();
 void TEST_min_cover_window();
 
 void TEST_print_parenthesis();
+
+void TEST_divide_and_mod();
 #endif  // ALGO_H
