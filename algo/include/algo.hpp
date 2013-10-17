@@ -154,6 +154,9 @@ int unique_path(int** table, int width, int height);
 
 // print all combination of balanced parenthesis
 void printParenthesis(int n);
+
+// displays the first no-dup char in char stream
+void stream_no_dup_char(std::string str);
 /************************************************/
 
 
@@ -268,4 +271,6 @@ void TEST_min_cover_window();
 void TEST_print_parenthesis();
 
 void TEST_divide_and_mod();
+
+void TEST_stream_no_dup_char();
 #endif  // ALGO_H

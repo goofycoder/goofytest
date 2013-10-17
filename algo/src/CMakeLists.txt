@@ -18,7 +18,8 @@ set(source_files
     str_longestPalindrome.cpp
     str_kmp.cpp
     str_reverse.cpp
-    str_longest_substr_no_dup
+    str_longest_substr_no_dup.cpp
+    stream_no_dup_char.cpp
     edit_distance.cpp
     regex.cpp
     min_cover_window.cpp
@@ -26,6 +27,7 @@ set(source_files
     prime.cpp
     isqrt.cpp
     linked_list_api.cpp
+    dlist.cpp
     circular_sorted_list.cpp
     reverse.cpp
     reservior_sampling.cpp

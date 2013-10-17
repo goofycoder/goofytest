@@ -60,7 +60,8 @@ int main()
               << "44. [BST]: convert BST to circular doubly-linked-list.\n"
               << "45. [STR]: minimum window(substring) in S contains all chars in string T.\n"
               << "46. Print all combination of balanced parenthesis.\n"
-              << "47. Compute Divide and Mod without division.\n";
+              << "47. Compute Divide and Mod without division.\n"
+              << "48. Display the first no-dup char in char stream.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -259,6 +260,10 @@ int main()
         
         case 47:
             TEST_divide_and_mod();
+            break;
+        
+        case 48:
+            TEST_stream_no_dup_char();
             break;
 
         default:
