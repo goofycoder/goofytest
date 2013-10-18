@@ -127,6 +127,12 @@ unsigned ugly_number(unsigned n);
 void divide_and_mod(int a, int b,
                     int& q,     // output: quotient 
                     int& r);    // output: remainder
+
+/* Given the target 'sum', print all the combinations from input array
+ *  that sums up to 'sum'.
+ */
+void sum_subset(int sum, int* input, int len);
+
 /************************************************/
 
 
@@ -273,4 +279,6 @@ void TEST_print_parenthesis();
 void TEST_divide_and_mod();
 
 void TEST_stream_no_dup_char();
+
+void TEST_sum_subset();
 #endif  // ALGO_H

@@ -46,6 +46,7 @@ set(source_files
     bst_mirror.cpp
     bst_to_doubly_list.cpp
     top_k.cpp
+    sum_subset.cpp
     slide_window_max.cpp
     maxheap.cpp
     bit_swap.cpp
