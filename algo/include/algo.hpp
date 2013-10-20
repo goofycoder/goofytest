@@ -57,6 +57,9 @@ void strPermute_NoDup(std::string str);
 // KMP algorithm: find string w in string s
 int string_kmp(std::string s, std::string w);
 
+// Robin-Karp algorithm: find 'pattern' string in string 'str';
+bool str_search_robin_karp(std::string str, std::string pattern);
+
 /* In place C-string reverse */
 void str_reverse(char* str, int len);
 
@@ -286,4 +289,6 @@ void TEST_stream_no_dup_char();
 void TEST_sum_subset();
 
 void TEST_fast_pow();
+
+void TEST_str_search_robin_karp();
 #endif  // ALGO_H

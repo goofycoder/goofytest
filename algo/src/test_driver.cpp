@@ -61,9 +61,10 @@ int main()
               << "45. [STR]: minimum window(substring) in S contains all chars in string T.\n"
               << "46. Print all combination of balanced parenthesis.\n"
               << "47. Compute Divide and Mod without division.\n"
-              << "48. Display the first no-dup char in char stream.\n"
+              << "48. [STR] Display the first no-dup char in char stream.\n"
               << "49. Given a target number, print all sum combinations to target.\n"
-              << "50. Fast pow(m,n).\n";
+              << "50. [NUM] Fast pow(m,n).\n"
+              << "51. [STR] String pattern search using Robin Karp algorithm.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -274,6 +275,10 @@ int main()
         
         case 50:
             TEST_fast_pow();
+            break;
+        
+        case 51:
+            TEST_str_search_robin_karp();
             break;
 
         default:
