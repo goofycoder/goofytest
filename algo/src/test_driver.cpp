@@ -62,7 +62,8 @@ int main()
               << "46. Print all combination of balanced parenthesis.\n"
               << "47. Compute Divide and Mod without division.\n"
               << "48. Display the first no-dup char in char stream.\n"
-              << "49. Given a target number, print all sum combinations to target.\n";
+              << "49. Given a target number, print all sum combinations to target.\n"
+              << "50. Fast pow(m,n).\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -269,6 +270,10 @@ int main()
         
         case 49:
             TEST_sum_subset();
+            break;
+        
+        case 50:
+            TEST_fast_pow();
             break;
 
         default:

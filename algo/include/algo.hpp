@@ -96,6 +96,9 @@ bool min_cover_window(std::string& s, std::string& t,
  ************************************************/
 bool isPrime(const int &num);
 
+// fast pow(m,n)
+int fast_pow(int m, int n);
+
 // Greatest Common Divider
 int gcd(int a, int b);
 int gcd_e(int a, int b);    // Euclid's algorithm
@@ -281,4 +284,6 @@ void TEST_divide_and_mod();
 void TEST_stream_no_dup_char();
 
 void TEST_sum_subset();
+
+void TEST_fast_pow();
 #endif  // ALGO_H

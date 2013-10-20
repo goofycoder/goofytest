@@ -58,6 +58,7 @@ set(source_files
     intersection_sorted_array.cpp
     unique_path.cpp
     parenthesis.cpp
+    fast_expo.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp
