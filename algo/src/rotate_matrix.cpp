@@ -3,7 +3,34 @@
 
     Algorithm:
        Rotate the matrix by layers  (like onion)
-
+       
+       1 2 3      7 4 1
+       4 5 6  ==> 8 5 2
+       7 8 9      9 6 3
+     
+     Step 1:
+        Outer layer (layer 0)
+        1 2 3        4 corners:  1   3                    
+        4   6   ==>                         
+        7 8 9                    7   9                      
+ 
+    ==>  buffer = 1; update upper-left corner
+        ->7     3
+            
+          7     9 
+ 
+    ==>  update bottom-left corner
+          7     3
+       
+        ->9     9
+ 
+    ==> update bottom-right corner
+        update upper-right corner (with buffer) 
+          7    1
+           
+          9    3
+    ==> outermost layer update is completed
+ 
     Space Complexity:
        Only 4 bytes (int) additional memory (buffer as below) is needed.
  */
