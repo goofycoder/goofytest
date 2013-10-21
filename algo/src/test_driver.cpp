@@ -65,7 +65,8 @@ int main()
               << "49. Given a target number, print all sum combinations to target.\n"
               << "50. [NUM] Fast pow(m,n).\n"
               << "51. [STR] String pattern search using Robin Karp algorithm.\n"
-              << "52. [MTX] Matrix rotation (Rotate N*N matrix 90 degree clockwise).\n";
+              << "52. [MTX] Matrix rotation (Rotate N*N matrix 90 degree clockwise).\n"
+              << "53. [MTX] Matrix: set entire row/column to zero if there is one element in row/column is zero.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -284,6 +285,10 @@ int main()
 
         case 52:
             TEST_rotate_matrix();
+            break;
+        
+        case 53:
+            TEST_matrix_set_zero();
             break;
         
         default:

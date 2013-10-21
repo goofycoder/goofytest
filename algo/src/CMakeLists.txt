@@ -61,6 +61,7 @@ set(source_files
     parenthesis.cpp
     fast_expo.cpp
     rotate_matrix.cpp
+    matrix_set_zero.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp

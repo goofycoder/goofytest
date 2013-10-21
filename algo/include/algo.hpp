@@ -184,6 +184,9 @@ void readMatrixFromFile(std::string filename, int**& matrix, int row, int col);
 void printMatrix(int** matrix, int row, int col);
 
 void rotate_matrix_clockwise(int**& matrix, int n, int degree);
+
+// Algorithm that set entire row and column is set to 0 if an element in an MxN matrix is 0 
+void matrix_set_zero(int**& matrix, int row, int col);
 /************************************************/
 
 
@@ -308,4 +311,6 @@ void TEST_fast_pow();
 void TEST_str_search_robin_karp();
 
 void TEST_rotate_matrix();
+
+void TEST_matrix_set_zero();
 #endif  // ALGO_H
