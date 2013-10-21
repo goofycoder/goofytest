@@ -5,8 +5,6 @@
 #include <vector>
 #include <string>
 
-typedef int Item;
-
 
 /************************************************
  ********* Commonly used APIs *******************
@@ -116,6 +114,8 @@ int fibo_nr(const int&n);   // non-recursive version
 unsigned isqrt(unsigned num);   
 
 /* reservior sampling */
+typedef int Item;
+
 void reservior_sample(const Item* stream, const unsigned& stream_len,
                       Item* samples, unsigned sample_size);
 void display_samples(const Item* samples, unsigned sample_size);
@@ -169,6 +169,21 @@ void printParenthesis(int n);
 
 // displays the first no-dup char in char stream
 void stream_no_dup_char(std::string str);
+/************************************************/
+
+
+/************************************************
+ *********** Matrix-related algorithm ***********
+ ************************************************/
+void alloc_matrix(int**& matrix, int row, int col);
+
+void free_matrix(int**& matrix, int row, int col);
+
+void readMatrixFromFile(std::string filename, int**& matrix, int row, int col);
+
+void printMatrix(int** matrix, int row, int col);
+
+void rotate_matrix_clockwise(int**& matrix, int n, int degree);
 /************************************************/
 
 
@@ -291,4 +306,6 @@ void TEST_sum_subset();
 void TEST_fast_pow();
 
 void TEST_str_search_robin_karp();
+
+void TEST_rotate_matrix();
 #endif  // ALGO_H

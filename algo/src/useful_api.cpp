@@ -91,3 +91,48 @@ void print_2D_array(int** table, const int width, const int height)
 
     std::cout << "\n";
 }
+
+/* ==================== Matrix-related APIs ========================*/
+void alloc_matrix(int**& matrix, int row, int col)
+{
+    matrix = new int*[row];
+
+    for(int i=0; i<row; i++) 
+        matrix[i] = new int[col];
+}
+
+void free_matrix(int**& matrix, int row, int col)
+{
+    for(int i=0; i<row; i++)
+        delete[] matrix[i];
+
+    delete[] matrix;
+}
+
+void readMatrixFromFile(std::string filename, int**& matrix, int row, int col)
+{
+    std::ifstream f_in(filename);
+    if (!f_in) {
+        std::cout << "Cannot open input file.\n";
+        return;
+    }
+
+    for(int i=0; i<row; i++) {
+        for(int j=0; j<col; j++) {
+            f_in >> matrix[i][j];
+        }
+    }
+
+    f_in.close();
+}
+
+void printMatrix(int** matrix, int row, int col)
+{
+    for(int i=0; i<row; i++) {
+        for(int j=0; j<col; j++) {
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << "\n";
+    }
+}
+/* =================================================================*/

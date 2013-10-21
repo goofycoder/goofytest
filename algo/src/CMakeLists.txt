@@ -60,6 +60,7 @@ set(source_files
     unique_path.cpp
     parenthesis.cpp
     fast_expo.cpp
+    rotate_matrix.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp

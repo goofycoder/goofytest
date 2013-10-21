@@ -64,7 +64,8 @@ int main()
               << "48. [STR] Display the first no-dup char in char stream.\n"
               << "49. Given a target number, print all sum combinations to target.\n"
               << "50. [NUM] Fast pow(m,n).\n"
-              << "51. [STR] String pattern search using Robin Karp algorithm.\n";
+              << "51. [STR] String pattern search using Robin Karp algorithm.\n"
+              << "52. [MTX] Matrix rotation (Rotate N*N matrix 90 degree clockwise).\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -281,6 +282,10 @@ int main()
             TEST_str_search_robin_karp();
             break;
 
+        case 52:
+            TEST_rotate_matrix();
+            break;
+        
         default:
             std::cout << "Invalid option.";
             break;
