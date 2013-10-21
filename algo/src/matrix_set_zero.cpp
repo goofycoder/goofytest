@@ -32,7 +32,8 @@ void matrix_set_zero(int**& matrix, int row, int col)
     for(int i=0; i<col; i++) {
         zero_col[i] = 0;
     }
-
+    
+    // 1st matrix traversal: mark the zero_row[] and zero_col[]
     for(int i=0; i<row; i++) {
         for(int j=0; j<col; j++) {
             if (matrix[i][j] == 0) {            
@@ -41,7 +42,8 @@ void matrix_set_zero(int**& matrix, int row, int col)
             }
         }
     }
-
+    
+    // 2nd matrix traversal: set the corresponding row/column to 0
     for(int i=0; i<row; i++) {
         for(int j=0; j<col; j++) {
             if (zero_row[i] == 1 || zero_col[j] == 1) {
