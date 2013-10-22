@@ -324,4 +324,6 @@ void TEST_rotate_matrix();
 void TEST_matrix_set_zero();
 
 void TEST_str_remove_dup_char();
+
+void TEST_unordered_map();
 #endif  // ALGO_H

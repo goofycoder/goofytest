@@ -67,7 +67,8 @@ int main()
               << "51. [STR] String pattern search using Robin Karp algorithm.\n"
               << "52. [MTX] Matrix rotation (Rotate N*N matrix 90 degree clockwise).\n"
               << "53. [MTX] Matrix: set entire row/column to zero if there is one element in row/column is zero.\n"
-              << "54. [STR] Remove duplicate char in a string (in place).\n";
+              << "54. [STR] Remove duplicate char in a string (in place).\n"
+              << "55. [STL] Unordered map.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -294,6 +295,10 @@ int main()
         
         case 54:
             TEST_str_remove_dup_char();
+            break;
+        
+        case 55:
+            TEST_unordered_map();
             break;
         
         default:
