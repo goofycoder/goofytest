@@ -53,7 +53,7 @@ Node* buildListFromArray(const int *array, unsigned len)
         tail = n;     
     }
 
-	return head;
+    return head;
 }
 
 Node* getTail(Node *p) 
