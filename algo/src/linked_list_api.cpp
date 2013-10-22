@@ -29,7 +29,7 @@ void deleteList(Node *p)
         Node* toDelete = p;
         p = p->next;
                           
-        free(toDelete);
+        delete toDelete;
     }
 }
 
@@ -98,15 +98,41 @@ Node* getNthNode(Node *p, int idx)
 void deleteNthNode(Node*& p, int idx) 
 {
     Node *toDelete = getNthNode(p, idx);
+    if (!toDelete) {
+        std::cout << "DeleteNthNode() fails. N_th node is NULL.\n";
+        return;
+    }
 
     if (toDelete == p) {    // delete head node
         p = p->next;
+        delete toDelete;
     } else {
         Node *prev = getPrevNode(p, toDelete);
         prev->next = toDelete->next;
     }
+}
 
-    delete toDelete;
+/* 
+    Input: Only a pointer to a node on the list (do not need head ptr)
+        NOTE: p cannot be the head or tail node       
+ */
+void deleteNode(Node*& p)
+{   
+    if (!p) {
+        std::cout << "Delete node fails since the node ptr to delete is NULL.\n";
+        return;    
+    }
+
+    Node *d = p->next;
+    if (!d) {           // cannot be tail node 
+        std::cout << "Does not support the deletion of tail node.\n";
+        return;
+    }
+
+    p->data = d->data;
+    p->next = d->next;
+
+    delete d;
 }
 
 Node* getPrevNode(Node *head, Node *p)
@@ -127,19 +153,31 @@ void TEST_linked_list()
 {
     std::cout << "\n *** TEST for linked list APIs***\n";
     std::cout << "\n * TEST: delete N_th node in linked list\n";
-    int arr[] = {2,3,1,4};
+    int arr[] = {2,6,3,1,4,5};
     unsigned len = sizeof(arr)/sizeof(int);
     Node *p = buildListFromArray(arr, len);
 
     int idx;
-    std::cout << "Enter the idx of the node to delete[1, " << len << "]: ";
+    std::cout << "Enter the idx of the node to delete [1, " << len << "]: ";
     std::cin >> idx;  
 
 	std::cout << "\nOriginal list: \n";
 	showList(p);
-
+    
     deleteNthNode(p, idx);
-	
+
     std::cout << "\nThe list after deletion: \n";
 	showList(p);
+
+    std::cout << "Enter the idx of the node to delete (cannot be head or tail node) [2, " << len-2 << "]: ";
+    std::cin >> idx;  
+
+    Node* d =  getNthNode(p, idx); 
+    deleteNode(d);
+    
+    std::cout << "\nThe list after deletion: \n";
+	showList(p);
+
+
+    deleteList(p);
 }

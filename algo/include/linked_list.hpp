@@ -20,6 +20,10 @@ Node* getNthNode(Node *p, int n);
 
 void deleteNthNode(Node*& p, int idx);
 
+/*  Input: a pointer to a node on the list (do not need head ptr)
+        NOTE: p cannot be the head or tail node   */
+void deleteNode(Node*& p);
+
 Node* getPrevNode(Node *head, Node *p);
 
 // get the length of the list
