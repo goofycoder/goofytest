@@ -21,6 +21,7 @@ set(source_files
     str_reverse.cpp
     str_longest_substr_no_dup.cpp
     str_remove_dup.cpp
+    str_rotate.cpp
     stream_no_dup_char.cpp
     edit_distance.cpp
     regex.cpp
@@ -38,7 +39,6 @@ set(source_files
     gcd.cpp
     divide_and_mod.cpp
     max_sum.cpp
-    rotateStr.cpp
     reverseBit.cpp
     bst.cpp
     bst_api.cpp

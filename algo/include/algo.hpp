@@ -48,6 +48,11 @@ void printLCS(char** b, const std::string& s, int i, int j);
 // Example: "abcde" ==> "cdeab"
 void rotateStr(std::string& str, const unsigned i);
 
+// Check whether string s1 is the rotation of string s2
+// Example:
+//      s1: abcd    s2: bcda    ==> return TRUE
+bool isRotation(std::string& s1, std::string& s2);
+
 // string permutation
 void strPermute(std::string str);
 void strPermute_NoDup(std::string str);
