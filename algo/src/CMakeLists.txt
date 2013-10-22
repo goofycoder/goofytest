@@ -20,6 +20,7 @@ set(source_files
     str_search_robin_karp.cpp
     str_reverse.cpp
     str_longest_substr_no_dup.cpp
+    str_remove_dup.cpp
     stream_no_dup_char.cpp
     edit_distance.cpp
     regex.cpp

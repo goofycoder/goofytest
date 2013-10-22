@@ -89,6 +89,10 @@ std::string longest_substr_no_dup(std::string s,
 // that contains all chars in string T
 bool min_cover_window(std::string& s, std::string& t,
                       int& w_left, int& w_right);
+
+// Remove the duplicated char in a char string.
+// Example: "abcbcd" ==> "abcd"
+void str_remove_dup_char(char*& str, int len);
 /************************************************/
 
 
@@ -313,4 +317,6 @@ void TEST_str_search_robin_karp();
 void TEST_rotate_matrix();
 
 void TEST_matrix_set_zero();
+
+void TEST_str_remove_dup_char();
 #endif  // ALGO_H
