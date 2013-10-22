@@ -53,7 +53,6 @@ bool isRotation(std::string& s1, std::string& s2)
 
 void TEST_rotateStr()
 {
-#if 0
     std::string str;
 
     std::cout << "\n *** TEST for String rotation***\n"
@@ -67,7 +66,6 @@ void TEST_rotateStr()
     std::cout << "String before rotation: " << str << "\n";
     rotateStr(str, pos); 
     std::cout << "String after rotation: " << str << "\n";
-#endif
 
     std::cout << "TEST: whether string s1 is a rotation of string s2.\n";
 
