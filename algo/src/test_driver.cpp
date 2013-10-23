@@ -37,7 +37,8 @@ int main()
               << "26. [BST] Misc APIs: \n \
                     \t1) get numOfChild of a node.\n \
                     \t2) get Parent node. \n  \
-                    \t3) getInorderSuccessor node\n"
+                    \t3) getInorderSuccessor node\n \
+                    \t4) Check whether the tree is balanced.\n"
               << "27. [BST] delete a node from BST.\n"
               << "28. #unique paths from left-upper to bottom-right in table.\n"
               << "29. List all the permutation of a string. (both Dup and Non-Dup algorithm.\n"

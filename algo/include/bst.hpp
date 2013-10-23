@@ -85,6 +85,12 @@ public:
    
     Node*   convertToDoublyList();      // convert BST to doubly-linked list
 
+    bool    isBalanced() const;         // check whether the tree is balanced 
+                                        // (no two nodes has height diff larger than 1
+
+    int     getMinDepth() const;
+    int     getMaxDepth() const;
+    
     Node*   root;                       // TO-DO: should not be public 
 
 private:
@@ -148,6 +154,9 @@ private:
     Node*   _mirror(Node *p) const;
     
     void    _convertToDoublyList(Node *p, Node *& prev, Node *& head);
+
+    int     _getMinDepth(Node *p) const;
+    int     _getMaxDepth(Node *p) const;
 };
 
 #endif /* BST_H_ */

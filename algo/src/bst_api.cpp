@@ -98,11 +98,52 @@ Node* BST::getSmallestNode(Node *n) const
     return p;
 }
 
+/* A BST is balanced if no two nodes in the tree has the depth diff larger than one 
+ * Algorithm: Recursion
+ *      getMaxDepth() and getMinDepth()
+ */
+bool BST::isBalanced() const
+{
+    int min_depth = getMinDepth();
+    int max_depth = getMaxDepth();
+
+    if (max_depth-min_depth>1)
+        return false;
+    else
+        return true;
+}
+
+int BST::getMinDepth() const
+{
+    return _getMinDepth(root);
+}
+
+int BST::_getMinDepth(Node *p) const
+{
+    if (p==NULL)
+        return 0;
+
+    return (std::min(_getMinDepth(p->left), _getMinDepth(p->right))+1);
+}
+
+int BST::getMaxDepth() const
+{
+    return _getMaxDepth(root);
+}
+
+int BST::_getMaxDepth(Node *p) const
+{
+    if (p==NULL)
+        return 0;
+
+    return (std::max(_getMaxDepth(p->left), _getMaxDepth(p->right))+1);
+}
+
 void TEST_BST_API()
 {
     std::cout << "\n=========== Test BST APIs.==============\n";
     
-    int a[] = {1,2,3,4,5,6,7,8,9,10};
+    int a[] = {1,2,3,4,5,6,7,8,9,10, 11, 12};
 	int len = sizeof(a)/sizeof(a[0]);
 	BST bst = BST(a, len);
     bst.printPretty();
@@ -131,5 +172,16 @@ void TEST_BST_API()
         } else {
             std::cout << " Inorder successor node is NULL.\n";
         }
+    }
+
+    int min_depth = bst.getMinDepth();
+    int max_depth = bst.getMaxDepth();
+
+    std::cout << "\nmin depth: " << min_depth << " max depth: " << max_depth << "\n";
+
+    if (bst.isBalanced()) {
+        std::cout << "BST is balanced.\n";
+    } else {
+        std::cout << "BST is NOT balanced.\n";
     }
 }
