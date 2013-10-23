@@ -329,4 +329,6 @@ void TEST_unordered_map();
 
 void TEST_linked_list_add();
 
+void TEST_MyQ();
+
 #endif  // ALGO_H

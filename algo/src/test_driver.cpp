@@ -69,7 +69,8 @@ int main()
               << "53. [MTX] Matrix: set entire row/column to zero if there is one element in row/column is zero.\n"
               << "54. [STR] Remove duplicate char in a string (in place).\n"
               << "55. [STL] Unordered map.\n"
-              << "56. [LST] Add two linked list as two integers.\n";
+              << "56. [LST] Add two linked list as two integers.\n"
+              << "57. [STK] Implement Queue using two stacks.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -304,6 +305,10 @@ int main()
         
         case 56:
             TEST_linked_list_add();
+            break;
+        
+        case 57:
+            TEST_MyQ();
             break;
         
         default:

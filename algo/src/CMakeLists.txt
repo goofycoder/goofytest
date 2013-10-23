@@ -65,6 +65,7 @@ set(source_files
     rotate_matrix.cpp
     matrix_set_zero.cpp
     stl_unordered_map.cpp
+    queue_by_stack.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp
