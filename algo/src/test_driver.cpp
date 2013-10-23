@@ -70,7 +70,8 @@ int main()
               << "54. [STR] Remove duplicate char in a string (in place).\n"
               << "55. [STL] Unordered map.\n"
               << "56. [LST] Add two linked list as two integers.\n"
-              << "57. [STK] Implement Queue using two stacks.\n";
+              << "57. [STK] Implement Queue using two stacks.\n"
+              << "58. [STK] Sort a stack.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -309,6 +310,10 @@ int main()
         
         case 57:
             TEST_MyQ();
+            break;
+        
+        case 58:
+            TEST_sort_stack();
             break;
         
         default:

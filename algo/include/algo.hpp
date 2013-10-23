@@ -4,25 +4,35 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
+#include <stack>
 
 /************************************************
  ********* Commonly used APIs *******************
  ************************************************/
+// read array from file into vector
 void readArrayFromFile(const std::string& filename, std::vector<int>& v);
 
-std::string intToStr(int val);          // Convert an integer value to string
+// Convert an integer value to string
+std::string intToStr(int val);          
 
-int minOfThree(int a, int b, int c);    // minimum of three integer
+// minimum of three integer
+int minOfThree(int a, int b, int c);    
 
+// swap
 void swapInt(int& a, int& b);           // swap two integers
 void swapChar(char& a, char& b);        // swap two chars
 
-void printIntArray(const int *arr, int len);    // print integer array
+// print integer array
+void printIntArray(const int *arr, int len);   
 
-void printVector(const std::vector<int> &v);    // print vector
+// print vector
+void printVector(const std::vector<int> &v);    
 
-void print_2D_array(int** table, int width, int height);    // print 2D array
+// print STL stack
+void printStack(std::stack<int> stk);
+
+// print 2D array
+void print_2D_array(int** table, int width, int height);    
 /************************************************/
 
 
@@ -218,6 +228,13 @@ bool powerOfTwo(int n);
 bool opposite_sign(int x, int y);
 /************************************************/
 
+
+/************************************************
+ ********* Stack operation algorithm ************
+ ************************************************/
+std::stack<int> sort_stk(std::stack<int>& stk);
+/************************************************/
+
 /************************************************
  ********* Unit Test APIS ***********************
  ************************************************/
@@ -330,5 +347,7 @@ void TEST_unordered_map();
 void TEST_linked_list_add();
 
 void TEST_MyQ();
+
+void TEST_sort_stack();
 
 #endif  // ALGO_H

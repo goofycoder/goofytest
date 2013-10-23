@@ -92,6 +92,21 @@ void print_2D_array(int** table, const int width, const int height)
     std::cout << "\n";
 }
 
+void printStack(std::stack<int> stk)
+{
+    if (stk.empty()) {
+        std::cout << "Empty stack.\n";
+        return;
+    }   
+    
+    std::cout << "=== Stack Top ===\n";
+    while(!stk.empty()) {
+        std::cout << stk.top() <<"\n";
+        stk.pop();
+    }
+    std::cout << "=== Stack Base ===\n";
+}
+
 /* ==================== Matrix-related APIs ========================*/
 void alloc_matrix(int**& matrix, int row, int col)
 {
