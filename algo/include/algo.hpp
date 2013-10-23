@@ -326,4 +326,7 @@ void TEST_matrix_set_zero();
 void TEST_str_remove_dup_char();
 
 void TEST_unordered_map();
+
+void TEST_linked_list_add();
+
 #endif  // ALGO_H

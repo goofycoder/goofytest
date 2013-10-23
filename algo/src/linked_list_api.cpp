@@ -19,6 +19,16 @@ void showList(Node* p)
     std::cout << std::endl;
 }
 
+void insertAtTail(Node*& list, Node* p)
+{
+    if (list==NULL) {
+        list = p;
+        return;
+    }
+
+    Node* tail = getTail(list);
+    tail->next = p;
+}
 
 void deleteList(Node *p)
 {
@@ -32,7 +42,6 @@ void deleteList(Node *p)
         delete toDelete;
     }
 }
-
 
 Node* buildListFromArray(const int *array, unsigned len)
 {

@@ -11,6 +11,13 @@ typedef struct node {
 Node* 
 buildListFromArray(const int *array, unsigned len);
 
+/* Insert the node at the tail. */
+void insertAtTail(Node*& head, Node* p);
+
+void showList(Node *p);
+
+void deleteList(Node *p);
+
 // get the pointer to the tail node
 Node* getTail(Node *p);
 
@@ -30,10 +37,6 @@ Node* getPrevNode(Node *head, Node *p);
 // return 0 if empty list
 int getLengthOfList(Node *p);
 
-void showList(Node *p);
-
-void deleteList(Node *p);
-
 // reverse the singly-linked list
 // return the head pointer to the reversed list
 Node* reverse(Node *);
@@ -50,5 +53,16 @@ void advance_slow(Node*& p);
 // the first list starts at head
 // the second list starts at split.
 void split_linked_list(Node* head, Node*& split);
+
+// add two linked lists as integers
+Node* linked_list_add(Node* m, Node* n);
+
+/* Convert integer to list
+   Example: 123 ==> 3->2->1 */
+Node* int_to_list(int num);
+
+/* Convert list to integer
+   Example: 3->2->1 ==> 123 */
+int list_to_int(Node *p);
 
 #endif // LINKED_LIST_H

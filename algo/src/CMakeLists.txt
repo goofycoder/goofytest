@@ -55,6 +55,7 @@ set(source_files
     bit_op.cpp
     list_loop.cpp
     split_linked_list.cpp
+    linked_list_add.cpp
     min_stack.cpp
     rectangle_overlap.cpp
     intersection_sorted_array.cpp
