@@ -80,6 +80,16 @@ void printVector(const std::vector<int> &v)
     std::cout << "\n";
 }
 
+bool isMember(const std::vector<int> &v, int d)
+{
+    for(int i=0; i<v.size(); i++) {
+        if (v[i] == d)
+            return true;
+    }
+
+    return false;
+}
+
 void print_2D_array(int** table, const int width, const int height)
 {
     for(int i=0; i<height; i++) {

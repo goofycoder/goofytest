@@ -72,7 +72,8 @@ int main()
               << "55. [STL] Unordered map.\n"
               << "56. [LST] Add two linked list as two integers.\n"
               << "57. [STK] Implement Queue using two stacks.\n"
-              << "58. [STK] Sort a stack.\n";
+              << "58. [STK] Sort a stack.\n"
+              << "59. [GRH] Undirected Graph.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -315,6 +316,10 @@ int main()
         
         case 58:
             TEST_sort_stack();
+            break;
+        
+        case 59:
+            TEST_undirected_graph();
             break;
         
         default:

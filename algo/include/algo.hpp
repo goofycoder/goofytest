@@ -28,6 +28,9 @@ void printIntArray(const int *arr, int len);
 // print vector
 void printVector(const std::vector<int> &v);    
 
+// check whether int d is already in the vector
+bool isMember(const std::vector<int> &v, int d);
+
 // print STL stack
 void printStack(std::stack<int> stk);
 
@@ -230,10 +233,21 @@ bool opposite_sign(int x, int y);
 
 
 /************************************************
- ********* Stack operation algorithm ************
+ ********* Stack-related algorithm ************
  ************************************************/
 std::stack<int> sort_stk(std::stack<int>& stk);
 /************************************************/
+
+
+/************************************************
+ ********* Graph-related algorithm ************
+ ************************************************/
+typedef std::pair<int,int> intpair;
+void readEdgeFromFile(const std::string filename, 
+                      std::vector<intpair>& E,
+                      std::vector<int>& V);
+/************************************************/
+
 
 /************************************************
  ********* Unit Test APIS ***********************
@@ -349,5 +363,7 @@ void TEST_linked_list_add();
 void TEST_MyQ();
 
 void TEST_sort_stack();
+
+void TEST_undirected_graph();
 
 #endif  // ALGO_H
