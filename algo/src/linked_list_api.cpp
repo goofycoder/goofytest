@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include "linked_list.hpp"
 
-void showList(Node* p)
+void showList(SNode* p)
 {
     if (p==NULL) {
         std::cout << "List is empty\n";
@@ -19,37 +19,37 @@ void showList(Node* p)
     std::cout << std::endl;
 }
 
-void insertAtTail(Node*& list, Node* p)
+void insertAtTail(SNode*& list, SNode* p)
 {
     if (list==NULL) {
         list = p;
         return;
     }
 
-    Node* tail = getTail(list);
+    SNode* tail = getTail(list);
     tail->next = p;
 }
 
-void deleteList(Node *p)
+void deleteList(SNode *p)
 {
     if (p==NULL) 
         return;
 
     while (p!=NULL) {
-        Node* toDelete = p;
+        SNode* toDelete = p;
         p = p->next;
                           
         delete toDelete;
     }
 }
 
-Node* buildListFromArray(const int *array, unsigned len)
+SNode* buildListFromArray(const int *array, unsigned len)
 {
-    Node *head = NULL;
-    Node *tail = NULL;
+    SNode *head = NULL;
+    SNode *tail = NULL;
 
     for (unsigned i=0; i<len; i++) {
-        Node *n = new Node();
+        SNode *n = new SNode();
         n->data = array[i];
         n->next = NULL;
 
@@ -65,7 +65,7 @@ Node* buildListFromArray(const int *array, unsigned len)
     return head;
 }
 
-Node* getTail(Node *p) 
+SNode* getTail(SNode *p) 
 {
     if (p==NULL) 
         return p;
@@ -77,7 +77,7 @@ Node* getTail(Node *p)
     return p;
 }
 
-int getLengthOfList(Node *p) 
+int getLengthOfList(SNode *p) 
 {   
     int len = 0;
 
@@ -89,7 +89,7 @@ int getLengthOfList(Node *p)
     return len;
 }
 
-Node* getNthNode(Node *p, int idx) 
+SNode* getNthNode(SNode *p, int idx) 
 {
     int len = getLengthOfList(p);
 
@@ -104,9 +104,9 @@ Node* getNthNode(Node *p, int idx)
     return p;
 }
 
-void deleteNthNode(Node*& p, int idx) 
+void deleteNthNode(SNode*& p, int idx) 
 {
-    Node *toDelete = getNthNode(p, idx);
+    SNode *toDelete = getNthNode(p, idx);
     if (!toDelete) {
         std::cout << "DeleteNthNode() fails. N_th node is NULL.\n";
         return;
@@ -116,7 +116,7 @@ void deleteNthNode(Node*& p, int idx)
         p = p->next;
         delete toDelete;
     } else {
-        Node *prev = getPrevNode(p, toDelete);
+        SNode *prev = getPrevNode(p, toDelete);
         prev->next = toDelete->next;
     }
 }
@@ -125,14 +125,14 @@ void deleteNthNode(Node*& p, int idx)
     Input: Only a pointer to a node on the list (do not need head ptr)
         NOTE: p cannot be the head or tail node       
  */
-void deleteNode(Node*& p)
+void deleteNode(SNode*& p)
 {   
     if (!p) {
         std::cout << "Delete node fails since the node ptr to delete is NULL.\n";
         return;    
     }
 
-    Node *d = p->next;
+    SNode *d = p->next;
     if (!d) {           // cannot be tail node 
         std::cout << "Does not support the deletion of tail node.\n";
         return;
@@ -144,9 +144,9 @@ void deleteNode(Node*& p)
     delete d;
 }
 
-Node* getPrevNode(Node *head, Node *p)
+SNode* getPrevNode(SNode *head, SNode *p)
 {
-    Node *q = head;
+    SNode *q = head;
 
     if (p==head)         // previous node of head node is NULL
         return NULL;
@@ -164,7 +164,7 @@ void TEST_linked_list()
     std::cout << "\n * TEST: delete N_th node in linked list\n";
     int arr[] = {2,6,3,1,4,5};
     unsigned len = sizeof(arr)/sizeof(int);
-    Node *p = buildListFromArray(arr, len);
+    SNode *p = buildListFromArray(arr, len);
 
     int idx;
     std::cout << "Enter the idx of the node to delete [1, " << len << "]: ";
@@ -181,7 +181,7 @@ void TEST_linked_list()
     std::cout << "Enter the idx of the node to delete (cannot be head or tail node) [2, " << len-2 << "]: ";
     std::cin >> idx;  
 
-    Node* d =  getNthNode(p, idx); 
+    SNode* d =  getNthNode(p, idx); 
     deleteNode(d);
     
     std::cout << "\nThe list after deletion: \n";

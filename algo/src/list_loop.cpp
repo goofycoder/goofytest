@@ -25,13 +25,13 @@
 #include <iostream>
 #include "linked_list.hpp"
  
-static void removeLoop(Node *head, Node *p, int loop_len);
+static void removeLoop(SNode *head, SNode *p, int loop_len);
 
-bool findAndRemoveLoop(Node* head,
-                  int* loop_size) 
+bool findAndRemoveLoop(SNode* head,
+                       int* loop_size) 
 {
-    Node *fast_p = head;
-    Node *slow_p = head;
+    SNode *fast_p = head;
+    SNode *slow_p = head;
 
     do {
         advance_fast(fast_p);
@@ -58,9 +58,9 @@ bool findAndRemoveLoop(Node* head,
 }
 
 /* p is the postion where fast and slow ptr meet during loop detection */
-static void removeLoop(Node *head, Node *p, int loop_len)
+static void removeLoop(SNode *head, SNode *p, int loop_len)
 {
-    Node *q = head;
+    SNode *q = head;
 
     /* !!! Corner case: slow and fast ptr meet at the head node
      *   Ex:  A->B->C->D->A (the whole list is a loop!)
@@ -88,7 +88,7 @@ static void removeLoop(Node *head, Node *p, int loop_len)
 
 // pay attention to the argument: the reference to the pointer
 // If not pass as reference, the pointer won't move in the caller function.
-void advance_fast(Node *& p) 
+void advance_fast(SNode *& p) 
 {
     (p) ? p=p->next : NULL;
     (p) ? p=p->next : NULL;
@@ -96,7 +96,7 @@ void advance_fast(Node *& p)
 
 // pay attention to the argument: the reference to the pointer
 // If not pass as reference, the pointer won't move in the caller function.
-void advance_slow(Node*& p)
+void advance_slow(SNode*& p)
 {
     (p) ? p=p->next : NULL;
 }
@@ -106,7 +106,7 @@ void TEST_find_loop()
     int arr[] = {2,9,5,7,4,8,1,6};
     unsigned arr_len = sizeof(arr)/sizeof(int);
     
-    Node *head = buildListFromArray(arr, arr_len);
+    SNode *head = buildListFromArray(arr, arr_len);
 
     showList(head);
 
@@ -117,9 +117,9 @@ void TEST_find_loop()
     std::cout << "Input an integer to indicate the linked list loops at N_th node (N in [1, len] ): ";
     std::cin >> idx;
 
-    Node *t = getTail(head);
+    SNode *t = getTail(head);
 
-    Node *p = getNthNode(head, idx);
+    SNode *p = getNthNode(head, idx);
     if (p) {
         std::cout << "Get node to form the loop: " << p->data <<"\n";
     } else {

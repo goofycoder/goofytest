@@ -12,19 +12,19 @@
 #include "linked_list.hpp"
 #include "algo.hpp"
 
-Node* linked_list_add(Node* m, Node* n)
+SNode* linked_list_add(SNode* m, SNode* n)
 {
-    Node* p = m;
-    Node* q = n;
+    SNode* p = m;
+    SNode* q = n;
     int sum;
     int carry_bit = 0;
-    Node* res = NULL;  
+    SNode* res = NULL;  
 
     while (p && q) {
         sum = p->data + q->data + carry_bit; 
         carry_bit = sum/10;
         
-        Node *s = new Node;
+        SNode *s = new SNode;
         s->data = sum%10;
         s->next = NULL;
         
@@ -38,7 +38,7 @@ Node* linked_list_add(Node* m, Node* n)
         sum = p->data + carry_bit;
         carry_bit = sum/10;
 
-        Node *s = new Node;
+        SNode *s = new SNode;
         s->data = sum%10;
         s->next = NULL;
         insertAtTail(res,s);
@@ -50,7 +50,7 @@ Node* linked_list_add(Node* m, Node* n)
         sum = q->data + carry_bit;
         carry_bit = sum/10;
         
-        Node *s = new Node;
+        SNode *s = new SNode;
         s->data = q->data;
         s->next = NULL;
         insertAtTail(res,s);
@@ -59,7 +59,7 @@ Node* linked_list_add(Node* m, Node* n)
     }
 
     if (carry_bit) {
-        Node *s = new Node;
+        SNode *s = new SNode;
         s->data = carry_bit;
         s->next = NULL;
         insertAtTail(res,s);
@@ -71,14 +71,14 @@ Node* linked_list_add(Node* m, Node* n)
 
 /* Convert integer to list
    Example: 123 ==> 3->2->1 */
-Node* int_to_list(int num)
+SNode* int_to_list(int num)
 {
-    Node* list=NULL;
+    SNode* list=NULL;
 
     while(num) {
         int d = num%10;
 
-        Node* p = new Node;
+        SNode* p = new SNode;
         p->data = d;
         p->next = NULL;
 
@@ -92,7 +92,7 @@ Node* int_to_list(int num)
 
 /* Convert list to integer
    Example: 3->2->1 ==> 123 */
-int list_to_int(Node *p)
+int list_to_int(SNode *p)
 {
     int res = 0;
     int i = 0;
@@ -117,14 +117,14 @@ void TEST_linked_list_add()
     std::cout << "Enter integer n: ";
     std::cin >> n;
 
-    Node *m_list = int_to_list(m);
-    Node *n_list = int_to_list(n);
+    SNode *m_list = int_to_list(m);
+    SNode *n_list = int_to_list(n);
 
     showList(m_list);
     showList(n_list);
 
     // result list 
-    Node *r_list = linked_list_add(m_list, n_list);
+    SNode *r_list = linked_list_add(m_list, n_list);
     showList(r_list);
 
     int result = list_to_int(r_list);

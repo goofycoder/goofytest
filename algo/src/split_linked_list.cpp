@@ -16,11 +16,11 @@
 #include <iostream>
 #include "linked_list.hpp"
 
-void split_linked_list(Node* head, Node*& split) 
+void split_linked_list(SNode* head, SNode*& split) 
 {
-    Node* fast = head;
-    Node* slow = head;
-    Node* slow_prev = NULL;
+    SNode* fast = head;
+    SNode* slow = head;
+    SNode* slow_prev = NULL;
 
     do {
         advance_fast(fast);
@@ -39,9 +39,9 @@ void TEST_split_list()
     std::cout << "\n * TEST split the linked list into half\n";
     int arr[] = {2,3,5,7,9};
     unsigned len = sizeof(arr)/sizeof(int);
-    Node *head = buildListFromArray(arr, len);
+    SNode *head = buildListFromArray(arr, len);
     
-    Node *head_2;
+    SNode *head_2;
 
     split_linked_list(head, head_2);
 

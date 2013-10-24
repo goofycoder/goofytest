@@ -101,19 +101,19 @@ void BST::insertNode(const int& data)
     while (p != NULL) {
     	if (p->data <= data) {
     	    if (p->right == NULL) {
-	        p->right = pNewNode;
-	    	return;
-	    } else { 
+	            p->right = pNewNode;
+	    	    return;
+	        } else { 
                 p = p->right;
             }
-	} else {
-	    if (p->left == NULL) {
-	        p->left = pNewNode;
-	        return;
 	    } else {
+	        if (p->left == NULL) {
+	            p->left = pNewNode;
+	            return;
+	        } else {
                 p = p->left;
             }
-	}   
+	    }   
     }
 }
 
@@ -192,17 +192,17 @@ void BST::DoPrintAllPath(Node* p, int path[], int pathLen) const
     pathLen++;
 
     if (p->left==NULL && p->right==NULL) {
-	printPath(path, pathLen);
+	    printPath(path, pathLen);
     } else {
      	DoPrintAllPath(p->left, path, pathLen);
-	DoPrintAllPath(p->right,path, pathLen);
+    	DoPrintAllPath(p->right,path, pathLen);
     }
 }
 
 void BST::printPath(int path[], int len) const
 {
     for(int i=0; i<len; i++) {
-	std::cout << path[i] << " ";
+    	std::cout << path[i] << " ";
     }
     std::cout << "\n";
 }
@@ -210,8 +210,8 @@ void BST::printPath(int path[], int len) const
 void BST::printKthLayer(int k) const		// root is layer 1
 {
     if ( k>getHeight() ) {
-	std::cout << "The max height of tree is: " << getHeight() << "\n";
-	return;
+	    std::cout << "The max height of tree is: " << getHeight() << "\n";
+	    return;
     }
 
     DoPrintKthLayer(root, k);
@@ -219,11 +219,12 @@ void BST::printKthLayer(int k) const		// root is layer 1
 
 void BST::DoPrintKthLayer(Node* p, int k) const
 {
-    if (p==NULL) return;
+    if (p==NULL) 
+        return;
 
     if (k==1) {
-	std::cout << p->data << " ";
-	return;
+        std::cout << p->data << " ";
+        return;
     }
 
     DoPrintKthLayer(p->left, k-1);
@@ -281,13 +282,13 @@ void BST::searchRange_int(Node* p, int k1, int k2) const
         return;
 
     if (k1 < p->data)
- 	searchRange_int(p->left,k1,k2);
+ 	    searchRange_int(p->left,k1,k2);
 	
     if (k1 <= p->data && k2 >= p->data)
-	std::cout << p->data << " ";
+	    std::cout << p->data << " ";
 	
     if (k2 > p->data)
-	searchRange_int(p->right,k1,k2);
+	    searchRange_int(p->right,k1,k2);
 }
 
 Node* BST::convTreeToList()
@@ -343,8 +344,9 @@ void BST::printList(Node* head) const
 
     while (p!=NULL) {
     	std::cout << p->data << " ";
-	p=p->right;
-	if (p==head) 
+    	p=p->right;
+	    
+        if (p==head) 
             break;
     }
 
