@@ -73,7 +73,8 @@ int main()
               << "56. [LST] Add two linked list as two integers.\n"
               << "57. [STK] Implement Queue using two stacks.\n"
               << "58. [STK] Sort a stack.\n"
-              << "59. [GRH] Undirected Graph.\n";
+              << "59. [GRH] Undirected Graph.\n"
+              << "60. [BST] Check whether one BST is another BST's subtree.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -320,6 +321,10 @@ int main()
         
         case 59:
             TEST_undirected_graph();
+            break;
+        
+        case 60:
+            TEST_subtree();
             break;
         
         default:

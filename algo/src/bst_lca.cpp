@@ -65,7 +65,7 @@ void TEST_lca()
     Node *n2 = bst.searchNode(n2_v);
 
     Node *node_lca;
-    node_lca = bst.lca(n1, n2, bst.root);
+    node_lca = bst.lca(n1, n2, bst.getRoot());
 
     std::cout << "The least common ancestor node: " << node_lca->data << "\n";
 }

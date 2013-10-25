@@ -366,4 +366,6 @@ void TEST_sort_stack();
 
 void TEST_undirected_graph();
 
+void TEST_subtree();
+
 #endif  // ALGO_H

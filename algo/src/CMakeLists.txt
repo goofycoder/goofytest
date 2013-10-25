@@ -32,7 +32,7 @@ set(source_files
     linked_list_api.cpp
     dlist.cpp
     circular_sorted_list.cpp
-    reverse.cpp
+    list_reverse.cpp
     reservior_sampling.cpp
     rejection_sampling.cpp
     ugly_number.cpp
@@ -47,6 +47,7 @@ set(source_files
     bst_delete_node.cpp
     bst_mirror.cpp
     bst_to_doubly_list.cpp
+    bst_subtree.cpp
     top_k.cpp
     sum_subset.cpp
     slide_window_max.cpp

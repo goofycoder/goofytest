@@ -90,10 +90,11 @@ public:
 
     int     getMinDepth() const;
     int     getMaxDepth() const;
-    
-    Node*   root;                       // TO-DO: should not be public 
+
+    Node*   getRoot() const;            // return root node
 
 private:
+    Node*   root;                       
 
 	void    deleteWholeTree(Node* p);			// used in the destructor
 
@@ -158,5 +159,9 @@ private:
     int     _getMinDepth(Node *p) const;
     int     _getMaxDepth(Node *p) const;
 };
+
+// Non-member functions
+bool isSameTree(Node *t, Node *s);
+bool isSubTree(Node *t, Node *s);
 
 #endif /* BST_H_ */

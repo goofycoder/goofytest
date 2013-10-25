@@ -83,6 +83,4 @@ void TEST_convertToDoublyList()
         p=p->right;
         delete d;
     }
-
-    bst.root = NULL;
 }

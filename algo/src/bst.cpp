@@ -30,6 +30,11 @@ BST::~BST()
     }
 }
 
+Node* BST::getRoot() const
+{
+    return root;    
+}
+
 void BST::deleteWholeTree(Node* p)
 {
     if (p == NULL) 
