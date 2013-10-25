@@ -4,7 +4,8 @@
 int main()
 {
     std::cout << "================== System API Lab ==================\n"
-              << "1. RAII example.\n";
+              << "1. RAII example.\n"
+              << "2. Exception example.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -13,6 +14,10 @@ int main()
         switch(option) {
         case 1:
             TEST_RAII_example();
+            break;
+        
+        case 2:
+            TEST_exception_example();
             break;
         
         default:
