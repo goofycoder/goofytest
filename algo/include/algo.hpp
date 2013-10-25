@@ -218,6 +218,11 @@ void matrix_set_zero(int**& matrix, int row, int col);
 /************************************************
  ********* Bit operation algorithm **************
  ************************************************/
+// utility functions that set/check bits 0/1.
+bool check_bit_one(const int num, int pos);
+void set_bit_one(int& num, int pos);
+void set_bit_zero(int& num, int pos);
+
 // Reverse Bits in the unsigned integer
 // Example: 8 (1010) ==> 5 (101)
 void reverseBit(unsigned &input);
@@ -235,11 +240,15 @@ bool opposite_sign(int x, int y);
 
 int bit_set_pattern(int base, int ptn, int start, int end);
 
+// set a region in the integer to be 0. other bits remain same.
+//  integer:  ****....**** ==> ***00...00***
+//                e  s            e     s
 int bit_clear_bits(int base, int start, int end);
 
 // find the next/prev int with same number of 1s set
 int bit_next_int(const int d);
 int bit_prev_int(const int d);
+
 /************************************************/
 
 

@@ -118,6 +118,7 @@ void printStack(std::stack<int> stk)
 }
 
 
+/* ==================== Bit-related APIs ========================*/
 /* Note: does not print the sign bit.
  *       TO-DO: negative number needs to be further verified.
  */
@@ -146,6 +147,25 @@ void print_int_by_bit(const int d)
 
     std::cout << "\n";
 }
+
+/* integer:    **...**
+ * pos:       31     0 
+ */
+bool check_bit_one(const int num, int pos)
+{
+    return ((num>>pos & 1) == 1);
+}
+
+void set_bit_one(int& num, int pos) 
+{
+    num |= (1<<pos);
+}
+
+void set_bit_zero(int& num, int pos)
+{
+    num &= ~(1<<pos);
+}
+/* =================================================================*/
 
 
 /* ==================== Matrix-related APIs ========================*/

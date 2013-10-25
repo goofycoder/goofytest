@@ -6,6 +6,7 @@
     Date: 10/25/2013
  */
 #include <iostream>
+#include "algo.hpp"
 
 // find the next int with same number of bit 1 set
 int bit_next_int(const int d)
@@ -69,6 +70,20 @@ void TEST_bit_next_int()
     int d;
     std::cout << "Enter the input integer: ";
     std::cin >> d;
+
+    std::cout << "Enter the position to check bit is set: \n";
+    int pos;
+    std::cin >> pos;
+
+    if (check_bit_one(d, pos)) {
+        std::cout << "Bit is set at postion " << pos << "\n";
+        set_bit_zero(d,pos);    //For TEST: set bit at pos to be 0    
+        print_int_by_bit(d);
+    } else {
+        std::cout << "Bit is NOT set at postion " << pos << "\n";
+        set_bit_one(d, pos);    //For TEST: set bit at pos to be 1
+        print_int_by_bit(d);
+    }   
 
     int next_int = bit_next_int(d);
     std::cout << "Next int with same number of 1s: " << next_int << "\n";
