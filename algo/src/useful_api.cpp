@@ -117,6 +117,37 @@ void printStack(std::stack<int> stk)
     std::cout << "=== Stack Base ===\n";
 }
 
+
+/* Note: does not print the sign bit.
+ *       TO-DO: negative number needs to be further verified.
+ */
+void print_int_by_bit(const int d)
+{
+    int t;          // unsigned version of d
+    if (d<0) {
+        t = -d;
+    } else {
+        t = d;
+    }
+
+    int flag = 0;       // flag that signals the start of print
+    for(int i=30; i>=0; i--) {
+        if (flag==0 && t>>i == 1) {
+            flag = 1;
+        } 
+        
+        if (flag == 1) {
+            std::cout << (t>>i);           
+        }
+
+        // set the checked bit to 0
+        t = t&((1<<i)-1);
+    }
+
+    std::cout << "\n";
+}
+
+
 /* ==================== Matrix-related APIs ========================*/
 void alloc_matrix(int**& matrix, int row, int col)
 {

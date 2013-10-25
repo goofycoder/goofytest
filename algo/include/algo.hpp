@@ -36,6 +36,9 @@ void printStack(std::stack<int> stk);
 
 // print 2D array
 void print_2D_array(int** table, int width, int height);    
+
+// print an int by 32 bit
+void print_int_by_bit(const int d);
 /************************************************/
 
 
@@ -229,6 +232,10 @@ int countBitOne(int num);
 bool powerOfTwo(int n);
 
 bool opposite_sign(int x, int y);
+
+int bit_set_pattern(int base, int ptn, int start, int end);
+
+int bit_clear_bits(int base, int start, int end);
 /************************************************/
 
 
@@ -367,5 +374,7 @@ void TEST_sort_stack();
 void TEST_undirected_graph();
 
 void TEST_subtree();
+
+void TEST_bit_set_pattern();
 
 #endif  // ALGO_H

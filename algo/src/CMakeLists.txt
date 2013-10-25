@@ -54,6 +54,7 @@ set(source_files
     maxheap.cpp
     bit_swap.cpp
     bit_op.cpp
+    bit_set_pattern.cpp
     list_loop.cpp
     split_linked_list.cpp
     linked_list_add.cpp

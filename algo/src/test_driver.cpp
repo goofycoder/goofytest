@@ -74,7 +74,8 @@ int main()
               << "57. [STK] Implement Queue using two stacks.\n"
               << "58. [STK] Sort a stack.\n"
               << "59. [GRH] Undirected Graph.\n"
-              << "60. [BST] Check whether one BST is another BST's subtree.\n";
+              << "60. [BST] Check whether one BST is another BST's subtree.\n"
+              << "61. [BIT] Set a bit region in an integer to be certain pattern.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -325,6 +326,10 @@ int main()
         
         case 60:
             TEST_subtree();
+            break;
+        
+        case 61:
+            TEST_bit_set_pattern();
             break;
         
         default:
