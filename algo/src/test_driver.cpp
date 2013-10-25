@@ -75,7 +75,8 @@ int main()
               << "58. [STK] Sort a stack.\n"
               << "59. [GRH] Undirected Graph.\n"
               << "60. [BST] Check whether one BST is another BST's subtree.\n"
-              << "61. [BIT] Set a bit region in an integer to be certain pattern.\n";
+              << "61. [BIT] Set a bit region in an integer to be certain pattern.\n"
+              << "62. [BIT] Find the next/prev int with same number of 1s set.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -330,6 +331,10 @@ int main()
         
         case 61:
             TEST_bit_set_pattern();
+            break;
+        
+        case 62:
+            TEST_bit_next_int();
             break;
         
         default:

@@ -236,6 +236,10 @@ bool opposite_sign(int x, int y);
 int bit_set_pattern(int base, int ptn, int start, int end);
 
 int bit_clear_bits(int base, int start, int end);
+
+// find the next/prev int with same number of 1s set
+int bit_next_int(const int d);
+int bit_prev_int(const int d);
 /************************************************/
 
 
@@ -377,4 +381,5 @@ void TEST_subtree();
 
 void TEST_bit_set_pattern();
 
+void TEST_bit_next_int();
 #endif  // ALGO_H

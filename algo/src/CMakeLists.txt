@@ -55,6 +55,7 @@ set(source_files
     bit_swap.cpp
     bit_op.cpp
     bit_set_pattern.cpp
+    bit_next_int.cpp
     list_loop.cpp
     split_linked_list.cpp
     linked_list_add.cpp
