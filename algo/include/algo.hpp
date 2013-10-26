@@ -194,6 +194,11 @@ void printParenthesis(int n);
 
 // displays the first no-dup char in char stream
 void stream_no_dup_char(std::string str);
+
+// search key on the rotated and sorted array
+// Example: search key 2 in arr[]= {4, 5, 6, 7, 8, 9, 2, 3}; 
+void searchRotateArray(int* arr, int len, int key, int& pos);
+void _searchRotateArray(int* arr, int l, int r, int key, int& pos);
 /************************************************/
 
 
@@ -395,4 +400,6 @@ void TEST_bit_set_pattern();
 void TEST_bit_next_int();
 
 void TEST_swap_even_odd_bits();
+
+void TEST_search_rotate_array();
 #endif  // ALGO_H

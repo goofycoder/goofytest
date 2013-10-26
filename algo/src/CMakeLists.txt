@@ -51,6 +51,7 @@ set(source_files
     top_k.cpp
     sum_subset.cpp
     slide_window_max.cpp
+    search_rotate_array.cpp
     maxheap.cpp
     bit_swap.cpp
     bit_op.cpp
