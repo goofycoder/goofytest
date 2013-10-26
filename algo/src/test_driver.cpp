@@ -76,7 +76,8 @@ int main()
               << "59. [GRH] Undirected Graph.\n"
               << "60. [BST] Check whether one BST is another BST's subtree.\n"
               << "61. [BIT] Set a bit region in an integer to be certain pattern.\n"
-              << "62. [BIT] Find the next/prev int with same number of 1s set.\n";
+              << "62. [BIT] Find the next/prev int with same number of 1s set.\n"
+              << "63. [BIT] Swap Even-Odd bits in an integer.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -335,6 +336,10 @@ int main()
         
         case 62:
             TEST_bit_next_int();
+            break;
+        
+        case 63:
+            TEST_swap_even_odd_bits();
             break;
         
         default:

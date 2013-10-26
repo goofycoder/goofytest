@@ -249,6 +249,8 @@ int bit_clear_bits(int base, int start, int end);
 int bit_next_int(const int d);
 int bit_prev_int(const int d);
 
+// swap even-odd bits in an integer
+void swap_even_odd_bit(int& num);
 /************************************************/
 
 
@@ -391,4 +393,6 @@ void TEST_subtree();
 void TEST_bit_set_pattern();
 
 void TEST_bit_next_int();
+
+void TEST_swap_even_odd_bits();
 #endif  // ALGO_H
