@@ -20,6 +20,7 @@ int minOfThree(int a, int b, int c);
 
 // swap
 void swapInt(int& a, int& b);           // swap two integers
+void swap_int_by_bit(int& a, int& b);   // In place (no extra buffer needed)
 void swapChar(char& a, char& b);        // swap two chars
 
 // print integer array
@@ -223,6 +224,9 @@ void matrix_set_zero(int**& matrix, int row, int col);
 /************************************************
  ********* Bit operation algorithm **************
  ************************************************/
+// In place, two integers swap via bit operation. (No buffer)
+void swap_int_by_bit(int& a, int& b);
+
 // utility functions that set/check bits 0/1.
 bool check_bit_one(const int num, int pos);
 void set_bit_one(int& num, int pos);

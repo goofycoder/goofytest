@@ -22,6 +22,14 @@ bool opposite_sign(int x, int y)
         return false;
 }
 
+/* in-place swap, no extra buffer needed */
+void swap_int_by_bit(int& a, int& b)
+{
+    a = a^b;
+    b = a^b;    // b = (a^b)^b = a;
+    a = a^b;    // a = (a^b)^a = b;
+}
+
 void TEST_bit_op()
 {
     std::cout << "TEST basic bit operations\n";
@@ -32,6 +40,10 @@ void TEST_bit_op()
     std::cin >> n1;
     std::cout << "Enter 2nd int: ";
     std::cin >> n2;
+
+    swap_int_by_bit(n1, n2);
+    std::cout << "After swap: n1: "<< n1 
+              << " n2: " << n2 << "\n";
     
     if (opposite_sign(n1, n2)) {
         std::cout << "Opposite sign.\n";
