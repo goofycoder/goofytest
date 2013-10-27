@@ -12,6 +12,12 @@
 // read array from file into vector
 void readArrayFromFile(const std::string& filename, std::vector<int>& v);
 
+// read all the lines into vector (each line is a string)
+void readFileToVector(const std::string& filename, std::vector<std::string>& v);
+
+// print a vector of strings
+void printStrVector(const std::vector<std::string>& v);
+
 // Convert an integer value to string
 std::string intToStr(int val);          
 
@@ -203,6 +209,8 @@ void _searchRotateArray(int* arr, int l, int r, int key, int& pos);
 
 // find all pairs of integers that sum to the given value (sum)
 void find_pair_to_sum(int* arr[], int len, int sum);
+
+void read_last_k_line(std::string filename, int k);
 /************************************************/
 
 
@@ -411,4 +419,6 @@ void TEST_swap_even_odd_bits();
 void TEST_search_rotate_array();
 
 void TEST_find_pair_to_sum();
+
+void TEST_read_last_k_line();
 #endif  // ALGO_H

@@ -22,6 +22,7 @@ set(source_files
     str_longest_substr_no_dup.cpp
     str_remove_dup.cpp
     str_rotate.cpp
+    file_last_k_line.cpp
     stream_no_dup_char.cpp
     edit_distance.cpp
     regex.cpp
