@@ -68,6 +68,7 @@ set(source_files
     parenthesis.cpp
     fast_expo.cpp
     rotate_matrix.cpp
+    find_pair_to_sum.cpp
     matrix_set_zero.cpp
     stl_unordered_map.cpp
     stk_sort.cpp

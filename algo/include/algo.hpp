@@ -200,6 +200,9 @@ void stream_no_dup_char(std::string str);
 // Example: search key 2 in arr[]= {4, 5, 6, 7, 8, 9, 2, 3}; 
 void searchRotateArray(int* arr, int len, int key, int& pos);
 void _searchRotateArray(int* arr, int l, int r, int key, int& pos);
+
+// find all pairs of integers that sum to the given value (sum)
+void find_pair_to_sum(int* arr[], int len, int sum);
 /************************************************/
 
 
@@ -406,4 +409,6 @@ void TEST_bit_next_int();
 void TEST_swap_even_odd_bits();
 
 void TEST_search_rotate_array();
+
+void TEST_find_pair_to_sum();
 #endif  // ALGO_H

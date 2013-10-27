@@ -78,7 +78,8 @@ int main()
               << "61. [BIT] Set a bit region in an integer to be certain pattern.\n"
               << "62. [BIT] Find the next/prev int with same number of 1s set.\n"
               << "63. [BIT] Swap Even-Odd bits in an integer.\n"
-              << "64. [ARR] Search key in a rotated and sorted int array.\n";
+              << "64. [ARR] Search key in a rotated and sorted int array.\n"
+              << "65. [ARR] Find a pair of integers that sum up to a given sum.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -345,6 +346,10 @@ int main()
         
         case 64:
             TEST_search_rotate_array();
+            break;
+        
+        case 65:
+            TEST_find_pair_to_sum();
             break;
         
         default:
