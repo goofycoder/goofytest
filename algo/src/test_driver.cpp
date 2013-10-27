@@ -80,7 +80,8 @@ int main()
               << "63. [BIT] Swap Even-Odd bits in an integer.\n"
               << "64. [ARR] Search key in a rotated and sorted int array.\n"
               << "65. [ARR] Find a pair of integers that sum up to a given sum.\n"
-              << "66. [ARR] Get the last K line of file.\n";
+              << "66. [ARR] Get the last K line of file.\n"
+              << "67. [SET] Print all subset of a given set.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -355,6 +356,10 @@ int main()
         
         case 66:
             TEST_read_last_k_line();
+            break;
+        
+        case 67:
+            TEST_all_subset();
             break;
         
         default:

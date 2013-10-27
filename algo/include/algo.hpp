@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <stack>
+#include <set>
 
 /************************************************
  ********* Commonly used APIs *******************
@@ -34,6 +35,9 @@ void printIntArray(const int *arr, int len);
 
 // print vector
 void printVector(const std::vector<int> &v);    
+
+// print set
+void printSet(const std::set<int> &s);
 
 // check whether int d is already in the vector
 bool isMember(const std::vector<int> &v, int d);
@@ -211,6 +215,9 @@ void _searchRotateArray(int* arr, int l, int r, int key, int& pos);
 void find_pair_to_sum(int* arr[], int len, int sum);
 
 void read_last_k_line(std::string filename, int k);
+
+// print all subset of a set
+void all_subset(std::set<int>& s);
 /************************************************/
 
 
@@ -421,4 +428,6 @@ void TEST_search_rotate_array();
 void TEST_find_pair_to_sum();
 
 void TEST_read_last_k_line();
+
+void TEST_all_subset();
 #endif  // ALGO_H

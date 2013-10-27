@@ -102,6 +102,17 @@ void printVector(const std::vector<int> &v)
     std::cout << "\n";
 }
 
+void printSet(const std::set<int> &s)
+{
+    auto it = s.begin();
+    
+    std::cout << "(";
+    for (; it!=s.end(); ++it) {
+        std::cout << *it << ",";
+    }
+    std::cout << ")\n";
+}
+
 bool isMember(const std::vector<int> &v, int d)
 {
     for(int i=0; i<v.size(); i++) {

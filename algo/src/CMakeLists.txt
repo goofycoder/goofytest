@@ -63,6 +63,7 @@ set(source_files
     split_linked_list.cpp
     linked_list_add.cpp
     min_stack.cpp
+    all_subset.cpp
     rectangle_overlap.cpp
     intersection_sorted_array.cpp
     unique_path.cpp
