@@ -70,8 +70,8 @@ void TEST_convertToDoublyList()
 
     Node *p = bst.convertToDoublyList();
 
-    // print the circular doubly-linked list
-    std::cout << "Converted circular doubly-linked list: \n";
+    // print the doubly-linked list
+    std::cout << "Converted doubly-linked list: \n";
     if (p==NULL)
         std::cout << "empty list.\n";
 
