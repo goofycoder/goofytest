@@ -218,6 +218,9 @@ void read_last_k_line(std::string filename, int k);
 
 // print all subset of a set
 void all_subset(std::set<int>& s);
+
+// merge array b into array a (array a has enough buffer to hold both a and b)
+void merge_sorted_array(int* a, int len_a, int* b, int len_b);
 /************************************************/
 
 
@@ -430,4 +433,6 @@ void TEST_find_pair_to_sum();
 void TEST_read_last_k_line();
 
 void TEST_all_subset();
+
+void TEST_merge_sorted_array();
 #endif  // ALGO_H

@@ -76,6 +76,7 @@ set(source_files
     stk_sort.cpp
     queue_by_stack.cpp
     undirected_graph.cpp
+    merge_array.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp
