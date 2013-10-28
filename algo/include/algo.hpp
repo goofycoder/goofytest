@@ -5,12 +5,19 @@
 #include <vector>
 #include <string>
 #include <stack>
+#include <set>
 
 /************************************************
  ********* Commonly used APIs *******************
  ************************************************/
 // read array from file into vector
 void readArrayFromFile(const std::string& filename, std::vector<int>& v);
+
+// read all the lines into vector (each line is a string)
+void readFileToVector(const std::string& filename, std::vector<std::string>& v);
+
+// print a vector of strings
+void printStrVector(const std::vector<std::string>& v);
 
 // Convert an integer value to string
 std::string intToStr(int val);          
@@ -28,6 +35,9 @@ void printIntArray(const int *arr, int len);
 
 // print vector
 void printVector(const std::vector<int> &v);    
+
+// print set
+void printSet(const std::set<int> &s);
 
 // check whether int d is already in the vector
 bool isMember(const std::vector<int> &v, int d);
@@ -203,6 +213,14 @@ void _searchRotateArray(int* arr, int l, int r, int key, int& pos);
 
 // find all pairs of integers that sum to the given value (sum)
 void find_pair_to_sum(int* arr[], int len, int sum);
+
+void read_last_k_line(std::string filename, int k);
+
+// print all subset of a set
+void all_subset(std::set<int>& s);
+
+// merge array b into array a (array a has enough buffer to hold both a and b)
+void merge_sorted_array(int* a, int len_a, int* b, int len_b);
 /************************************************/
 
 
@@ -411,4 +429,10 @@ void TEST_swap_even_odd_bits();
 void TEST_search_rotate_array();
 
 void TEST_find_pair_to_sum();
+
+void TEST_read_last_k_line();
+
+void TEST_all_subset();
+
+void TEST_merge_sorted_array();
 #endif  // ALGO_H

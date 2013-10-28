@@ -22,6 +22,7 @@ set(source_files
     str_longest_substr_no_dup.cpp
     str_remove_dup.cpp
     str_rotate.cpp
+    file_last_k_line.cpp
     stream_no_dup_char.cpp
     edit_distance.cpp
     regex.cpp
@@ -62,6 +63,7 @@ set(source_files
     split_linked_list.cpp
     linked_list_add.cpp
     min_stack.cpp
+    all_subset.cpp
     rectangle_overlap.cpp
     intersection_sorted_array.cpp
     unique_path.cpp
@@ -74,6 +76,7 @@ set(source_files
     stk_sort.cpp
     queue_by_stack.cpp
     undirected_graph.cpp
+    merge_array.cpp
     test_bst.cpp
     test_driver.cpp
     useful_api.cpp

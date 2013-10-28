@@ -30,6 +30,28 @@ void readArrayFromFile(const std::string& file_name, std::vector<int>& v)
     }
 }
 
+void readFileToVector(const std::string& filename, std::vector<std::string>& v)
+{
+    std::ifstream f_in(filename);
+
+    std::string str;
+    while(std::getline(f_in, str)) {
+        v.push_back(str);
+    }
+}
+
+void printStrVector(const std::vector<std::string>& v) 
+{
+    //std::vector<std::string>::iterator it = v.begin();
+    auto it = v.begin();    
+
+    for (; it!=v.end(); ++it) {
+        std::cout << *it << "\n";
+    }
+
+    std::cout << "\n";
+}
+
 // Convert an integer value to string
 std::string intToStr(int val) 
 {
@@ -78,6 +100,17 @@ void printVector(const std::vector<int> &v)
     }
 
     std::cout << "\n";
+}
+
+void printSet(const std::set<int> &s)
+{
+    auto it = s.begin();
+    
+    std::cout << "(";
+    for (; it!=s.end(); ++it) {
+        std::cout << *it << ",";
+    }
+    std::cout << ")\n";
 }
 
 bool isMember(const std::vector<int> &v, int d)
