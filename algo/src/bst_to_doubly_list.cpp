@@ -1,6 +1,5 @@
 /* 
-    Given an ordered binary tree, returns a sorted circular
-  doubly-linked list. The conversion is done in-place.
+    Given an ordered binary tree, returns a sorted  doubly-linked list. The conversion is done in-place.
  
     Idea: 'left' pointer in Node struct means "prev" ptr.
           'right' pointer in Node struct means "next" ptr.
@@ -19,42 +18,45 @@
 
 Node* BST::convertToDoublyList() 
 {
-    Node *prev = NULL;
-    Node *head = NULL;
-    
-    _convertToDoublyList(root, prev, head);
-  
-    return head;
+    Node* root_node = root;
+    root = NULL;        // set root to NULL to avoid freeing in the destructor
+
+    return  _convertToDoublyList(root_node);
 }
 
-void BST::_convertToDoublyList(Node *p, Node *& prev, Node *& head)
+Node* BST::_convertToDoublyList(Node* p)
 {
-    if (!p) 
-        return; 
+    Node *result = NULL;
 
-    // left substree
-    _convertToDoublyList(p->left, prev, head);
+    if (p==NULL) 
+        return NULL;
 
-    // current node's left points to previous node
-    p->left = prev;
+    Node* l = _convertToDoublyList(p->left);
 
-    if (prev)
-        prev->right = p;
-    else
-        head = p;
-    
-    // as soon as the recursion ends, the head's left pointer 
-    // points to the last node, and the last node's right pointer
-    // points to the head pointer.
-    Node *right = p->right;
-    head->left = p;
-    p->right = head;
+    if (l) {
+        Node *tail = l;
+        while(tail->right) {
+            tail = tail->right;
+        }
+        
+        tail->right = p; 
+        p->left = tail;
+    }
 
-    // updates previous node
-    prev = p;
+    Node* r = _convertToDoublyList(p->right);
+    p->right = r;
+  
+    if (r) {
+        r->left = p;
+    }
 
-    // right substree
-    _convertToDoublyList(right, prev, head);
+    if (l) {
+        result = l;
+    } else {
+        result = p;
+    }
+
+    return result;
 }
 
 void TEST_convertToDoublyList()
@@ -66,21 +68,23 @@ void TEST_convertToDoublyList()
 	BST bst = BST(a, len);
     bst.printPretty();
 
-    Node *head = bst.convertToDoublyList();
+    Node *p = bst.convertToDoublyList();
 
     // print the circular doubly-linked list
-    std::cout << "Converted circular doubly-linked list: \n"; 
-    Node *p = head;
-    for (int i=0; i<len; i++) {
+    std::cout << "Converted circular doubly-linked list: \n";
+    if (p==NULL)
+        std::cout << "empty list.\n";
+
+    while (p) {
         std::cout << p->data << " ";
         p = p->right;
     }
     std::cout << "\n";
 
     // free the list
-    for (int i=0; i<len; i++) {
+    while (p) {
         Node *d = p;
-        p=p->right;
+        p = p->right;
         delete d;
     }
 }

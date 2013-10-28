@@ -30,9 +30,11 @@ public:
     BST(Node *r):root(r) {}
 	BST(int a[], int len);
 	~BST();
-    
+
     /* Very useful API */
     void    printPretty();
+
+    Node*   goo(Node* p);
 
 	void    insertNode(const int& dataToInsert);
 	void    deleteNode(Node *d);
@@ -154,10 +156,11 @@ private:
     
     Node*   _mirror(Node *p) const;
     
-    void    _convertToDoublyList(Node *p, Node *& prev, Node *& head);
+    Node*   _convertToDoublyList(Node *p);
 
     int     _getMinDepth(Node *p) const;
     int     _getMaxDepth(Node *p) const;
+    
 };
 
 // Non-member functions
