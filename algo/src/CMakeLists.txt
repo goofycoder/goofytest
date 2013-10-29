@@ -49,6 +49,7 @@ set(source_files
     bst_mirror.cpp
     bst_to_doubly_list.cpp
     bst_subtree.cpp
+    bst_rw_file.cpp
     top_k.cpp
     sum_subset.cpp
     slide_window_max.cpp

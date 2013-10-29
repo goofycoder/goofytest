@@ -95,6 +95,8 @@ public:
 
     Node*   getRoot() const;            // return root node
 
+    void    write_to_file(std::ofstream& out) const;       // write BST to file
+
 private:
     Node*   root;                       
 
@@ -160,7 +162,8 @@ private:
 
     int     _getMinDepth(Node *p) const;
     int     _getMaxDepth(Node *p) const;
-    
+
+    void    _write_to_file(Node* p, std::ofstream& out) const;
 };
 
 // Non-member functions

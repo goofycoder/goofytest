@@ -84,7 +84,8 @@ int main()
               << "67. [SET] Print all subset of a given set.\n"
               << "68. [ARR] Merge two sorted arrays into one.\n"
               << "69. [MTX] Search target value in the matrix.\n"
-              << "70. [STG] Convert integer to excel row number (aa)\n";
+              << "70. [STG] Convert integer to excel row number (aa)\n"
+              << "71. [BST] Read/Write BST from/to file.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -375,6 +376,10 @@ int main()
         
         case 70:
             TEST_int_to_excel_row();
+            break;
+        
+        case 71:
+            TEST_bst_rw_to_file();
             break;
         
         default:

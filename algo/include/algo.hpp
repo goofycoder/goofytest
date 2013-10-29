@@ -452,4 +452,6 @@ void TEST_merge_sorted_array();
 void TEST_matrix_search();
 
 void TEST_int_to_excel_row();
+
+void TEST_bst_rw_to_file();
 #endif  // ALGO_H
