@@ -83,7 +83,8 @@ int main()
               << "66. [ARR] Get the last K line of file.\n"
               << "67. [SET] Print all subset of a given set.\n"
               << "68. [ARR] Merge two sorted arrays into one.\n"
-              << "69. [MTX] Search target value in the matrix.\n";
+              << "69. [MTX] Search target value in the matrix.\n"
+              << "70. [STG] Convert integer to excel row number (aa)\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -370,6 +371,10 @@ int main()
         
         case 69:
             TEST_matrix_search();
+            break;
+        
+        case 70:
+            TEST_int_to_excel_row();
             break;
         
         default:

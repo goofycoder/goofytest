@@ -307,6 +307,14 @@ void readEdgeFromFile(const std::string filename,
 
 
 /************************************************
+ ********* Brain-teaser algorithm ************
+ ************************************************/
+// convert integer to excel row number
+std::string int_to_excel_row(int num);
+/************************************************/
+
+
+/************************************************
  ********* Unit Test APIS ***********************
  ************************************************/
 void TEST_isPrime();            // Prime number
@@ -442,4 +450,6 @@ void TEST_all_subset();
 void TEST_merge_sorted_array();
 
 void TEST_matrix_search();
+
+void TEST_int_to_excel_row();
 #endif  // ALGO_H

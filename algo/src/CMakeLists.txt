@@ -71,6 +71,7 @@ set(source_files
     fast_expo.cpp
     rotate_matrix.cpp
     find_pair_to_sum.cpp
+    excel_row_number.cpp
     matrix_set_zero.cpp
     matrix_search.cpp
     stl_unordered_map.cpp
