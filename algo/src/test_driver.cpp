@@ -82,7 +82,8 @@ int main()
               << "65. [ARR] Find a pair of integers that sum up to a given sum.\n"
               << "66. [ARR] Get the last K line of file.\n"
               << "67. [SET] Print all subset of a given set.\n"
-              << "68. [ARR] Merge two sorted arrays into one.\n";
+              << "68. [ARR] Merge two sorted arrays into one.\n"
+              << "69. [MTX] Search target value in the matrix.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -365,6 +366,10 @@ int main()
         
         case 68:
             TEST_merge_sorted_array();
+            break;
+        
+        case 69:
+            TEST_matrix_search();
             break;
         
         default:

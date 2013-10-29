@@ -239,6 +239,11 @@ void rotate_matrix_clockwise(int**& matrix, int n, int degree);
 
 // Algorithm that set entire row and column is set to 0 if an element in an MxN matrix is 0 
 void matrix_set_zero(int**& matrix, int row, int col);
+
+// search 'target' in the matrix[row][col]
+// if found, the coordinates are in (tgt_row, tgt_col) and return true
+bool matrix_search(int target, int** m, int row, int col, 
+                   int& tgt_row, int& tgt_col);     // output
 /************************************************/
 
 
@@ -435,4 +440,6 @@ void TEST_read_last_k_line();
 void TEST_all_subset();
 
 void TEST_merge_sorted_array();
+
+void TEST_matrix_search();
 #endif  // ALGO_H

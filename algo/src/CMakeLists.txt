@@ -72,6 +72,7 @@ set(source_files
     rotate_matrix.cpp
     find_pair_to_sum.cpp
     matrix_set_zero.cpp
+    matrix_search.cpp
     stl_unordered_map.cpp
     stk_sort.cpp
     queue_by_stack.cpp
