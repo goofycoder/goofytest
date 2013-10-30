@@ -85,7 +85,8 @@ int main()
               << "68. [ARR] Merge two sorted arrays into one.\n"
               << "69. [MTX] Search target value in the matrix.\n"
               << "70. [STG] Convert integer to excel row number (aa)\n"
-              << "71. [BST] Read/Write BST from/to file.\n";
+              << "71. [BST] Read/Write BST from/to file.\n"
+              << "72. [ARR] Partition the sorted array.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -380,6 +381,10 @@ int main()
         
         case 71:
             TEST_bst_rw_to_file();
+            break;
+        
+        case 72:
+            TEST_partition();
             break;
         
         default:

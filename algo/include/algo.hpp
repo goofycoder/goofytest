@@ -221,6 +221,11 @@ void all_subset(std::set<int>& s);
 
 // merge array b into array a (array a has enough buffer to hold both a and b)
 void merge_sorted_array(int* a, int len_a, int* b, int len_b);
+
+// Partition an sorted array to two arrays, 
+// which makes the difference between sum of each array is minimum.
+void partition_sorted_array(int *arr, int len, 
+                            std::vector<int>& p1, std::vector<int>& p2);
 /************************************************/
 
 
@@ -454,4 +459,6 @@ void TEST_matrix_search();
 void TEST_int_to_excel_row();
 
 void TEST_bst_rw_to_file();
+
+void TEST_partition();
 #endif  // ALGO_H
