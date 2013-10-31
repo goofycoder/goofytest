@@ -26,6 +26,7 @@ set(source_files
     stream_no_dup_char.cpp
     edit_distance.cpp
     regex.cpp
+    sorted_array_partition.cpp
     min_cover_window.cpp
     fibo.cpp
     prime.cpp

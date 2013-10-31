@@ -25,16 +25,16 @@ void _printParenthesis(int n, int pos, int open, int close)
     if (close==n) {
         std::cout << str << "\n";
         return;
-    } else {
-        if (open>close) {
-            str[pos] = '}';
-            _printParenthesis(n, pos+1, open, close+1);
-        }
+    }
 
-        if (open<n) {
-            str[pos] = '{';
-            _printParenthesis(n, pos+1, open+1, close);
-        }
+    if (open>close) {
+        str[pos] = '}';
+        _printParenthesis(n, pos+1, open, close+1);
+    }
+
+    if (open<n) {
+        str[pos] = '{';
+        _printParenthesis(n, pos+1, open+1, close);
     }
 }
 
