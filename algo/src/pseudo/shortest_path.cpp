@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <stack>
 
 // Graph node;
 typedef struct gnode {
@@ -7,6 +8,7 @@ typedef struct gnode {
     int data;
 } GNode;
 
+// Dijkstra's algorithm
 void shortest_path(GNode* v)
 {
     std::priority_queue<GNode*> s;
@@ -30,5 +32,36 @@ void shortest_path(GNode* v)
         for (int i=0; i<v.size(); i++) {
             s.insert(neighbor[i]);
         }
+    }
+}
+
+
+// Depth First Search
+void dfs(node start) 
+{
+    std::stack<GNode*> s;
+    s.push_back(start);
+    
+    while (s.empty() == false) {
+        top = s.top();
+        s.pop();
+        
+        //mark top as visited;
+        markAsVisited(top);
+        
+        // check for termination condition
+        check_term_cond();
+        
+        // add all of top's unvisited neighbors to the stack.
+        vector<GNode*> neighbor;
+        
+        findNeighbor(start, neighbor);
+   
+        for (int i=0; i<v.size(); i++) {
+            s.push(neighbor[i]);
+        }
+        
+        // mark top as not visited;
+        markAsNotVisited(top);
     }
 }
