@@ -1,3 +1,7 @@
+// The idea is similar to shuffle the cards
+// pick one char in the string, swap to the beginning, do the shuffle(permute) to the rest of string
+//     and swap the chosen char back to its orginal position.
+// iterate through string for the same process
 #include <iostream>
 #include <string>
 #include <vector>
