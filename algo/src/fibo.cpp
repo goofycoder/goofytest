@@ -7,6 +7,9 @@
 
 #define FIBO_ERR (-1)
 
+static int _fibo_memo(int n, int* memo);
+
+// this is bad solution
 int fibo(int n) 
 {
     if (n<=0) 
@@ -17,6 +20,33 @@ int fibo(int n)
 
     return fibo(n-2)+fibo(n-1);
 }
+
+int fibo_memo(int n) 
+{
+    if (n<0)
+        return FIBO_ERR;
+
+    int memo[n+1];
+    for(int i=0; i<=n; i++) {
+        memo[i] = -1;
+    }
+    
+    memo[0] = 0;
+    memo[1] = 1;
+
+    return _fibo_memo(n, memo);
+}
+
+static int _fibo_memo(int n, int* memo)
+{
+    if (n==0 || n==1)
+        return memo[n];
+
+    if (memo[n]!=-1) 
+        return memo[n];
+    else 
+        return (_fibo_memo(n-1, memo) + _fibo_memo(n-2, memo));
+} 
 
 int fibo_nr(const int n) 
 {
@@ -60,6 +90,11 @@ void TEST_fibo()
             std::cout << fibo_nr(i) << " ";
         }
         std::cout << "\n";
+        
+        std::cout << "Memo-recursive: \n";
+        for (int i=0; i<num; i++) {
+            std::cout << fibo_memo(i) << " ";
+        }
 
         std::cout << "\nEnter an interger: ";
     }

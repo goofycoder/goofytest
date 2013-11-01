@@ -145,6 +145,7 @@ bool isPalindromeNum(int x);
 // Fibonacci number
 int fibo(const int&n);      // recursive version
 int fibo_nr(const int&n);   // non-recursive version
+int fibo_memo(const int&n);   // recursive version with memo
 
 // compute the sqrt of an integer
 unsigned isqrt(unsigned num);   
