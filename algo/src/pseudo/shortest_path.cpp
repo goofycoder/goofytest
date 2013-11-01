@@ -1,6 +1,12 @@
 #include <iostream>
 #include <queue>
 
+// Graph node;
+typedef struct gnode {
+    struct gnode* neighbors[];
+    int data;
+} GNode;
+
 void shortest_path(GNode* v)
 {
     std::priority_queue<GNode*> s;
