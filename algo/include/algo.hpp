@@ -50,6 +50,10 @@ void print_2D_array(int** table, int width, int height);
 
 // print an int by 32 bit
 void print_int_by_bit(const int d);
+
+// test the endianness of machine
+// return true if it's Big Endian
+bool isBigEndian();
 /************************************************/
 
 
@@ -460,6 +464,8 @@ void TEST_matrix_search();
 void TEST_int_to_excel_row();
 
 void TEST_bst_rw_to_file();
+
+void TEST_endian();
 
 void TEST_partition();
 #endif  // ALGO_H

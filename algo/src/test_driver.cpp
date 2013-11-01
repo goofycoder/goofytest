@@ -86,7 +86,8 @@ int main()
               << "69. [MTX] Search target value in the matrix.\n"
               << "70. [STG] Convert integer to excel row number (aa)\n"
               << "71. [BST] Read/Write BST from/to file.\n"
-              << "72. [ARR] Partition the sorted array.\n";
+              << "72. [ARR] Partition the sorted array.\n"
+              << "73. [SYS] Read/Write BST from/to file.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -385,6 +386,10 @@ int main()
         
         case 72:
             TEST_partition();
+            break;
+
+        case 73:
+            TEST_endian();
             break;
         
         default:

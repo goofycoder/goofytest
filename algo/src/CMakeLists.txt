@@ -30,6 +30,7 @@ set(source_files
     min_cover_window.cpp
     fibo.cpp
     prime.cpp
+    endian.cpp
     isqrt.cpp
     linked_list_api.cpp
     dlist.cpp
