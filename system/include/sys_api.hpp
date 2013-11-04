@@ -12,4 +12,6 @@ void TEST_rlimit();
 
 void TEST_hash();
 
+void TEST_hashtable();
+
 #endif //SYS_API_H

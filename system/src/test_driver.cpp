@@ -7,7 +7,8 @@ int main()
               << "1. RAII example.\n"
               << "2. Exception example.\n"
               << "3. rlimit example.\n"
-              << "4. hash example.\n";
+              << "4. hash example.\n"
+              << "5. unordered map.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -28,6 +29,10 @@ int main()
         
         case 4:
             TEST_hash();
+            break;
+       
+        case 5:
+            TEST_hashtable();
             break;
         
         default:

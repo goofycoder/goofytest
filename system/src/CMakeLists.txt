@@ -12,6 +12,7 @@ set(source_files
     exception_example.cpp
     rlimit.cpp
     hash_example.cpp
+    unordered_map.cpp
     test_driver.cpp
 )
 
