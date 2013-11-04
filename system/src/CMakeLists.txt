@@ -10,6 +10,8 @@ include_directories(${system_SOURCE_DIR}/include)
 set(source_files 
     raii_example.cpp
     exception_example.cpp
+    rlimit.cpp
+    hash_example.cpp
     test_driver.cpp
 )
 
