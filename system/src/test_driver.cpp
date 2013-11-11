@@ -8,7 +8,8 @@ int main()
               << "2. Exception example.\n"
               << "3. rlimit example.\n"
               << "4. hash example.\n"
-              << "5. unordered map.\n";
+              << "5. unordered map.\n"
+              << "6. [PCAP]: example.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -35,6 +36,10 @@ int main()
             TEST_hashtable();
             break;
         
+        case 6:
+            TEST_pcap_example();
+            break;
+
         default:
             std::cout << "Invalid option.";
             break;

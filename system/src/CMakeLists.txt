@@ -13,6 +13,7 @@ set(source_files
     rlimit.cpp
     hash_example.cpp
     unordered_map.cpp
+    pcap_example.cpp
     test_driver.cpp
 )
 
@@ -23,6 +24,8 @@ if (USE_STATIC_BOOST)
 endif ()
 
 find_package(Threads)
+
+find_library(PCAP_LIB NAMES pcap HINTS /usr/local/lib)
 
 # add_executable: Add an executable to the project using the specified source files.
 add_executable(test_driver ${source_files})
@@ -35,4 +38,5 @@ target_link_libraries(
     test_driver 
     ${CMAKE_THREAD_LIBS_INIT}
     ${Boost_LIBRARIES}
+    ${PCAP_LIB}
 )
