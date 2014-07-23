@@ -19,4 +19,3 @@ print 'reverse ' + str(in_2) + ': ' + str(reverse_int(in_2))
 
 in_3 = 3
 print 'reverse ' + str(in_3) + ': ' + str(reverse_int(in_3))
-
