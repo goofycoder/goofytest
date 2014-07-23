@@ -1,9 +1,7 @@
 '''
     Permutation (order matters):
-    
     Combination (order does NOT matter)
-    
-    Cartesian product:
+    Cartesian product
 '''
 import itertools
 
@@ -29,3 +27,22 @@ print list(itertools.product([1,2,3], [4,5,6]))
 print list(itertools.product([1,2], repeat=3))
 #[(1, 1, 1), (1, 1, 2), (1, 2, 1), (1, 2, 2),
 #(2, 1, 1), (2, 1, 2), (2, 2, 1), (2, 2, 2)]
+
+
+# *: unpacks the sequence/collection into positional arguments, so you can do this:
+# **: does the same, but only for a dictionary, fetch the value in (key:value) in the dict item
+def sum(a, b):
+    return a + b
+
+values = (1, 2)
+
+s = sum(*values)
+print s
+
+args = {'a':3, 'b':4}
+
+c = sum(*args)
+print c             # c is 'ab' ('a'+'b')
+
+d = sum(**args)
+print d             # d is 7 (3+4)
