@@ -44,7 +44,7 @@ int main()
               << "29. List all the permutation of a string. (both Dup and Non-Dup algorithm.\n"
               << "30. Split the linked list to half.\n"
               << "31. Compute the square root of an int\n"
-              << "32. Max in the sliding window of int array.(crash)\n"
+              << "32. [CRASH] Max in the sliding window of int array.\n"
               << "33. Mirror of BST.\n"
               << "34. Ugly number.\n"
               << "35. Test basic bit operations.\n \
@@ -87,7 +87,8 @@ int main()
               << "70. [STG] Convert integer to excel row number (aa)\n"
               << "71. [BST] Read/Write BST from/to file.\n"
               << "72. [ARR] Partition the sorted array.\n"
-              << "73. [SYS] Read/Write BST from/to file.\n";
+              << "73. [SYS] Read/Write BST from/to file.\n"
+              << "74. [BST] Print BST by level.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -225,7 +226,7 @@ int main()
 	        break;
         
         case 32:
-            TEST_slide_window_max();
+            //TEST_slide_window_max();
 	        break;
         
         case 33:
@@ -392,6 +393,10 @@ int main()
             TEST_endian();
             break;
         
+        case 74:
+            TEST_printTreeByLevel();
+            break;
+
         default:
             std::cout << "Invalid option.";
             break;

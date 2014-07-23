@@ -371,6 +371,7 @@ void TEST_BinarySearch();
 void TEST_TreeAPI();
 void TEST_lca();
 void TEST_prettyprintBST();
+void TEST_printTreeByLevel();
 void TEST_BST_API();            // getParent(), getNumOfChild()
 void TEST_BST_deleteNode();
 void TEST_bst_mirror();         // test the mirror of BST

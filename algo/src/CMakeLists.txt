@@ -52,9 +52,9 @@ set(source_files
     bst_to_doubly_list.cpp
     bst_subtree.cpp
     bst_rw_file.cpp
+    bst_print_by_level.cpp
     top_k.cpp
     sum_subset.cpp
-    slide_window_max.cpp
     search_rotate_array.cpp
     maxheap.cpp
     bit_swap.cpp

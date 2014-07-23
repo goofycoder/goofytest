@@ -63,6 +63,8 @@ public:
     int     getWidth(int k) const;
 	
     void    printAllPath() const;
+    
+    void    printTreeByLevel() const;
 	
 	Node*   convTreeToList();
 	
@@ -145,6 +147,8 @@ private:
                         int nodesInThisLevel, 
                         const std::deque<Node*>& nodesQueue, 
                         std::ostream& out);
+
+
     Node*   __buildFromInPreOrder(int* in, int* pre, int len);
 
     bool    isLeaf(const Node* p) const;
