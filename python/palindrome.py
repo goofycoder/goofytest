@@ -1,9 +1,9 @@
-import reverse_int
+import reverse_int      # in reverse_int.py
 
 def isPalindrome(num):
-    r = reverse_int.reverse_int(num) 
+    rev = reverse_int.reverse_int(num)    # call reverse_int() defined in reverse_int.py module
 
-    if r == num:
+    if rev == num:
         return True
     else:
         return False
