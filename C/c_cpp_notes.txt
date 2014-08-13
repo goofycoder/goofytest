@@ -8,3 +8,7 @@ int len = sizeof(arr)/sizeof(int);    // OK, len = 5
 the keyword 'bool' is defined in <stdbool.h>
 
 -------------------------------------------
+INT_MAX is defined in <limits.h>
+
+INT_MAX is 2^31-1
+INT_MIN is -2^31+1
