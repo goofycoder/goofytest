@@ -1,3 +1,31 @@
+floating number:
+
+
+float f = 0.1;
+if(f==0.1)      // return false;
+if(f==0.1f)     // return true;
+
+float f2 = 0.5; 
+if(f==0.5)      // return true;
+if(f==0.5f)     // return 
+
+
+------------------------------------------------------
+void **ptr;
+int size;
+
+Q: reverse the memory ptr points to.
+
+
+A: it is pointer to pointer. thus only reverse the ptr to memory, not memory itself.
+
+
+for(int i=0; i<size/2; i++) 
+{
+  ptr[i] = ptr[size-i-1]
+}
+
+------------------------------------
 sizeof(int) is not 32, it is 4.
 
 --------------------------------------------
