@@ -2,7 +2,9 @@ floating number:
 
 
 float f = 0.1;
-if(f==0.1)      // return false;
+if(f==0.1)      // return false; because 0.1 is promoted to double from float.
+                // the promotion of float to double can only cause mismatch 
+                // when a value (like 0.1) uses more precision bits than the bits of single precision.
 if(f==0.1f)     // return true;
 
 float f2 = 0.5; 
