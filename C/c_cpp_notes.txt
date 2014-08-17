@@ -1,3 +1,13 @@
+int *p = NULL;
+
+int **pp = &p;                  // OK
+
+if (pp == NULL)                 // false;
+
+if (*pp == NULL)                // true;
+
+
+--------------------------------------------------------
 floating number:
 
 
@@ -33,6 +43,7 @@ sizeof(int) is not 32, it is 4.
 --------------------------------------------
 int arr[] = {2,1,3,5,4};
 int len = sizeof(arr)/sizeof(int);    // OK, len = 5
+int len = sizeof(arr)/sizeof(arr[0]); // OK, len = 5
 
 -------------------------------------------
 the keyword 'bool' is defined in <stdbool.h>
