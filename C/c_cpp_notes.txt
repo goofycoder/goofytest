@@ -1,3 +1,22 @@
+linked list insertion:
+
+void insert_front(Node** phead, int data)           // Note: Node** phead;  because it would change the head ptr
+{
+    Node* n = new Node;
+    
+    n->data = data;
+    n->next = next;
+    
+    if(*phead == NULL) {
+        *phead = n;                     // linked in the new head;
+        // phead = &n;                  // ERROR: it does not work!
+        return;
+    }
+    
+    ...
+}
+
+-----------------------------------------------------------
 function pointer:
 
 int (*fp)(int a, int b);   
