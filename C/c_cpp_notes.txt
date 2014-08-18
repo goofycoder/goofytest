@@ -1,3 +1,18 @@
+function pointer:
+
+int (*fp)(int a, int b);   
+// int *fp(int a, int b);       // note: this is different!
+                                // this declares a function that returns int*, not the function pointer!
+
+int foo(int a, int b) { return (a+b); }
+
+fp = &foo;
+// *fp = foo;              // won't compile!!!
+
+int sum = (*fp)(a,b);      // sum = 5;
+
+
+-----------------------------------------------------------
 int *p = NULL;
 
 int **pp = &p;                  // OK
@@ -5,7 +20,6 @@ int **pp = &p;                  // OK
 if (pp == NULL)                 // false;
 
 if (*pp == NULL)                // true;
-
 
 --------------------------------------------------------
 floating number:
