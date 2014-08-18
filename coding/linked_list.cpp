@@ -2,23 +2,12 @@
  *  linked list APIs
  *      - insert_back()
  *      - insert_front()
- *      - reverse_list()
  *      - print_list()
  *      - free_list()
  */
 #include <iostream>
+#include "linked_list.h"
 using namespace std;
-
-typedef struct node {
-    int data;
-    struct node* next;
-} Node;
-
-void insert_back(Node** phead, int data);
-void insert_front(Node** phead, int data);
-void print_list(Node* head);
-Node* reverse_list(Node *head);
-void free_list(Node* head);
 
 void insert_front(Node** phead, int data)
 {
@@ -78,42 +67,4 @@ void print_list(Node* head)
     }
 
     cout << endl;
-}
-
-Node* reverse_list(Node *head)
-{
-    Node *prev=NULL;
-    Node *next = NULL;
-    Node *p = head;
-
-    while(p) {
-        next = p->next;
-
-        p->next = prev;
-
-        prev = p;
-
-        p = next;
-    }
-
-    return prev;
-}
-
-int main()
-{
-    Node* head = NULL;
-
-    insert_back(&head, 1);
-    insert_back(&head, 2);
-    insert_front(&head, 3);
-    insert_front(&head, 4);
-
-    print_list(head);
-
-    Node *rhead = reverse_list(head);
-    print_list(rhead);
-
-    free_list(rhead);
-
-    return 0;
 }
