@@ -98,6 +98,9 @@ public:
     Node*   getRoot() const;            // return root node
 
     void    write_to_file(std::ofstream& out) const;       // write BST to file
+    
+    Node*   inorderPredecessor(Node *p) const;
+    Node*   inorderSuccessor(Node* p) const;
 
 private:
     Node*   root;                       

@@ -88,7 +88,8 @@ int main()
               << "71. [BST] Read/Write BST from/to file.\n"
               << "72. [ARR] Partition the sorted array.\n"
               << "73. [SYS] Read/Write BST from/to file.\n"
-              << "74. [BST] Print BST by level.\n";
+              << "74. [BST] Print BST by level.\n"
+              << "75. [BST] Print Predecessor/Successor node in BST.\n";
 
     unsigned option;
     std::cout << "\nYou choose: \n";
@@ -395,6 +396,10 @@ int main()
         
         case 74:
             TEST_printTreeByLevel();
+            break;
+        
+        case 75:
+            TEST_predecessor_successor();
             break;
 
         default:

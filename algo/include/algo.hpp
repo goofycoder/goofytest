@@ -469,4 +469,6 @@ void TEST_bst_rw_to_file();
 void TEST_endian();
 
 void TEST_partition();
+
+void TEST_predecessor_successor();
 #endif  // ALGO_H

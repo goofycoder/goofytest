@@ -53,6 +53,7 @@ set(source_files
     bst_subtree.cpp
     bst_rw_file.cpp
     bst_print_by_level.cpp
+    bst_predecessor_successor.cpp
     top_k.cpp
     sum_subset.cpp
     search_rotate_array.cpp
