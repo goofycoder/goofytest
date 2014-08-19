@@ -1,3 +1,13 @@
+XOR operation
+
+    x^y = y^x;
+    
+    x^x = x;
+    
+    x^y^x = x^x^y = y
+
+
+--------------------------------------------------------
 bit operation
     - bitwise operators:  &  |  ~ ^
         NOTE: ! is not a bit operator, do NOT confuse it with ~
