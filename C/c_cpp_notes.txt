@@ -1,3 +1,15 @@
+HOW-TO:
+    insert an integer char in front of a string.
+    
+    "abc" --> "1abc"?
+    
+    int d = 1;
+    string str = "abc";
+    
+    str = (char)(d+'0') + str;      // the type conversion is mandatory! 
+
+
+-----------------------------------------------------
 XOR operation
 
     x^y = y^x;
