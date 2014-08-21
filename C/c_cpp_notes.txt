@@ -1,3 +1,14 @@
+------------------------------------------------------
+I know it's a silly mistake, but DO NOT do the following:
+
+set s;          // ERROR: should be  set<int> s;
+
+int *b;     
+b = new int[len];   
+delete b[];     // ERROR: should be   delete[] b;
+
+
+-------------------------------------------------------
 HOW-TO:
     insert an integer char in front of a string.
     
