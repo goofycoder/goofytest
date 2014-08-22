@@ -1,3 +1,25 @@
+-----------------------------------------------------
+memory allocation is in the function and pass pointers into the function.
+
+
+int main()
+{
+    int *p = NULL;   // pass-by-reference, needs initialization, otherwise gives warning 
+    int len = 0;
+
+    foo(p, len); 
+
+    delete[] p;      // calling function's responsibility to free
+}
+
+
+void foo(int*& p, int& len) 
+{
+     len = 10;
+  
+     p = new int[len];    // DON't DO this:   int *p = new int[len];  this define a new local p, will hide the argument p
+}
+
 ------------------------------------------------------
 I know it's a silly mistake, but DO NOT do the following:
 
