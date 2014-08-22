@@ -20,6 +20,24 @@ void foo(int*& p, int& len)
      p = new int[len];    // DON't DO this:   int *p = new int[len];  this define a new local p, will hide the argument p
 }
 
+
+********* COMPARE *******************
+#include <algorithm>        // for sort()
+using namespace std;
+
+int main()
+{
+    int a[] = {-1, 0, 1, 2, -1, -4};
+    int len = sizeof(a)/sizeof(int);
+    
+    array_sort(a, len);
+}
+
+void array_sort(int* a, int len)        // no need to pass-by-reference, the a is a copy of memory location
+{
+    sort(a, a+len);
+}
+
 ------------------------------------------------------
 I know it's a silly mistake, but DO NOT do the following:
 
