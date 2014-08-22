@@ -1,3 +1,22 @@
+A var declaration can include initializers, one per variable.
+  - If an initializer is present, the type can be omitted; 
+  - the variable will take the type of the initializer.
+
+-------------------------------------------------------------
+Package:
+  - Every Go program is made up of packages.
+  - Programs start running in package main.
+  - Program is using the packages within the "import (...)"
+  - By convention, the package name is the same as the last element of the import path. 
+      * For instance, the "math/rand" package comprises files that begin with the statement package rand.
+
+-------------------------------------------------------------
+Exported names:
+  - After importing a package, you can refer to the names it exports.
+  - In Go, a name is exported if it begins with a capital letter.
+  - Exmaple: Foo is an exported name, as is FOO. The name foo is not exported.
+
+
 HOWTO: compile foo.go
   $go build foo.go      // it will generate foo executable
   
