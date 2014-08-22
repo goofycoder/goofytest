@@ -1,0 +1,5 @@
+HOWTO: compile foo.go
+  $go build foo.go      // it will generate foo executable
+  
+HOWTO: install go lang on ubuntu
+  $sudo apt-get install ubuntu
