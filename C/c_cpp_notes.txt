@@ -1,4 +1,24 @@
 -----------------------------------------------------
+pointer arithmetic
+
+int a[] = {1,2,3,4,5};
+
+int *p1 = &a[0];
+
+int *p2 = p1+1;     // p2 points to a[1]
+
+int *p3 = p1++;     // both p1 and p3 point to a[1]
+
+int *p4 = &a[len-1];  // p4 points to the end of array
+
+while (p2<p4)       // till p2 and p4 meet
+{
+    // do something
+    p2++;       // move forward
+    p4--;       // move backward
+}
+
+-----------------------------------------------------
 memory allocation is in the function and pass pointers into the function.
 
 
