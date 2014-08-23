@@ -1,3 +1,17 @@
+----------------------------------------------------
+analyze coredump
+
+1. generate coredump:
+
+ulimit -c unlimit
+
+2. run the code to generate coredump
+
+gdb ./executable
+
+(gdb) core-file core
+(gdb) bt
+
 -----------------------------------------------------
 pointer arithmetic
 
