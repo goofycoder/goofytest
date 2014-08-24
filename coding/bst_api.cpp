@@ -5,6 +5,7 @@
  *
  */
 #include <iostream>
+#include <queue>
 using namespace std;
 
 typedef struct node {
@@ -17,6 +18,8 @@ void bst_insert(Node*& root, int data);
 void bst_inorder_traverse(Node* root);
 void bst_free_tree(Node* root);
 Node* bst_lca(Node* root, Node* p1, Node* p2);
+void bst_print_by_level(Node* root);
+void _bst_print_path(Node* p, int* path, int pos);
 
 void bst_insert(Node*& root, int data)
 {
@@ -100,10 +103,93 @@ Node* bst_lca(Node* root, Node* p1, Node* p2)
     // won't reach here
 }
 
+void bst_print_by_level(Node* root)
+{
+    if (!root)
+        return;
+
+    queue<Node*> q;
+    q.push(root);
+    int curLevel = 1;
+    int nxtLevel = 0;
+
+    while(!q.empty()) 
+    {
+        Node* tmp = q.front();
+        cout << tmp->data << " ";
+        
+        if (tmp->left) {
+            q.push(tmp->left);
+            nxtLevel++;
+        } 
+
+        if (tmp->right) {
+            q.push(tmp->right);
+            nxtLevel++;
+        }
+
+        q.pop();
+        curLevel--;
+
+        if(curLevel==0) { 
+            cout << endl; 
+            curLevel = nxtLevel;
+            nxtLevel = 0;
+        }
+    }
+}
+
+int bst_height(Node* root)
+{   
+    if(root==NULL) 
+        return 0;
+
+    if(root->left==NULL && root->right==NULL) 
+        return 1;
+
+    return max(bst_height(root->left)+1, bst_height(root->right)+1);
+}
+
+void bst_print_path(Node* root)
+{
+    int height=bst_height(root);
+    int path[height];
+
+    _bst_print_path(root, path, 0);
+}
+
+void _bst_print_path(Node* p, int* path, int pos)
+{   
+    if(p==NULL) {
+        return;
+    }
+    
+    path[pos] = p->data;
+    pos++;
+
+    // leaf node
+    if(p->left==NULL && p->right==NULL) {
+        for(int i=0; i<pos; i++) {
+            cout << path[i] << " ";
+        }
+        cout << endl;
+        return;
+    }
+
+    _bst_print_path(p->left, path, pos);
+    _bst_print_path(p->right, path, pos);
+}
+
 int main()
 {
     Node* root = NULL;
-
+    
+    /* BST:
+     *              10
+     *          5       15
+     *       2     7  12   
+     *           6       13
+     */
     int a[] = {10,5,15,2,7, 12, 6,13};
     int len = sizeof(a)/sizeof(a[0]);
 
@@ -114,6 +200,10 @@ int main()
  
     bst_inorder_traverse(root);
     cout << endl;
+
+    //******** BST height **********
+    cout << "height: " << bst_height(root) << endl;
+
 
     //************ Lowest Common Ancestor **************
     int n1 = 2;
@@ -129,5 +219,13 @@ int main()
         cout << "LCA is NULL\n";
     }
 
+    //********* print bst by level *****************
+    cout << "BST print by level: " << endl;
+    bst_print_by_level(root);
+
+    //********* print bst by level *****************
+    cout << "BST print root-to-leave paths: " << endl;
+    bst_print_path(root);
+ 
     bst_free_tree(root);
 }
