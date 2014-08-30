@@ -2,7 +2,7 @@
  *  BST APIs
  *      - LCA
  *      - print-by-level
- *
+ *      - compute the sum of max sum path
  */
 #include <iostream>
 #include <queue>
@@ -20,6 +20,7 @@ void bst_free_tree(Node* root);
 Node* bst_lca(Node* root, Node* p1, Node* p2);
 void bst_print_by_level(Node* root);
 void _bst_print_path(Node* p, int* path, int pos);
+int bst_max_path_sum(Node* root);
 
 void bst_insert(Node*& root, int data)
 {
@@ -180,6 +181,17 @@ void _bst_print_path(Node* p, int* path, int pos)
     _bst_print_path(p->right, path, pos);
 }
 
+int bst_max_path_sum(Node* root)
+{
+    if (root==NULL) 
+        return 0;
+
+    int left_max = bst_max_path_sum(root->left);
+    int right_max = bst_max_path_sum(root->right);
+
+    return root->data + max(left_max, right_max);
+}
+
 int main()
 {
     Node* root = NULL;
@@ -227,5 +239,8 @@ int main()
     cout << "BST print root-to-leave paths: " << endl;
     bst_print_path(root);
  
+    //********* get max sum of path ****************
+    cout << "BST max path sum: " << bst_max_path_sum(root) << endl;
+
     bst_free_tree(root);
 }
