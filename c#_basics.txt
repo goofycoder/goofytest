@@ -1,0 +1,45 @@
+----------------------------------------------
+Q: What is the difference between ref & out parameters?  
+A: An argument passed to a ref parameter must first be initialized. 
+   Compare this to an out parameter,whose argument does not have to be explicitly initialized 
+   before being passed to an out parameter.
+   
+
+----------------------------------------------
+** Static member
+static member types (also referred to as class properties) are used to store data values
+which are common to all object instances of class. 
+
+For example, all bank customers would likely earn the same rate of interest on a savings account. 
+An interestRate member would, therefore, be declared as static since it is common across 
+all object instances of the class.
+
+Static members are declared using the static keyword. For example:
+public class BankAccount
+{
+  public static int interestRate;
+}
+
+----------------------------------------------
+Q:What is serialization?
+A: Serialization is the process of converting an object into a stream of bytes in order to store the object or transmit it to memory, a database, or a file. 
+
+Its main purpose is to save the state of an object in order to be able to recreate it when needed. The reverse process is called deserialization.
+
+-------------------------------------------------
+Q: What is Jagged Arrays?
+A: A jagged array is an array whose elements are arrays. The elements of a jagged array can be of different dimensions and sizes.
+   A jagged array is sometimes called an array–of–arrays.
+   
+----------------------------------------------------
+Q: How is method overriding different from method overloading?
+
+A: When overriding a method, you change the behavior of the method for the derived class. Overloading a method simply involves having another method with the same name within the class.
+
+-----------------------------------------------------
+Q:  What are the difference between Structure and Class?
+  
+A: Structures are value type and Classes are reference type
+Structures can not have contractors or destructors.
+Classes can have both contractors and destructors.
+Structures do not support Inheritance, while Classes support Inheritance.
