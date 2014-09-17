@@ -1,0 +1,18 @@
+Why git is better than X?
+http://thkoch2001.github.io/whygitisbetter/#git-is-standard
+
+Cheap local branching
+  *** most compelling feature  
+  - Git will allow you to have multiple local branches that can be entirely independent of each other and the creation
+  - easy to tryout new ideas
+  - when you push to a remote repository, you do not have to push all of your branches. 
+    * You can only share one of your branches and not all of them. 
+
+staging area
+  - Unlike the other systems, Git has what it calls the "staging area" or "index". 
+  - This is an intermediate area that you can setup what you want your commit to look like before you commit it.
+
+Social coding
+  - github
+
+Easy to learn
